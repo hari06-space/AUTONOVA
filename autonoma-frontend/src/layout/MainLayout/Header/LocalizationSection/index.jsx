@@ -16,6 +16,7 @@ import Box from '@mui/material/Box';
 
 // project imports
 import Transitions from 'ui-component/extended/Transitions';
+import { getUserStorageJson, setUserStorageItem } from 'utils/userStorage';
 
 // assets
 import TranslateTwoToneIcon from '@mui/icons-material/TranslateTwoTone';
@@ -40,7 +41,7 @@ const getLangIndicator = (lng) => {
 
 /**
  * Sets or clears the googtrans cookie so Google Translate picks it up on reload.
- * - For English (en): clears the cookie to restore original language.
+ * - For English (en): clears the cookie across all domain/path variants and sets /en/en.
  * - For other languages: sets googtrans=/en/<lang>.
  */
 function applyGoogTransCookie(lng) {
@@ -48,26 +49,47 @@ function applyGoogTransCookie(lng) {
   const hostname = window.location.hostname;
   const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || /^[0-9.]+$/.test(hostname);
 
-  // Always expire old cookies on all possible domain variants first
-  const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
-  document.cookie = `googtrans=; ${expire}; path=/`;
+  // Expire old cookies across all potential domains and paths
+  const domains = ['', hostname];
   if (!isLocalhost) {
-    document.cookie = `googtrans=; ${expire}; path=/; domain=${hostname}`;
-    document.cookie = `googtrans=; ${expire}; path=/; domain=.${hostname}`;
+    domains.push(`.${hostname}`);
     const parts = hostname.split('.');
     if (parts.length > 2) {
       const rootDomain = parts.slice(-2).join('.');
-      document.cookie = `googtrans=; ${expire}; path=/; domain=.${rootDomain}`;
+      domains.push(rootDomain, `.${rootDomain}`);
     }
+  } else {
+    domains.push('.localhost');
   }
 
+  const paths = ['/', window.location.pathname];
+  const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC; Max-Age=0;';
+
+  domains.forEach((dom) => {
+    paths.forEach((p) => {
+      if (dom) {
+        document.cookie = `googtrans=; ${expire} path=${p}; domain=${dom}`;
+      }
+      document.cookie = `googtrans=; ${expire} path=${p};`;
+    });
+  });
+
   if (lng === 'en') {
-    // English = restore original; no cookie needed
+    // English is native; set /en/en and wipe translate caches
+    document.cookie = `googtrans=/en/en; path=/;`;
+    if (!isLocalhost) {
+      document.cookie = `googtrans=/en/en; path=/; domain=${hostname};`;
+      document.cookie = `googtrans=/en/en; path=/; domain=.${hostname};`;
+    }
+    try {
+      sessionStorage.removeItem('googtrans');
+      localStorage.removeItem('googtrans');
+    } catch (_) {}
     return;
   }
 
   const value = `/en/${googleLang}`;
-  // Set cookie without domain attribute for localhost (required for cookies to work on localhost)
+  // Set cookie for target language
   document.cookie = `googtrans=${value}; path=/`;
   if (!isLocalhost) {
     document.cookie = `googtrans=${value}; path=/; domain=${hostname}`;
@@ -103,14 +125,13 @@ export default function LocalizationSection() {
     // Persist the selection in config state (React async, for in-session use)
     setField('i18n', lng);
 
-    // Synchronously update localStorage before reload — setField triggers an async
-    // useEffect that writes to localStorage, but window.location.reload() fires
-    // before that effect runs, causing the indicator to read the old stale value.
+    // Synchronously update both user-scoped and global localStorage before reload
     try {
       const STORAGE_KEY = 'berry-config-vite-js';
-      const stored = localStorage.getItem(STORAGE_KEY);
-      const current = stored ? JSON.parse(stored) : {};
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...current, i18n: lng }));
+      const stored = getUserStorageJson(STORAGE_KEY) || {};
+      const updated = { ...stored, i18n: lng };
+      setUserStorageItem(STORAGE_KEY, updated);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     } catch (e) {
       // ignore storage errors
     }

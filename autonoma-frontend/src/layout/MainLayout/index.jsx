@@ -305,10 +305,20 @@ function MainLayoutInner() {
     downMD && handlerDrawerOpen(false);
   }, [downMD]);
 
-  // Dynamically load Google Translate Engine on Mount.
-  // Translation language is controlled by the 'googtrans' cookie set in LocalizationSection
-  // before page reload — Google Translate reads it automatically on script load.
+  // Dynamically load Google Translate Engine only for non-English languages.
+  // When i18n is 'en', Google Translate is unloaded and cleaned up so native English renders cleanly.
   useEffect(() => {
+    if (!i18n || i18n === 'en') {
+      const script = document.getElementById('google-translate-script');
+      if (script) script.remove();
+      const elem = document.getElementById('google_translate_element');
+      if (elem) elem.remove();
+      const style = document.getElementById('google-translate-styles');
+      if (style) style.remove();
+      document.documentElement.classList.remove('translated-ltr', 'translated-rtl');
+      return;
+    }
+
     // Ensure the hidden GT container exists (idempotent)
     if (!document.getElementById('google_translate_element')) {
       const gtContainer = document.createElement('div');
@@ -367,7 +377,7 @@ function MainLayoutInner() {
     return () => {
       window.removeEventListener('online', loadTranslateScript);
     };
-  }, []);
+  }, [i18n]);
 
   // Anti-screenshot, printing, and context-menu protection
   useEffect(() => {

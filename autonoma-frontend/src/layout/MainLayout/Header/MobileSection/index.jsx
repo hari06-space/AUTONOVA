@@ -23,6 +23,7 @@ import MenuItem from '@mui/material/MenuItem';
 import useAuth from 'hooks/useAuth';
 import useConfig from 'hooks/useConfig';
 import useLookups from 'hooks/useLookups';
+import { getUserStorageJson, setUserStorageItem } from 'utils/userStorage';
 import { getUserImageUrl } from 'utils/upload-helper';
 import axios from 'utils/axios';
 import ChangePasswordModal from 'ui-component/ChangePasswordModal';
@@ -60,19 +61,42 @@ function applyGoogTransCookie(lng) {
   const hostname = window.location.hostname;
   const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || /^[0-9.]+$/.test(hostname);
 
-  const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
-  document.cookie = `googtrans=; ${expire}; path=/`;
+  const domains = ['', hostname];
   if (!isLocalhost) {
-    document.cookie = `googtrans=; ${expire}; path=/; domain=${hostname}`;
-    document.cookie = `googtrans=; ${expire}; path=/; domain=.${hostname}`;
+    domains.push(`.${hostname}`);
     const parts = hostname.split('.');
     if (parts.length > 2) {
       const rootDomain = parts.slice(-2).join('.');
-      document.cookie = `googtrans=; ${expire}; path=/; domain=.${rootDomain}`;
+      domains.push(rootDomain, `.${rootDomain}`);
     }
+  } else {
+    domains.push('.localhost');
   }
 
-  if (lng === 'en') return;
+  const paths = ['/', window.location.pathname];
+  const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC; Max-Age=0;';
+
+  domains.forEach((dom) => {
+    paths.forEach((p) => {
+      if (dom) {
+        document.cookie = `googtrans=; ${expire} path=${p}; domain=${dom}`;
+      }
+      document.cookie = `googtrans=; ${expire} path=${p};`;
+    });
+  });
+
+  if (lng === 'en') {
+    document.cookie = `googtrans=/en/en; path=/;`;
+    if (!isLocalhost) {
+      document.cookie = `googtrans=/en/en; path=/; domain=${hostname};`;
+      document.cookie = `googtrans=/en/en; path=/; domain=.${hostname};`;
+    }
+    try {
+      sessionStorage.removeItem('googtrans');
+      localStorage.removeItem('googtrans');
+    } catch (_) {}
+    return;
+  }
 
   const value = `/en/${googleLang}`;
   document.cookie = `googtrans=${value}; path=/`;
@@ -185,9 +209,10 @@ export default function MobileSection() {
     setField('i18n', lng);
     try {
       const STORAGE_KEY = 'berry-config-vite-js';
-      const stored = localStorage.getItem(STORAGE_KEY);
-      const current = stored ? JSON.parse(stored) : {};
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...current, i18n: lng }));
+      const stored = getUserStorageJson(STORAGE_KEY) || {};
+      const updated = { ...stored, i18n: lng };
+      setUserStorageItem(STORAGE_KEY, updated);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     } catch (e) {}
     applyGoogTransCookie(lng);
     window.location.reload();
