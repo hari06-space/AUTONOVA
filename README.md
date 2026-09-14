@@ -1,4 +1,4 @@
-# 🛡️ Autonoma ERP System
+# 🛡️ Autonova ERP System
 
 A premium enterprise resource planning solution built with **React 19 (Frontend)** and **Spring Boot 3.x (Backend)**, powered by **H2 (Development)** and **Microsoft SQL Server 2022 (Production)** compatibility.
 
