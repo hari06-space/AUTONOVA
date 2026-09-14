@@ -1,0 +1,22 @@
+-- Add ncr_suffix and ofi_suffix columns to AD_PREFIX_CREDENTIALS table if missing
+IF OBJECT_ID('dbo.AD_PREFIX_CREDENTIALS', 'U') IS NOT NULL
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('AD_PREFIX_CREDENTIALS') AND name = 'ncr_suffix')
+    BEGIN
+        ALTER TABLE AD_PREFIX_CREDENTIALS ADD ncr_suffix NVARCHAR(20) NULL;
+    END;
+
+    IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('AD_PREFIX_CREDENTIALS') AND name = 'ofi_suffix')
+    BEGIN
+        ALTER TABLE AD_PREFIX_CREDENTIALS ADD ofi_suffix NVARCHAR(20) NULL;
+    END;
+END;
+
+-- Add NCR_NO column to QMS_NCR_REWORK_LOG table if missing
+IF OBJECT_ID('dbo.QMS_NCR_REWORK_LOG', 'U') IS NOT NULL
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'NCR_NO')
+    BEGIN
+        ALTER TABLE QMS_NCR_REWORK_LOG ADD NCR_NO NVARCHAR(100) NULL;
+    END;
+END;

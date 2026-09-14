@@ -1,0 +1,28 @@
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+.metadata/
+.project
+.settings/
+.classpath
+.factorypath
+
+# IDE
+.idea/
+*.iml
+*.iws
+.vscode/
+.DS_Store
+
+# Environment
+application-local.properties
+.env
+.logs/
+.scratch/
+
+# Compiled Frontend Assets (Vite build output)
+src/main/resources/static/

@@ -1,0 +1,133 @@
+-- ==========================================================
+-- Migration: V380.0 - Add Observation Context Fields to QMS_NCR_REWORK_LOG
+-- Description: Adds audit observation context, workflow, and organization
+--              fields so that QMS_NCR_REWORK_LOG records are automatically
+--              populated when an Audit Observation with NC or OFI status is saved.
+-- Date: 2026-06-29
+-- ==========================================================
+
+-- OBSERVATION_ID: Link to QMS_AUDIT_OBSERVATION
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'OBSERVATION_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD OBSERVATION_ID BIGINT NULL;
+END
+GO
+
+-- AUDIT_SCHEDULE_ID: Link to QMS_AUDIT_SCHEDULE
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'AUDIT_SCHEDULE_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD AUDIT_SCHEDULE_ID BIGINT NULL;
+END
+GO
+
+-- AUDIT_ID: Observation schedule no / audit identifier (denormalized for reporting)
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'AUDIT_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD AUDIT_ID NVARCHAR(100) NULL;
+END
+GO
+
+-- CHECKLIST_ID: Criteria / checklist item ID
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'CHECKLIST_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD CHECKLIST_ID BIGINT NULL;
+END
+GO
+
+-- CLAUSE: Observation clause reference
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'CLAUSE')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD CLAUSE NVARCHAR(255) NULL;
+END
+GO
+
+-- CRITERIA: Observation criteria / checklist details
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'CRITERIA')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD CRITERIA NVARCHAR(MAX) NULL;
+END
+GO
+
+-- STATUS: Observation status (NC / OFI)
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'STATUS')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD STATUS NVARCHAR(50) NULL;
+END
+GO
+
+-- REMARKS: Observation comments / remarks
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'REMARKS')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD REMARKS NVARCHAR(MAX) NULL;
+END
+GO
+
+-- ATTACHMENT: Evidence / attachment path
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'ATTACHMENT')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD ATTACHMENT NVARCHAR(MAX) NULL;
+END
+GO
+
+-- WORKFLOW_STATUS: Overall workflow state (e.g. Pending, In Progress, Closed)
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'WORKFLOW_STATUS')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD WORKFLOW_STATUS NVARCHAR(50) NULL DEFAULT 'Pending';
+END
+GO
+
+-- APPROVAL_STATUS: Approval state (e.g. Open, Approved, Rejected)
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'APPROVAL_STATUS')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD APPROVAL_STATUS NVARCHAR(50) NULL DEFAULT 'Open';
+END
+GO
+
+-- ASSIGNED_USER: User assigned to rework this finding
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'ASSIGNED_USER')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD ASSIGNED_USER NVARCHAR(100) NULL;
+END
+GO
+
+-- REWORK_STATUS: Rework completion status (e.g. Pending, Completed)
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'REWORK_STATUS')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD REWORK_STATUS NVARCHAR(50) NULL DEFAULT 'Pending';
+END
+GO
+
+-- COMPLETED_DATE: Date the rework was completed
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'COMPLETED_DATE')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD COMPLETED_DATE DATETIME NULL;
+END
+GO
+
+-- CLOSED_DATE: Date the finding was formally closed
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'CLOSED_DATE')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD CLOSED_DATE DATETIME NULL;
+END
+GO
+
+-- COMPANY_ID: Multi-company support
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'COMPANY_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD COMPANY_ID BIGINT NULL;
+END
+GO
+
+-- BRANCH_ID: Multi-branch support
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'BRANCH_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD BRANCH_ID BIGINT NULL;
+END
+GO
+
+-- DEPARTMENT_ID: Department of the finding
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('QMS_NCR_REWORK_LOG') AND name = 'DEPARTMENT_ID')
+BEGIN
+    ALTER TABLE QMS_NCR_REWORK_LOG ADD DEPARTMENT_ID BIGINT NULL;
+END
+GO

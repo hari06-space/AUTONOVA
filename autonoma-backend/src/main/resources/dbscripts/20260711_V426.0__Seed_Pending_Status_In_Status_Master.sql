@@ -1,0 +1,6 @@
+-- Seed 'Pending' status in AD_STATUS_MASTER if it does not exist
+IF NOT EXISTS (SELECT 1 FROM AD_STATUS_MASTER WHERE NAME = 'Pending')
+BEGIN
+    INSERT INTO AD_STATUS_MASTER (NAME) VALUES ('Pending');
+END
+GO

@@ -1,0 +1,10 @@
+-- Migration Script: Standardize FROM_WHERE in HR_LEAVE_TRAVEL_DETAILS
+-- Date: 2026-07-26
+
+IF OBJECT_ID('dbo.HR_LEAVE_TRAVEL_DETAILS', 'U') IS NOT NULL
+BEGIN
+    UPDATE HR_LEAVE_TRAVEL_DETAILS
+    SET FROM_WHERE = 'Employee Self Care'
+    WHERE FROM_WHERE = 'Self Care' OR FROM_WHERE IS NULL;
+    PRINT 'Standardized FROM_WHERE values in HR_LEAVE_TRAVEL_DETAILS to Employee Self Care.';
+END;

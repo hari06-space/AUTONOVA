@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button id="fs">Fullscreen</button>
+  <script>
+    document.getElementById('fs').onclick = () => document.documentElement.requestFullscreen();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        console.log('Escape pressed, default prevented');
+      }
+    });
+  </script>
+</body>
+</html>

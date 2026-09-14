@@ -1,0 +1,2 @@
+ALTER TABLE AD_USER_THEME_SETTING 
+ADD notification_mapping NVARCHAR(MAX);

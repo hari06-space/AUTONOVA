@@ -1,0 +1,26 @@
+Autonoma ERP Development Requirements
+
+Frontend (React):
+- Node.js: v18.x or higher
+- Package Manager: npm or yarn
+- Key Libraries: Material UI, Redux Toolkit, Tabler Icons, React Intl, Axios
+
+Backend (Spring Boot):
+- Java: JDK 17
+- Build Tool: Maven
+- Key Dependencies: Spring Data JPA, Spring Security, JWT, Lombok, MS SQL Server Driver
+
+Database:
+- Type: Microsoft SQL Server
+- Version: 2019 or higher (Compatible with Docker)
+- Default Database Name: AUTONOMA
+
+Environment Setup:
+1. Frontend:
+   - Run `npm install`
+   - Run `npm start`
+2. Backend:
+   - Configure `src/main/resources/application.properties` with your SQL Server credentials.
+   - Run `mvn spring-boot:run`
+3. SQL Schema:
+   - Execute the SQL files in `Autonoma_Backend/sql/` to set up the base tables and seed data.

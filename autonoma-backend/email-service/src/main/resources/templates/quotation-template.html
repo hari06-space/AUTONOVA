@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Quotation</title>
+    <style>
+        body { font-family: 'Helvetica', 'Arial', sans-serif; font-size: 12pt; color: #333; }
+        .header { display: table; width: 100%; border-bottom: 2px solid #0056b3; padding-bottom: 20px; margin-bottom: 20px; }
+        .header-col { display: table-cell; vertical-align: middle; }
+        .company-info { text-align: right; }
+        .company-name { font-size: 24pt; font-weight: bold; color: #0056b3; }
+        .doc-title { font-size: 20pt; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;}
+        .info-table { width: 100%; margin-bottom: 30px; }
+        .info-table td { vertical-align: top; width: 50%; padding: 5px; }
+        .label { font-weight: bold; color: #666; font-size: 10pt;}
+        .items-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        .items-table th, .items-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .items-table th { background-color: #f8f9fa; font-weight: bold; color: #333;}
+        .text-right { text-align: right; }
+        .totals-table { width: 50%; float: right; border-collapse: collapse; }
+        .totals-table td { padding: 8px; border-bottom: 1px solid #eee;}
+        .totals-table tr:last-child td { border-bottom: none; font-weight: bold; font-size: 14pt; border-top: 2px solid #333;}
+        .footer { clear: both; margin-top: 50px; font-size: 10pt; color: #666; border-top: 1px solid #ddd; padding-top: 20px;}
+        .notes-section { margin-top: 30px; clear: both;}
+        .notes-title { font-weight: bold; margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-col">
+            <div class="doc-title">QUOTATION</div>
+        </div>
+        <div class="header-col company-info">
+            <div class="company-name">NUTECH MANUFACTURING</div>
+            <div>123 Industrial Estate, Phase 1</div>
+            <div>Bangalore, KA 560001, India</div>
+            <div>sales@nutech.example.com | +91 80 1234 5678</div>
+        </div>
+    </div>
+
+    <table class="info-table">
+        <tr>
+            <td>
+                <div class="label">QUOTE TO:</div>
+                <div th:text="${customer.name}" style="font-weight: bold; font-size: 14pt; margin-top: 5px;">Customer Name</div>
+                <div th:text="${customer.companyName}">Company Name</div>
+                <div th:text="${customer.email}">customer@example.com</div>
+            </td>
+            <td>
+                <div class="label">QUOTATION DETAILS:</div>
+                <table style="width: 100%; margin-top: 5px;">
+                    <tr>
+                        <td style="width: 40%; font-weight: bold;">Quote No:</td>
+                        <td th:text="${quotation.quotationNumber}">QT-000001</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Date:</td>
+                        <td th:text="${quotation.quotationDate.format(dateFormatter)}">01-Jan-2025</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Valid Until:</td>
+                        <td th:text="${quotation.validUntil.format(dateFormatter)}">31-Jan-2025</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th style="width: 5%">#</th>
+                <th style="width: 20%">Part Code</th>
+                <th style="width: 35%">Description</th>
+                <th style="width: 10%" class="text-right">Qty</th>
+                <th style="width: 15%" class="text-right">Unit Price</th>
+                <th style="width: 15%" class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="line, stat : ${lines}">
+                <td th:text="${stat.count}">1</td>
+                <td th:text="${line.partCode}">PART-123</td>
+                <td>
+                    <div th:text="${line.partName}" style="font-weight: bold;">Part Name</div>
+                    <div th:text="${line.description}" style="font-size: 10pt; color: #666; margin-top: 3px;">Description</div>
+                </td>
+                <td class="text-right" th:text="${line.quantity}">10</td>
+                <td class="text-right" th:text="${#numbers.formatDecimal(line.unitPrice, 1, 'COMMA', 2, 'POINT')}">1,000.00</td>
+                <td class="text-right" th:text="${#numbers.formatDecimal(line.lineTotal, 1, 'COMMA', 2, 'POINT')}">10,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="totals-table">
+        <tr>
+            <td>Subtotal</td>
+            <td class="text-right" th:text="${quotation.currency + ' ' + #numbers.formatDecimal(quotation.subtotal, 1, 'COMMA', 2, 'POINT')}">INR 10,000.00</td>
+        </tr>
+        <tr>
+            <td>Tax Amount</td>
+            <td class="text-right" th:text="${quotation.currency + ' ' + #numbers.formatDecimal(quotation.taxAmount, 1, 'COMMA', 2, 'POINT')}">INR 1,800.00</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td class="text-right" th:text="${quotation.currency + ' ' + #numbers.formatDecimal(quotation.totalAmount, 1, 'COMMA', 2, 'POINT')}">INR 11,800.00</td>
+        </tr>
+    </table>
+
+    <div class="notes-section">
+        <div class="notes-title">Terms &amp; Conditions</div>
+        <div style="white-space: pre-line" th:text="${quotation.termsAndConditions}">Standard terms.</div>
+        
+        <div th:if="${quotation.specialInstructions != null and !quotation.specialInstructions.isEmpty()}" style="margin-top: 15px;">
+            <div class="notes-title">Special Notes</div>
+            <div style="white-space: pre-line" th:text="${quotation.specialInstructions}">Special instructions here.</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="text-align: center; margin-bottom: 10px;">Thank you for your business!</div>
+        <div style="text-align: center;">This is a computer-generated document and requires no signature.</div>
+    </div>
+
+</body>
+</html>

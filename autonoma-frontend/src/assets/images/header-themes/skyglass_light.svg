@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Crisp Daytime Sky -->
+    <linearGradient id="sky_day" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="45%" stop-color="#e0f2fe"/>
+      <stop offset="90%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <!-- Glass Facade Reflection (Reflecting Sky & Light) -->
+    <linearGradient id="glass_reflect" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#0284c7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <!-- Glass Tower Body -->
+    <linearGradient id="tower_body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+
+    <!-- Sun Flare Core -->
+    <radialGradient id="sun_core" cx="680" cy="18" r="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#fde047" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="1440" height="90" fill="url(#sky_day)"/>
+
+  <!-- Radiant Sun Glow -->
+  <circle cx="680" cy="18" r="160" fill="url(#sun_core)"/>
+
+  <!-- Soft Distant Cloud Whisps -->
+  <path d="M0 45 Q 180 28, 360 40 T 720 32 T 1080 38 T 1440 30 L 1440 90 L 0 90 Z" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Modern Architectural Penthouse Glass Facades -->
+  <!-- Tower 1 (Left): Diagonal Crown Tower (x: 140 to 260) -->
+  <polygon points="150,90 150,38 210,22 260,38 260,90" fill="url(#tower_body)" opacity="0.6"/>
+  <polygon points="150,90 150,38 210,22 260,38 260,90" fill="url(#glass_reflect)"/>
+  <line x1="210" y1="22" x2="210" y2="90" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+  <!-- Floor mullions -->
+  <line x1="155" y1="52" x2="255" y2="52" stroke="#ffffff" stroke-width="1" opacity="0.75"/>
+  <line x1="155" y1="68" x2="255" y2="68" stroke="#ffffff" stroke-width="1" opacity="0.75"/>
+
+  <!-- Tower 2 (Center): Ultra-Tall Prism Glass Skyscraper (x: 580 to 760) -->
+  <polygon points="600,90 600,32 680,14 760,32 760,90" fill="url(#tower_body)" opacity="0.55"/>
+  <polygon points="600,90 600,32 680,14 760,32 760,90" fill="url(#glass_reflect)"/>
+  <line x1="680" y1="14" x2="680" y2="90" stroke="#ffffff" stroke-width="2" opacity="0.95"/>
+  <!-- Sleek floor grids -->
+  <line x1="610" y1="44" x2="750" y2="44" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+  <line x1="610" y1="58" x2="750" y2="58" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+  <line x1="610" y1="72" x2="750" y2="72" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+
+  <!-- Tower 3 (Right): Stepped Modernist Terrace Tower (x: 1060 to 1240) -->
+  <polygon points="1080,90 1080,42 1130,42 1130,28 1190,28 1190,42 1240,42 1240,90" fill="url(#tower_body)" opacity="0.6"/>
+  <polygon points="1080,90 1080,42 1130,42 1130,28 1190,28 1190,42 1240,42 1240,90" fill="url(#glass_reflect)"/>
+  <line x1="1160" y1="28" x2="1160" y2="90" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+
+  <!-- Foreground Crisp White Architectural Promenade Edge -->
+  <rect y="84" width="1440" height="6" fill="#f8fafc"/>
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#38bdf8" stroke-width="2"/>
+</svg>

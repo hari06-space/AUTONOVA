@@ -1,0 +1,12 @@
+-- Clean up invalid '[object Object]' strings saved in HR_EMPLOYEE_ABILITY table
+UPDATE [dbo].[HR_EMPLOYEE_ABILITY]
+SET [CHAIRED_TYPE] = NULL
+WHERE [CHAIRED_TYPE] LIKE '%[object Object]%';
+
+UPDATE [dbo].[HR_EMPLOYEE_ABILITY]
+SET [HOST_TYPE] = NULL
+WHERE [HOST_TYPE] LIKE '%[object Object]%';
+
+UPDATE [dbo].[HR_EMPLOYEE_ABILITY]
+SET [PARTICIPANTS_TYPE] = NULL
+WHERE [PARTICIPANTS_TYPE] LIKE '%[object Object]%';

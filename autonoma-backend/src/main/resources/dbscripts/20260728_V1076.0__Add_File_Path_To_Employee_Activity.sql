@@ -1,0 +1,11 @@
+-- Idempotent SQL migration script to add FILE_PATH column to HR_EMPLOYEE_ACTIVITY
+IF NOT EXISTS (
+    SELECT 1 
+    FROM sys.columns 
+    WHERE object_id = OBJECT_ID('HR_EMPLOYEE_ACTIVITY') 
+      AND name = 'FILE_PATH'
+)
+BEGIN
+    ALTER TABLE HR_EMPLOYEE_ACTIVITY ADD FILE_PATH VARCHAR(1000) NULL;
+END
+GO

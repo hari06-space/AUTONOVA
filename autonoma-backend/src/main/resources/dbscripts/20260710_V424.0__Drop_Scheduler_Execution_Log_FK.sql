@@ -1,0 +1,5 @@
+-- Drop the foreign key constraint from BOS_SCHEDULER_EXECUTION_LOG to allow logging system schedule trigger executions
+IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_BOS_SCHEDULER_EXEC_CONFIG' AND parent_object_id = OBJECT_ID('BOS_SCHEDULER_EXECUTION_LOG'))
+BEGIN
+    ALTER TABLE BOS_SCHEDULER_EXECUTION_LOG DROP CONSTRAINT FK_BOS_SCHEDULER_EXEC_CONFIG;
+END

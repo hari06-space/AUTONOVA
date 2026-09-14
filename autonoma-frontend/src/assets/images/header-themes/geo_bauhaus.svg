@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bauhaus_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <linearGradient id="g_rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+
+    <linearGradient id="g_amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <linearGradient id="g_cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <linearGradient id="g_mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+
+    <linearGradient id="g_indigo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c7d2fe"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Canvas -->
+  <rect width="1440" height="90" fill="url(#bauhaus_bg)"/>
+
+  <!-- Cluster 1: Left Bauhaus Geometry (x: 40 - 220) -->
+  <circle cx="90" cy="45" r="28" fill="url(#g_rose)" opacity="0.35"/>
+  <circle cx="125" cy="45" r="20" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+  <polygon points="160,20 185,65 135,65" fill="url(#g_amber)" opacity="0.45"/>
+  <rect x="200" y="32" width="22" height="22" rx="4" fill="url(#g_cyan)" opacity="0.4"/>
+
+  <!-- Cluster 2: Center-Left Geometry (x: 380 - 540) -->
+  <polygon points="410,25 440,25 455,55 425,55" fill="url(#g_indigo)" opacity="0.35"/>
+  <circle cx="480" cy="42" r="24" fill="url(#g_mint)" opacity="0.4"/>
+  <line x1="470" y1="15" x2="530" y2="75" stroke="#f43f5e" stroke-width="2" opacity="0.5"/>
+  <circle cx="530" cy="35" r="14" fill="none" stroke="#0284c7" stroke-width="2" opacity="0.6"/>
+
+  <!-- Cluster 3: Center Bauhaus Harmony (x: 700 - 860) -->
+  <circle cx="740" cy="48" r="32" fill="url(#g_amber)" opacity="0.38"/>
+  <rect x="770" y="22" width="34" height="34" rx="8" fill="url(#g_cyan)" opacity="0.35"/>
+  <polygon points="830,68 855,20 880,68" fill="url(#g_rose)" opacity="0.4"/>
+  <circle cx="855" cy="44" r="18" fill="none" stroke="#10b981" stroke-width="2" opacity="0.7"/>
+
+  <!-- Cluster 4: Center-Right Geometry (x: 1020 - 1180) -->
+  <rect x="1040" y="30" width="28" height="28" rx="6" fill="url(#g_mint)" opacity="0.45"/>
+  <circle cx="1100" cy="45" r="26" fill="url(#g_indigo)" opacity="0.35"/>
+  <circle cx="1135" cy="45" r="16" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.7"/>
+  <polygon points="1160,25 1190,65 1130,65" fill="url(#g_cyan)" opacity="0.38"/>
+
+  <!-- Cluster 5: Right Bauhaus Accents (x: 1280 - 1400) -->
+  <circle cx="1320" cy="40" r="26" fill="url(#g_rose)" opacity="0.35"/>
+  <polygon points="1370,18 1400,68 1340,68" fill="url(#g_amber)" opacity="0.4"/>
+  <line x1="1300" y1="55" x2="1360" y2="55" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+
+  <!-- Geometric Accent Dot Matrix Across Top Bar -->
+  <g fill="#94a3b8" opacity="0.45">
+    <circle cx="280" cy="35" r="2"/><circle cx="295" cy="35" r="2"/><circle cx="310" cy="35" r="2"/>
+    <circle cx="280" cy="50" r="2"/><circle cx="295" cy="50" r="2"/><circle cx="310" cy="50" r="2"/>
+    <circle cx="620" cy="35" r="2"/><circle cx="635" cy="35" r="2"/><circle cx="650" cy="35" r="2"/>
+    <circle cx="620" cy="50" r="2"/><circle cx="635" cy="50" r="2"/><circle cx="650" cy="50" r="2"/>
+    <circle cx="950" cy="35" r="2"/><circle cx="965" cy="35" r="2"/><circle cx="980" cy="35" r="2"/>
+    <circle cx="950" cy="50" r="2"/><circle cx="965" cy="50" r="2"/><circle cx="980" cy="50" r="2"/>
+    <circle cx="1240" cy="35" r="2"/><circle cx="1255" cy="35" r="2"/><circle cx="1270" cy="35" r="2"/>
+    <circle cx="1240" cy="50" r="2"/><circle cx="1255" cy="50" r="2"/><circle cx="1270" cy="50" r="2"/>
+  </g>
+
+  <!-- Crisp Bottom Border -->
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#e2e8f0" stroke-width="2"/>
+</svg>

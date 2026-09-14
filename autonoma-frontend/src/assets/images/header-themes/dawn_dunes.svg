@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Morning Pastel Champagne Sky -->
+    <linearGradient id="dawn_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffdfa"/>
+      <stop offset="40%" stop-color="#fef3c7"/>
+      <stop offset="85%" stop-color="#fed7aa"/>
+      <stop offset="100%" stop-color="#fdba74"/>
+    </linearGradient>
+
+    <!-- Warm Rising Sun Glow -->
+    <radialGradient id="dawn_sun" cx="720" cy="55" r="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#fef08a" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#f59e0b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Distant Dunes (Pastel Peach Silk) -->
+    <linearGradient id="dune_light_far" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="50%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+
+    <!-- Mid Dunes (Warm Terracotta Gold) -->
+    <linearGradient id="dune_light_mid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="45%" stop-color="#f59e0b"/>
+      <stop offset="80%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Foreground Silk Dune (Warm Caramel Cream) -->
+    <linearGradient id="dune_light_fore" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="30%" stop-color="#fef3c7"/>
+      <stop offset="75%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fcd34d"/>
+    </linearGradient>
+
+    <!-- Golden Crest Line -->
+    <linearGradient id="crest_gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="80%" stop-color="#fef08a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="1440" height="90" fill="url(#dawn_sky)"/>
+
+  <!-- Morning Sun Halo -->
+  <circle cx="720" cy="55" r="260" fill="url(#dawn_sun)"/>
+
+  <!-- Far Sensual Dune Wave -->
+  <path d="M0 62 C 240 42, 500 72, 780 46 C 1060 22, 1280 56, 1440 42 L 1440 90 L 0 90 Z" fill="url(#dune_light_far)" opacity="0.85"/>
+
+  <!-- Mid Dune Crest -->
+  <path d="M0 72 C 200 54, 400 48, 620 66 C 880 86, 1140 52, 1440 68 L 1440 90 L 0 90 Z" fill="url(#dune_light_mid)" opacity="0.88"/>
+  <path d="M0 72 C 200 54, 400 48, 620 66 C 880 86, 1140 52, 1440 68" fill="none" stroke="url(#crest_gold)" stroke-width="1.6"/>
+
+  <!-- Foreground Fluid Silk Alabaster Dune -->
+  <path d="M0 90 L 0 82 C 280 64, 560 88, 920 72 C 1180 60, 1340 78, 1440 74 L 1440 90 Z" fill="url(#dune_light_fore)"/>
+  <path d="M0 82 C 280 64, 560 88, 920 72 C 1180 60, 1340 78, 1440 74" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.9"/>
+
+  <!-- Warm Amber Horizon Bottom Border -->
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#f59e0b" stroke-width="2" opacity="0.85"/>
+</svg>

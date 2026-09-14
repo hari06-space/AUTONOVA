@@ -1,0 +1,3 @@
+-- Drop unused tables as requested
+DROP TABLE IF EXISTS [dbo].[NPD_BOM_PROCESS_NORM];
+DROP TABLE IF EXISTS [dbo].[NPD_BOM_PROCESS_QUALITY];

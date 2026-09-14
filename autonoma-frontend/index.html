@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Autonoma BOS(S)</title>
+  <link rel="icon" type="image/jpeg" href="/logo1.jpeg?v=1" />
+  <link rel="manifest" href="/manifest.json" />
+  <!-- Meta Tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function() {
+      function cleanupViewport() {
+        var meta = document.querySelector('meta[name="viewport"]');
+        if (meta) {
+          var content = meta.getAttribute('content') || '';
+          if (content.indexOf('maximum-scale') !== -1 || content.indexOf('user-scalable') !== -1) {
+            var cleanContent = content
+              .split(',')
+              .map(function(part) { return part.trim(); })
+              .filter(function(part) {
+                return !part.startsWith('maximum-scale') && !part.startsWith('user-scalable');
+              })
+              .join(', ');
+            meta.setAttribute('content', cleanContent);
+          }
+        }
+      }
+      cleanupViewport();
+      var observer = new MutationObserver(cleanupViewport);
+      observer.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['content'] });
+    })();
+  </script>
+  <meta name="theme-color" content="#2296f3" />
+  <meta name="title" content="Autonoma BOS(S)" />
+  <meta name="description" content="Autonoma BOS(S) - Advanced Business Operating System" />
+  <meta name="keywords" content="Autonoma BOS(S) - Advanced Business Operating System" />
+  <meta name="author" content="Autonoma BOS(S)" />
+
+  <!-- Performance hints for Vite -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+          This HTML file is a template.
+          If you open it directly in the browser, you will see an empty page.
+
+          You can add webfonts, meta tags, or analytics to this file.
+          The build step will place the bundled scripts into the <body> tag.
+
+          To begin the development, run `npm start` or `yarn start`.
+          To create a production bundle, use `npm run build` or `yarn build`.
+        -->
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>

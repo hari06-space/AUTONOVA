@@ -1,0 +1,16 @@
+-- Migration to reassign OD Apply (PAGE_CODE = 'ESC1030') PAGE_ID from out-of-sequence 45003 to sequential 181
+-- (fits cleanly into sequence: 178=Permission Verification, 179=OD Verification, 181=OD Apply, 182=Leave Configuration)
+
+IF EXISTS (SELECT 1 FROM BOS_PAGES WHERE PAGE_ID = 45003)
+BEGIN
+    UPDATE BOS_USER_PAGE_AUTH SET PAGE_ID = 181 WHERE PAGE_ID = 45003;
+    DELETE FROM BOS_PAGES WHERE PAGE_ID = 45003;
+END
+
+IF NOT EXISTS (SELECT 1 FROM BOS_PAGES WHERE PAGE_ID = 181 OR PAGE_CODE = 'ESC1030')
+BEGIN
+    SET IDENTITY_INSERT BOS_PAGES ON;
+    INSERT INTO BOS_PAGES (PAGE_ID, MOD_ID, SUB_MOD_ID, PAGE_CODE, PAGE_NAME, ENABLED, PAGE_URL, ICON)
+    VALUES (181, 16, 161, 'ESC1030', 'OD Apply', 1, '/employee-self-care/leave/od-apply', 'IconBriefcase');
+    SET IDENTITY_INSERT BOS_PAGES OFF;
+END

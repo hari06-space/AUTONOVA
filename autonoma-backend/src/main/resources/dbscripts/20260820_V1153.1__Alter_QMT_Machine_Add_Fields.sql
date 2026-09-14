@@ -1,0 +1,12 @@
+ 
+    
+        ALTER TABLE QMT_MACHINE ADD MACHINE_SHORT_NAME      NVARCHAR(100)           NULL;
+        ALTER TABLE QMT_MACHINE ADD MODEL_NO                NVARCHAR(100)           NULL;
+        ALTER TABLE QMT_MACHINE ADD SERIAL_NO               NVARCHAR(100)           NULL;
+        ALTER TABLE QMT_MACHINE ADD MAKE                    NVARCHAR(100)           NULL;
+        ALTER TABLE QMT_MACHINE ADD WARRANTY                BIT                     NOT NULL DEFAULT 0;
+        ALTER TABLE QMT_MACHINE ADD WARRANTY_DURATION       INT                     NULL;
+        ALTER TABLE QMT_MACHINE ADD EXPIRY_DATE             DATETIME                NULL;
+        ALTER TABLE QMT_MACHINE ADD HSN_SAC_CODE            NVARCHAR(50)            NULL;
+        ALTER TABLE QMT_MACHINE ADD MACHINE_LIFE            NVARCHAR(50)            NULL;
+ 

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Soft Lavender Gradient Background -->
+    <linearGradient id="iso_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdf4ff"/>
+      <stop offset="50%" stop-color="#faf5ff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </linearGradient>
+
+    <!-- Isometric Cube Face Gradients -->
+    <!-- Top Face (Light) -->
+    <linearGradient id="cube_top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </linearGradient>
+    <!-- Left Face (Mid Tone Purple) -->
+    <linearGradient id="cube_left" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <!-- Right Face (Deep Tone Indigo) -->
+    <linearGradient id="cube_right" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+
+    <!-- Master Isometric Cube (width: 40px, height: 46px) -->
+    <!-- Origin (0,0) at center top vertex -->
+    <g id="iso_cube">
+      <!-- Top Face: (0,0) (20,11) (0,22) (-20,11) -->
+      <polygon points="0,0 20,11 0,22 -20,11" fill="url(#cube_top)"/>
+      <!-- Left Face: (-20,11) (0,22) (0,46) (-20,35) -->
+      <polygon points="-20,11 0,22 0,46 -20,35" fill="url(#cube_left)" opacity="0.75"/>
+      <!-- Right Face: (0,22) (20,11) (20,35) (0,46) -->
+      <polygon points="0,22 20,11 20,35 0,46" fill="url(#cube_right)" opacity="0.85"/>
+      <!-- Crisp White Edge Highlights -->
+      <polyline points="-20,11 0,22 20,11" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+      <line x1="0" y1="22" x2="0" y2="46" stroke="#ffffff" stroke-width="1.2"/>
+    </g>
+
+    <g id="iso_cube_cyan">
+      <polygon points="0,0 20,11 0,22 -20,11" fill="#ffffff"/>
+      <polygon points="-20,11 0,22 0,46 -20,35" fill="#38bdf8" opacity="0.75"/>
+      <polygon points="0,22 20,11 20,35 0,46" fill="#0284c7" opacity="0.85"/>
+      <polyline points="-20,11 0,22 20,11" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+      <line x1="0" y1="22" x2="0" y2="46" stroke="#ffffff" stroke-width="1.2"/>
+    </g>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1440" height="90" fill="url(#iso_bg)"/>
+
+  <!-- Subtle Wireframe Isometric Ground Grid -->
+  <g stroke="#c084fc" stroke-width="0.8" opacity="0.25">
+    <line x1="0" y1="20" x2="1440" y2="60"/>
+    <line x1="0" y1="40" x2="1440" y2="80"/>
+    <line x1="0" y1="60" x2="1440" y2="100"/>
+    <line x1="100" y1="0" x2="260" y2="90"/>
+    <line x1="300" y1="0" x2="460" y2="90"/>
+    <line x1="500" y1="0" x2="660" y2="90"/>
+    <line x1="700" y1="0" x2="860" y2="90"/>
+    <line x1="900" y1="0" x2="1060" y2="90"/>
+    <line x1="1100" y1="0" x2="1260" y2="90"/>
+    <line x1="1300" y1="0" x2="1460" y2="90"/>
+  </g>
+
+  <!-- Stepped Isometric Cube Clusters Across Header -->
+  <!-- Cluster 1 (Left) -->
+  <use href="#iso_cube" x="80" y="20"/>
+  <use href="#iso_cube" x="120" y="42"/>
+  <use href="#iso_cube_cyan" x="160" y="20"/>
+
+  <!-- Cluster 2 (Center-Left) -->
+  <use href="#iso_cube" x="380" y="30"/>
+  <use href="#iso_cube_cyan" x="420" y="8"/>
+  <use href="#iso_cube" x="460" y="30"/>
+  <use href="#iso_cube" x="500" y="52"/>
+
+  <!-- Cluster 3 (Center) -->
+  <use href="#iso_cube_cyan" x="700" y="22"/>
+  <use href="#iso_cube" x="740" y="44"/>
+  <use href="#iso_cube" x="780" y="22"/>
+  <use href="#iso_cube_cyan" x="820" y="44"/>
+
+  <!-- Cluster 4 (Center-Right) -->
+  <use href="#iso_cube" x="1020" y="15"/>
+  <use href="#iso_cube" x="1060" y="37"/>
+  <use href="#iso_cube_cyan" x="1100" y="15"/>
+  <use href="#iso_cube" x="1140" y="37"/>
+
+  <!-- Cluster 5 (Right) -->
+  <use href="#iso_cube" x="1320" y="25"/>
+  <use href="#iso_cube_cyan" x="1360" y="47"/>
+  <use href="#iso_cube" x="1400" y="25"/>
+
+  <!-- Floating Isometric Dots -->
+  <g fill="#9333ea" opacity="0.6">
+    <circle cx="250" cy="30" r="3"/>
+    <circle cx="290" cy="52" r="2.5"/>
+    <circle cx="610" cy="28" r="3"/>
+    <circle cx="650" cy="50" r="2.5"/>
+    <circle cx="930" cy="30" r="3"/>
+    <circle cx="970" cy="52" r="2.5"/>
+    <circle cx="1230" cy="28" r="3"/>
+    <circle cx="1270" cy="50" r="2.5"/>
+  </g>
+
+  <!-- Bottom Purple/Indigo Accent Border -->
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#a855f7" stroke-width="2"/>
+</svg>

@@ -1,0 +1,17 @@
+-- =========================================================================
+-- Migration: V1002__Seed_Missing_Employee_Categories.sql
+-- Purpose: Seed employee category master values if missing.
+-- =========================================================================
+
+SET IDENTITY_INSERT dbo.HR_CATEGORY_MASTER ON;
+
+IF NOT EXISTS (SELECT 1 FROM dbo.HR_CATEGORY_MASTER WHERE ID = 1)
+    INSERT INTO dbo.HR_CATEGORY_MASTER (ID, CATEGORY_NAME, CREATED_BY, CREATED_DATE) VALUES (1, 'EMPLOYEE', 'SYSTEM', GETDATE());
+
+IF NOT EXISTS (SELECT 1 FROM dbo.HR_CATEGORY_MASTER WHERE ID = 2)
+    INSERT INTO dbo.HR_CATEGORY_MASTER (ID, CATEGORY_NAME, CREATED_BY, CREATED_DATE) VALUES (2, 'CONTRACTOR', 'SYSTEM', GETDATE());
+
+IF NOT EXISTS (SELECT 1 FROM dbo.HR_CATEGORY_MASTER WHERE ID = 3)
+    INSERT INTO dbo.HR_CATEGORY_MASTER (ID, CATEGORY_NAME, CREATED_BY, CREATED_DATE) VALUES (3, 'CONSULTANT', 'SYSTEM', GETDATE());
+
+SET IDENTITY_INSERT dbo.HR_CATEGORY_MASTER OFF;

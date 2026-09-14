@@ -1,0 +1,11 @@
+node_modules
+.git
+.yarn
+Autonoma_Backend
+Autonoma_ERP
+email-frontend
+tools
+frontend_log.txt
+*.log
+*.lock
+yarn.lock

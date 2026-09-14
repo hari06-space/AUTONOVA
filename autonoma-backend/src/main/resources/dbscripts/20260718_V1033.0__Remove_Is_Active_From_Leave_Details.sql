@@ -1,0 +1,22 @@
+-- V1033.0: Remove IS_ACTIVE column from HR_LEAVE_DETAILS
+DECLARE @ConstraintName NVARCHAR(256);
+SELECT @ConstraintName = OBJECT_NAME(default_object_id)
+FROM sys.columns
+WHERE object_id = OBJECT_ID('HR_LEAVE_DETAILS') AND name = 'IS_ACTIVE';
+
+IF @ConstraintName IS NOT NULL
+BEGIN
+    DECLARE @DropSql NVARCHAR(MAX) = 'ALTER TABLE HR_LEAVE_DETAILS DROP CONSTRAINT ' + @ConstraintName;
+    EXEC sp_executesql @DropSql;
+    PRINT 'Dropped constraint: ' + @ConstraintName;
+END
+
+IF EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'HR_LEAVE_DETAILS' AND COLUMN_NAME = 'IS_ACTIVE'
+)
+BEGIN
+    ALTER TABLE HR_LEAVE_DETAILS DROP COLUMN IS_ACTIVE;
+    PRINT 'Dropped IS_ACTIVE column from HR_LEAVE_DETAILS';
+END
+GO

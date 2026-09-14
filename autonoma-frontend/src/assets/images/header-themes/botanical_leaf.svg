@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Crisp Morning Mist Sky -->
+    <linearGradient id="leaf_sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="50%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+
+    <!-- Fresh Leaf Green Gradients -->
+    <linearGradient id="leaf_primary" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="60%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+
+    <linearGradient id="leaf_emerald" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <linearGradient id="leaf_soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bbf7d0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#86efac" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Morning Sunbeam Rays -->
+    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef9c3" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft_blur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Morning Mist Background -->
+  <rect width="1440" height="90" fill="url(#leaf_sky)"/>
+
+  <!-- Golden Morning Sunbeam Rays -->
+  <polygon points="120,0 260,0 380,90 200,90" fill="url(#sunbeam)"/>
+  <polygon points="580,0 720,0 860,90 680,90" fill="url(#sunbeam)" opacity="0.6"/>
+  <polygon points="1040,0 1180,0 1340,90 1160,90" fill="url(#sunbeam)" opacity="0.7"/>
+
+  <!-- Layer 1: Distant Botanical Foliage Canopy (Soft Depth) -->
+  <path d="M0 90 L0 50 C 60 42, 120 28, 180 38 C 240 48, 300 62, 380 44 C 460 26, 540 36, 620 52 C 700 68, 780 42, 860 36 C 940 30, 1020 48, 1100 58 C 1180 68, 1260 38, 1340 42 C 1390 44, 1420 54, 1440 50 L1440 90 Z" fill="url(#leaf_soft)" filter="url(#soft_blur)"/>
+
+  <!-- Layer 2: Elegant Curved Monstera & Palm Leaf Silhouettes -->
+  <!-- Left Leaf Cluster (x: 40 to 220) -->
+  <path d="M10 90 C 20 60, 60 32, 110 24 C 135 20, 175 28, 195 44 C 160 40, 130 52, 95 68 C 65 80, 45 88, 10 90 Z" fill="url(#leaf_primary)" opacity="0.85"/>
+  <path d="M10 90 C 40 70, 85 46, 145 36" fill="none" stroke="#86efac" stroke-width="1.2" opacity="0.8"/>
+  <!-- Leaflet slits -->
+  <path d="M75 58 Q 95 48 115 54" fill="none" stroke="#15803d" stroke-width="1.2" opacity="0.5"/>
+  <path d="M50 72 Q 70 62 90 68" fill="none" stroke="#15803d" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Center-Left Floating Eucalyptus Sprig (x: 360 to 520) -->
+  <path d="M380 90 C 410 65, 450 40, 510 32 C 485 45, 455 62, 430 85 Z" fill="url(#leaf_emerald)" opacity="0.8"/>
+  <path d="M440 90 C 470 60, 520 42, 570 38 C 550 50, 520 68, 495 90 Z" fill="url(#leaf_primary)" opacity="0.75"/>
+
+  <!-- Center Canopy Arch (x: 680 to 860) -->
+  <path d="M660 90 C 690 55, 740 22, 810 16 C 835 14, 875 24, 895 38 C 860 34, 825 46, 785 64 C 740 82, 700 88, 660 90 Z" fill="url(#leaf_emerald)" opacity="0.9"/>
+  <path d="M660 90 C 700 66, 760 40, 840 26" fill="none" stroke="#6ee7b7" stroke-width="1.4" opacity="0.9"/>
+
+  <!-- Right Leaf Cluster (x: 1060 to 1340) -->
+  <path d="M1080 90 C 1110 58, 1160 26, 1230 20 C 1265 18, 1315 28, 1345 46 C 1300 42, 1260 56, 1215 72 C 1170 85, 1125 90, 1080 90 Z" fill="url(#leaf_primary)" opacity="0.88"/>
+  <path d="M1080 90 C 1130 64, 1195 42, 1275 30" fill="none" stroke="#86efac" stroke-width="1.4" opacity="0.85"/>
+  <path d="M1250 90 C 1280 62, 1340 44, 1410 36 C 1380 52, 1345 72, 1310 90 Z" fill="url(#leaf_emerald)" opacity="0.78"/>
+
+  <!-- Sparkling Morning Dew Drops -->
+  <g fill="#ffffff">
+    <circle cx="112" cy="23" r="1.8" opacity="0.9"/>
+    <circle cx="178" cy="40" r="1.4" opacity="0.85"/>
+    <circle cx="508" cy="31" r="1.6" opacity="0.85"/>
+    <circle cx="812" cy="15" r="2.0" opacity="0.95"/>
+    <circle cx="865" cy="32" r="1.5" opacity="0.8"/>
+    <circle cx="1232" cy="19" r="2.0" opacity="0.95"/>
+    <circle cx="1312" cy="42" r="1.5" opacity="0.85"/>
+  </g>
+
+  <!-- Dew Highlights -->
+  <circle cx="813" cy="14" r="0.6" fill="#fef08a"/>
+  <circle cx="1233" cy="18" r="0.6" fill="#fef08a"/>
+
+  <!-- Fresh Mint Bottom Accent Border Line -->
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#10b981" stroke-width="2.5" opacity="0.85"/>
+</svg>

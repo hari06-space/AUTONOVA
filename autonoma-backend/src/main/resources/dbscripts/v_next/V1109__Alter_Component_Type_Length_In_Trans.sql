@@ -1,0 +1,8 @@
+-- Migration: V1109__Alter_Component_Type_Length_In_Trans.sql
+-- Purpose: Increase the column size of COMPONENT_TYPE in HR_PAYROLL_PROCESS_TRANS to support longer component types like 'EMPLOYER_CONTRIBUTION'.
+
+IF EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('HR_PAYROLL_PROCESS_TRANS') AND name = 'COMPONENT_TYPE')
+BEGIN
+    ALTER TABLE HR_PAYROLL_PROCESS_TRANS ALTER COLUMN COMPONENT_TYPE NVARCHAR(50) NOT NULL;
+END
+GO

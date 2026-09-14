@@ -1,0 +1,25 @@
+-- -----------------------------------------------------------------------------
+-- Migration: V1089.0 - Create HR_EMPLOYEE_SALARY_COMPONENT_LOG Table
+-- Created At: 2026-07-30
+-- Developer: Antigravity
+-- Description: Create dedicated logging/audit table for employee salary component changes.
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE HR_EMPLOYEE_SALARY_COMPONENT_LOG (
+    ID BIGINT IDENTITY(1,1) PRIMARY KEY,
+    EMPLOYEE_ID BIGINT NOT NULL,
+    COMPONENT_CODE NVARCHAR(50),
+    COMPONENT_NAME NVARCHAR(100),
+    OLD_AMOUNT DECIMAL(18,2),
+    NEW_AMOUNT DECIMAL(18,2),
+    ACTION_TYPE NVARCHAR(20),
+    CREATED_BY NVARCHAR(50) NOT NULL,
+    CREATED_DATE DATETIME,
+    UPDATED_BY NVARCHAR(50),
+    UPDATED_DATE DATETIME,
+    CONSTRAINT FK_HR_EMP_SAL_COMP_LOG_CREATED_BY FOREIGN KEY (CREATED_BY) REFERENCES dbo.AD_USER_CREDENTIAL(USER_ID),
+    CONSTRAINT FK_HR_EMP_SAL_COMP_LOG_UPDATED_BY FOREIGN KEY (UPDATED_BY) REFERENCES dbo.AD_USER_CREDENTIAL(USER_ID)
+);
+
+-- Index on EMPLOYEE_ID for faster audit log lookup
+CREATE INDEX IX_HR_EMPLOYEE_SALARY_COMPONENT_LOG_EMPLOYEE_ID ON HR_EMPLOYEE_SALARY_COMPONENT_LOG(EMPLOYEE_ID);

@@ -1,0 +1,46 @@
+# ============================================================================
+#  Autonoma ERP — required environment variables
+# ----------------------------------------------------------------------------
+#  Copy this file's values into your real environment (shell export, .env,
+#  systemd unit, Docker secrets, or a secrets manager). DO NOT put real
+#  secrets back into application.properties — that file is committed to git.
+#
+#  All four secrets below were previously hardcoded and have been ROTATED.
+#  The old values are dead; use the new ones supplied by your administrator.
+# ============================================================================
+
+# --- Primary database (AUTONOMA) ------------------------------------------
+# DB_URL is optional; defaults to local SQL Server if unset.
+DB_URL=jdbc:sqlserver://localhost:1433;databaseName=AUTONOMA;trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive
+DB_USERNAME=changeme
+DB_PASSWORD=changeme
+
+# --- Secondary database (ERPDb_NUTECH) ------------------------------------
+# Username/password fall back to the primary DB credentials if unset.
+SECONDARY_DB_URL=jdbc:sqlserver://localhost:1433;databaseName=ERPDb_NUTECH;trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive
+SECONDARY_DB_USERNAME=changeme
+SECONDARY_DB_PASSWORD=changeme
+
+# --- JWT ------------------------------------------------------------------
+# Must be at least 256 bits (>= 32 random bytes). Generate with:
+#   openssl rand -hex 48
+JWT_SECRET=changeme-generate-a-strong-random-256bit-secret
+JWT_EXPIRATION=86400000
+
+# --- Groq AI --------------------------------------------------------------
+# Rotate in the Groq console; the previously committed key must be revoked.
+GROQ_API_KEY=changeme
+GROQ_MODEL=llama-3.3-70b-versatile
+
+# --- SMTP Mail (Satisfaction reminders, automation alerts, memos) ----------
+# Required for real email delivery. Without these, emails are saved to disk
+# at uploads/emails/ (safe for local development).
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your-email@company.com
+SMTP_PASSWORD=your-app-password
+SMTP_FROM=no-reply@company.com
+
+# --- Error detail exposure ------------------------------------------------
+# Leave as "never" in production; set to "always" only for local debugging.
+ERROR_INCLUDE_MESSAGE=never

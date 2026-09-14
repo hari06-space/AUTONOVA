@@ -1,0 +1,9 @@
+-- Idempotent Migration: Sync page permissions for user AKASH on Leave and Checklist pages
+IF EXISTS (SELECT * FROM sys.tables WHERE name = 'BOS_USER_PAGE_AUTH')
+BEGIN
+    UPDATE BOS_USER_PAGE_AUTH
+    SET ENABLE = 1, READ_ACS = 1, [WRITE] = 1, EXPORT = 1, APPROVAL = 1, MANAGER = 1, UPDATED_BY = 'SUPER BOSS', UPDATED_DATE = GETDATE()
+    WHERE USER_ID = 'AKASH' AND PAGE_ID IN (
+        SELECT PAGE_ID FROM BOS_PAGES WHERE PAGE_CODE IN ('ESC1010', 'M2390', 'HA1390', 'M2350', 'ESC1020')
+    );
+END

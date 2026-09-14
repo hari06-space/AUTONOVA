@@ -1,0 +1,24 @@
+-- Migration to update Leave Apply (PAGE_ID = 115, PAGE_CODE = 'ESC1010')
+-- Module: Employee Self-Care (MOD_ID = 16)
+-- Submodule: Attendance (SUB_MOD_ID = 161)
+
+IF EXISTS (SELECT 1 FROM BOS_SUB_MODULES WHERE SUB_MOD_ID = 161 AND MOD_ID = 16)
+BEGIN
+    UPDATE BOS_SUB_MODULES
+    SET SUB_MOD_NAME = 'Attendance'
+    WHERE SUB_MOD_ID = 161 AND MOD_ID = 16;
+END
+
+IF EXISTS (SELECT 1 FROM BOS_PAGES WHERE PAGE_ID = 115)
+BEGIN
+    UPDATE BOS_PAGES
+    SET MOD_ID = 16,
+        SUB_MOD_ID = 161
+    WHERE PAGE_ID = 115;
+END
+
+-- Standardize all Employee Self-Care leave page mappings
+UPDATE BOS_PAGES
+SET MOD_ID = 16,
+    SUB_MOD_ID = 161
+WHERE PAGE_CODE IN ('ESC1010', 'ESC1020', 'ESC1030', 'ESC1040', 'ESC1050');

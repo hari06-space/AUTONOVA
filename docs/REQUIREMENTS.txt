@@ -1,0 +1,26 @@
+Autonoma ERP Development Requirements
+
+Frontend (React):
+- Node.js: v18.x or higher
+- Package Manager: npm or yarn
+- Key Libraries: Material UI, Redux Toolkit, Tabler Icons, React Intl, Axios
+- Default Port: 3001
+
+Backend (Spring Boot):
+- Java: JDK 21
+- Build Tool: Maven (3.9+)
+- Key Dependencies: Spring Data JPA, Spring Security, JWT, Lombok, MS SQL Server Driver
+- Note: Spring Services and RestControllers require explicit @Autowired constructors under Java 21 compiler.
+- Default Port: 8081
+
+Database:
+- Type: Microsoft SQL Server (Docker Container: autonoma-sqlserver)
+- Version: 2022-latest
+- Default Database Name: AT_NUTECH (Populated Data: 1.37M rows) / AUTONOMA (Fresh Schema)
+
+Environment Setup:
+1. Local Application Suite Start:
+   - Run `./start.sh` (macOS) or `docker compose up -d`
+2. Backend:
+   - Configure `src/main/resources/application.properties` with database credentials.
+   - Run `mvn package -Dmaven.test.skip=true`

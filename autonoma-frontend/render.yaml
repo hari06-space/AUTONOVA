@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: autonoma-backend
+    runtime: docker
+    rootDir: Autonoma_Backend
+    envVars:
+      - key: DB_URL
+        value: jdbc:sqlserver://utonoma-server-123.database.windows.net:1433;database=AUTONOMA;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+      - key: DB_USERNAME
+        value: nutechadmin
+      - key: DB_PASSWORD
+        value: Autonoma@2026!
+      - key: JWT_SECRET
+        value: 9a4f2c8d3e1f5b7a6c9d8e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0
+      - key: JWT_EXPIRATION
+        value: 86400000

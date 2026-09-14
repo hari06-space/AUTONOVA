@@ -1,0 +1,2 @@
+-- Add Process Cost to Main Process Table
+ALTER TABLE [dbo].[NPD_BOM_PROCESS] ADD [PROCESS_COST] DECIMAL(15,2) NULL DEFAULT 0;

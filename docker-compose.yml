@@ -1,0 +1,86 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    container_name: autonoma-sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=nutech@2026
+      - MSSQL_PID=Developer
+    volumes:
+      - mssql_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P nutech@2026 -Q 'SELECT 1' -C -b -o /dev/null || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+      - autonoma-network
+
+  backend:
+    build:
+      context: ./autonoma-backend
+      dockerfile: Dockerfile
+    container_name: autonoma-backend
+    ports:
+      - "8081:8081"
+    environment:
+      - DEV_MODE=true
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://sqlserver:1433;databaseName=AUTONOMA;trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive;selectMethod=direct
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=nutech@2026
+      - SECONDARY_DB_URL=jdbc:sqlserver://sqlserver:1433;databaseName=ERPDb_NUTECH;trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive
+      - SECONDARY_DB_USERNAME=sa
+      - SECONDARY_DB_PASSWORD=nutech@2026
+      - ESSL_DB_URL=jdbc:sqlserver://sqlserver:1433;databaseName=essl;trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive;sendTimeAsDateTime=false
+      - ESSL_DB_USER=sa
+      - ESSL_DB_PASSWORD=nutech@2026
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.microsoft.sqlserver.jdbc.SQLServerDriver
+      - SPRING_JPA_DATABASE_PLATFORM=com.autonoma.erp.config.CustomSQLServerDialect
+      - SPRING_JPA_PROPERTIES_HIBERNATE_JDBC_USE_GET_GENERATED_KEYS=false
+      - SPRING_SECONDARY_DATASOURCE_URL=jdbc:sqlserver://sqlserver:1433;databaseName=ERPDb_NUTECH;trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive;selectMethod=direct
+      - SPRING_SECONDARY_DATASOURCE_USERNAME=sa
+      - SPRING_SECONDARY_DATASOURCE_PASSWORD=nutech@2026
+      - SPRING_SECONDARY_DATASOURCE_DRIVER_CLASS_NAME=com.microsoft.sqlserver.jdbc.SQLServerDriver
+      - JAVA_TOOL_OPTIONS=-Xmx768m -Dbypass.license=true
+      - SMTP_HOST=${SMTP_HOST:-localhost}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USERNAME=${SMTP_USERNAME:-}
+      - SMTP_PASSWORD=${SMTP_PASSWORD:-}
+      - SMTP_FROM=${SMTP_FROM:-no-reply@autonoma.com}
+    restart: on-failure
+    networks:
+      - autonoma-network
+    volumes:
+      - bos_documents:/app/BOS_DOCUMENTS
+
+  frontend:
+    build:
+      context: ./autonoma-frontend
+      dockerfile: Dockerfile
+    container_name: autonoma-frontend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - backend
+    environment:
+      - VITE_BACKEND_URL=http://backend:8081
+      - NODE_OPTIONS=--max-old-space-size=2048
+    volumes:
+      - ./autonoma-frontend/src:/app/src
+      - ./autonoma-frontend/public:/app/public
+    restart: unless-stopped
+    networks:
+      - autonoma-network
+
+volumes:
+  mssql_data:
+  bos_documents:
+
+networks:
+  autonoma-network:
+    driver: bridge

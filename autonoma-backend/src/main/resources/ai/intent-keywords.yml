@@ -1,0 +1,364 @@
+# ==============================================================================
+# BOS Intent Engine - Keyword Configuration
+# intent-keywords.yml
+#
+# This file contains the keyword sets used by BosIntentEngine for deterministic
+# intent classification. Loaded at startup and refreshable from DB admin UI.
+#
+# Format:
+#   modules:
+#     MODULE_KEY:
+#       keywords: [list of English keywords]
+#       synonyms: [Tamil, Hindi transliterations, abbreviations]
+#       injection_blocked: true  # set on sensitive modules
+#
+# CRITICAL: This file is checked into source control.
+# Do NOT add actual data (names, codes) here — only keywords/phrases.
+# ==============================================================================
+
+modules:
+
+  PAYROLL:
+    description: "Salary, payslip, compensation — most sensitive module"
+    injection_blocked: true
+    keywords:
+      - salary
+      - payroll
+      - pay slip
+      - payslip
+      - ctc
+      - gross pay
+      - net pay
+      - gross salary
+      - net salary
+      - compensation
+      - remuneration
+      - increment
+      - salary hike
+      - hike
+      - bonus
+      - incentive
+      - deduction
+      - pf
+      - provident fund
+      - esi
+      - tax deduction
+      - tds
+      - loan
+      - loan deduction
+      - salary advance
+      - advance salary
+      - penalty
+      - salary structure
+    synonyms:
+      - சம்பளம்       # Tamil: sambalam
+      - ஊதியம்        # Tamil: uthiyam
+      - sal
+      - slary          # common misspelling
+
+  LEAVE:
+    description: "Leave balance, leave requests"
+    injection_blocked: false
+    keywords:
+      - leave balance
+      - leave request
+      - leave application
+      - leave status
+      - casual leave
+      - earned leave
+      - sick leave
+      - annual leave
+      - privilege leave
+      - maternity leave
+      - paternity leave
+      - leave encashment
+      - holiday
+      - holiday list
+      - holiday schedule
+      - off day
+      - off days
+      - leave approval
+      - leave rejection
+      - leave history
+    synonyms:
+      - விடுமுறை     # Tamil: vidumurai
+      - லீவ்          # Tamil: leevu
+      - cl            # casual leave abbrev
+      - el            # earned leave abbrev
+      - sl            # sick leave abbrev
+      - al            # annual leave abbrev
+      - pl            # privilege leave abbrev
+      - lta           # leave travel allowance
+
+  ATTENDANCE:
+    description: "Daily attendance, check-in/out, biometric"
+    injection_blocked: false
+    keywords:
+      - attendance
+      - daily attendance
+      - monthly attendance
+      - check in
+      - check out
+      - punch in
+      - punch out
+      - biometric
+      - present
+      - absent
+      - late arrival
+      - early exit
+      - early out
+      - on duty
+      - permission
+      - short leave
+      - half day
+      - shift timing
+      - working hours
+      - overtime
+      - attendance report
+    synonyms:
+      - ஆஜர்         # Tamil: ajaru
+      - வருகை         # Tamil: varugai
+      - att
+      - od            # on duty
+
+  EMPLOYEE:
+    description: "Employee directory, department listing, employee details"
+    injection_blocked: false
+    keywords:
+      - employee
+      - employee list
+      - employee directory
+      - employee details
+      - employee master
+      - staff
+      - worker
+      - who is in
+      - who are in
+      - who works in
+      - department employees
+      - department members
+      - department list
+      - designation
+      - team members
+      - colleague
+      - headcount
+      - joining date
+      - date of joining
+      - employee code
+      - employee id
+      - reporting manager
+    department_names:
+      - HRA
+      - HR
+      - HUMAN RESOURCE
+      - ADMIN
+      - ADMINISTRATION
+      - PRODUCTION
+      - QUALITY
+      - PURCHASE
+      - ACCOUNTS
+      - FINANCE
+      - PRODUCT DEVELOPMENT
+      - MAINTENANCE
+      - SALES
+      - SALES & MARKETING
+      - ASSEMBLY
+      - STORES
+      - OPERATIONS
+      - LOGISTICS
+      - TOP MANAGEMENT
+      - MANAGEMENT
+      - STRATEGIC PROCUREMENT
+      - PLANNING
+      - MANAGEMENT REPRESENTATIVE
+      - BUSINESS DEVELOPMENT
+      - DESIGN
+      - DESIGN & DEVELOPMENT
+    synonyms:
+      - ஊழியர்       # Tamil: uzhiyar
+      - பணியாளர்      # Tamil: paniyaalar
+      - emp
+
+  QMS_CHECKLIST:
+    description: "QMS checklist assignments and status"
+    injection_blocked: false
+    keywords:
+      - checklist
+      - check list
+      - pending checklist
+      - my checklist
+      - assigned checklist
+      - checklist status
+      - checklist report
+      - checklist assigned
+      - checklist renewal
+      - checklist verification
+      - qms checklist
+
+  QMS_AUDIT:
+    description: "QMS audit NCR, OFI, observations"
+    injection_blocked: false
+    keywords:
+      - audit
+      - ncr
+      - ofi
+      - non-conformance
+      - non conformance
+      - audit schedule
+      - audit observation
+      - audit report
+      - audit finding
+      - corrective action
+      - capa
+      - internal audit
+      - external audit
+      - close ncr
+
+  QMS_MEETING:
+    description: "QMS MOM, meeting schedule, action items"
+    injection_blocked: false
+    keywords:
+      - meeting
+      - mom
+      - minutes of meeting
+      - meeting schedule
+      - meeting attendance
+      - action item
+      - action point
+      - discussion point
+      - close mom
+
+  MACHINE:
+    description: "Machine master, maintenance schedule, QMT"
+    injection_blocked: false
+    keywords:
+      - machine
+      - equipment
+      - qmt
+      - machine status
+      - machine maintenance
+      - next maintenance
+      - last maintenance
+      - machine category
+      - machine code
+      - eb meter
+      - power consumption
+      - machine list
+    synonyms:
+      - இயந்திரம்     # Tamil: iyandaram
+
+  CUSTOMER:
+    description: "Customer master, CRM"
+    injection_blocked: false
+    keywords:
+      - customer
+      - client
+      - buyer
+      - crm
+      - customer master
+      - contact person
+      - customer code
+      - customer list
+      - customer details
+      - customer satisfaction
+    synonyms:
+      - வாடிக்கையாளர்  # Tamil: vaadikaiyaalar
+
+  SUPPLIER:
+    description: "Supplier master, vendor management"
+    injection_blocked: false
+    keywords:
+      - supplier
+      - vendor
+      - subcontractor
+      - sub-contractor
+      - supplier master
+      - supplier list
+      - supplier details
+
+  INVENTORY:
+    description: "Stock, inventory, BOM, product master"
+    injection_blocked: false
+    keywords:
+      - inventory
+      - stock
+      - current stock
+      - item
+      - product
+      - stock report
+      - rejection stock
+      - stock ledger
+      - stock movement
+      - bom
+      - material
+      - item group
+      - item type
+      - stock balance
+
+  SALES:
+    description: "Sales orders, quotations, enquiries"
+    injection_blocked: false
+    keywords:
+      - sales
+      - enquiry
+      - quotation
+      - price master
+      - sales order
+      - delivery
+      - invoice
+      - ocr
+      - sales report
+      - order
+
+  SUPPORT:
+    description: "TTC tickets, support tickets"
+    injection_blocked: false
+    keywords:
+      - ticket
+      - support ticket
+      - support
+      - raised for
+      - traceability
+      - ttc
+      - issue
+      - complaint
+      - resolution
+      - open ticket
+      - pending ticket
+
+# ==============================================================================
+# Injection Detection Patterns
+# These always result in INJECTION_ATTEMPT classification, regardless of context.
+# ==============================================================================
+injection_patterns:
+  - "ignore previous"
+  - "ignore all"
+  - "ignore instructions"
+  - "forget everything"
+  - "forget above"
+  - "override"
+  - "jailbreak"
+  - "disregard"
+  - "developer mode"
+  - "dev mode"
+  - "god mode"
+  - "system prompt"
+  - "reveal prompt"
+  - "print context"
+  - "show context"
+  - "you are now"
+  - "pretend you are"
+  - "act as"
+  - "roleplay as"
+  - "from now on you"
+  - "bypass security"
+  - "bypass permission"
+  - "as an ai without"
+  - "do anything now"
+  - "dan prompt"
+  - "[dan]"
+  - "sudo"
+  - "root access"
+  - "admin access"
+  - "i give you permission"
+  - "i grant you"

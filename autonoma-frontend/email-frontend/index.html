@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        function cleanupViewport() {
+          var meta = document.querySelector('meta[name="viewport"]');
+          if (meta) {
+            var content = meta.getAttribute('content') || '';
+            if (content.indexOf('maximum-scale') !== -1 || content.indexOf('user-scalable') !== -1) {
+              var cleanContent = content
+                .split(',')
+                .map(function(part) { return part.trim(); })
+                .filter(function(part) {
+                  return !part.startsWith('maximum-scale') && !part.startsWith('user-scalable');
+                })
+                .join(', ');
+              meta.setAttribute('content', cleanContent);
+            }
+          }
+        }
+        cleanupViewport();
+        var observer = new MutationObserver(cleanupViewport);
+        observer.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['content'] });
+      })();
+    </script>
+    <meta name="description" content="Nutech Email Processing — Intelligent email ingestion, OCR, AI classification, and quotation/invoice generation" />
+    <title>Nutech Email Processing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

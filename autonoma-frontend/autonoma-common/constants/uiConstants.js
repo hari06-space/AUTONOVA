@@ -1,0 +1,1 @@
+export const STATUS_CHIP_WIDTH_TABLE = 130;

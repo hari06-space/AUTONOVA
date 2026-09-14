@@ -1,0 +1,48 @@
+-- ===================================================================================
+-- Migration: 20260801_V1101.0__Remove_Obsolete_OD_Policy_Columns.sql
+-- Module: HR / OD Apply Policy Settings
+-- Purpose: Remove obsolete OD Policy columns and preferences (OD_ALLOW_PAST_DATES,
+--          OD_MAX_BACKDATED_DAYS, OD_MAX_REQUESTS_PER_MONTH, OD_MAX_DAYS_PER_REQUEST,
+--          OD_DOC_REQUIRED_THRESHOLD_DAYS) as OD follows standard 3-day / ADD1 rule
+--          and unconstrained application submission.
+-- ===================================================================================
+
+IF EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('HR_SETTING_MASTER') AND name = 'OD_ALLOW_PAST_DATES')
+BEGIN
+    ALTER TABLE HR_SETTING_MASTER DROP COLUMN OD_ALLOW_PAST_DATES;
+END
+GO
+
+IF EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('HR_SETTING_MASTER') AND name = 'OD_MAX_BACKDATED_DAYS')
+BEGIN
+    ALTER TABLE HR_SETTING_MASTER DROP COLUMN OD_MAX_BACKDATED_DAYS;
+END
+GO
+
+IF EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('HR_SETTING_MASTER') AND name = 'OD_MAX_REQUESTS_PER_MONTH')
+BEGIN
+    ALTER TABLE HR_SETTING_MASTER DROP COLUMN OD_MAX_REQUESTS_PER_MONTH;
+END
+GO
+
+IF EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('HR_SETTING_MASTER') AND name = 'OD_MAX_DAYS_PER_REQUEST')
+BEGIN
+    ALTER TABLE HR_SETTING_MASTER DROP COLUMN OD_MAX_DAYS_PER_REQUEST;
+END
+GO
+
+IF EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('HR_SETTING_MASTER') AND name = 'OD_DOC_REQUIRED_THRESHOLD_DAYS')
+BEGIN
+    ALTER TABLE HR_SETTING_MASTER DROP COLUMN OD_DOC_REQUIRED_THRESHOLD_DAYS;
+END
+GO
+
+-- Clean up preferences from AD_APP_PREFERENCE table if present
+DELETE FROM AD_APP_PREFERENCE WHERE PREF_NAME IN (
+    'OD_ALLOW_PAST_DATES',
+    'OD_MAX_BACKDATED_DAYS',
+    'OD_MAX_REQUESTS_MONTH',
+    'OD_MAX_DAYS_PER_REQUEST',
+    'OD_DOCUMENT_REQUIRED_THRESHOLD'
+);
+GO

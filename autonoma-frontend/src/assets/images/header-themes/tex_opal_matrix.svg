@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Crisp Crystal Quartz Base with Soft Radiant Glow -->
+    <linearGradient id="opal_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#faf5ff"/>
+      <stop offset="70%" stop-color="#f5f3ff"/>
+      <stop offset="100%" stop-color="#fdf4ff"/>
+    </linearGradient>
+
+    <!-- Iridescent Shard Gradients -->
+    <linearGradient id="shard_cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <linearGradient id="shard_purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+
+    <linearGradient id="shard_gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+
+    <linearGradient id="shard_rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1440" height="90" fill="url(#opal_bg)"/>
+
+  <!-- Repeating Tactile Terrazzo / Opal Quartz Shards Across 1440px -->
+  <g opacity="0.88">
+    <!-- Cyan Shards -->
+    <polygon points="50,15 85,8 75,45" fill="url(#shard_cyan)"/>
+    <polygon points="170,45 205,38 195,75" fill="url(#shard_cyan)"/>
+    <polygon points="300,10 335,5 325,40" fill="url(#shard_cyan)"/>
+    <polygon points="430,55 465,48 455,85" fill="url(#shard_cyan)"/>
+    <polygon points="550,15 585,8 575,45" fill="url(#shard_cyan)"/>
+    <polygon points="670,50 705,42 695,80" fill="url(#shard_cyan)"/>
+    <polygon points="800,12 835,5 825,42" fill="url(#shard_cyan)"/>
+    <polygon points="930,58 965,50 955,88" fill="url(#shard_cyan)"/>
+    <polygon points="1050,18 1085,10 1075,48" fill="url(#shard_cyan)"/>
+    <polygon points="1180,52 1215,44 1205,82" fill="url(#shard_cyan)"/>
+    <polygon points="1310,14 1345,6 1335,44" fill="url(#shard_cyan)"/>
+    <polygon points="1400,55 1435,48 1425,85" fill="url(#shard_cyan)"/>
+
+    <!-- Purple / Amethyst Shards -->
+    <polygon points="100,50 138,38 128,75" fill="url(#shard_purple)"/>
+    <polygon points="230,15 268,8 258,45" fill="url(#shard_purple)"/>
+    <polygon points="360,45 398,38 388,75" fill="url(#shard_purple)"/>
+    <polygon points="490,10 528,2 518,40" fill="url(#shard_purple)"/>
+    <polygon points="610,58 648,50 638,88" fill="url(#shard_purple)"/>
+    <polygon points="740,16 778,8 768,46" fill="url(#shard_purple)"/>
+    <polygon points="870,48 908,40 898,78" fill="url(#shard_purple)"/>
+    <polygon points="1000,12 1038,5 1028,42" fill="url(#shard_purple)"/>
+    <polygon points="1120,55 1158,48 1148,85" fill="url(#shard_purple)"/>
+    <polygon points="1250,18 1288,10 1278,48" fill="url(#shard_purple)"/>
+    <polygon points="1370,42 1408,35 1398,72" fill="url(#shard_purple)"/>
+
+    <!-- Gold / Citrine Shards -->
+    <polygon points="140,15 170,8 160,35" fill="url(#shard_gold)"/>
+    <polygon points="270,55 300,48 290,75" fill="url(#shard_gold)"/>
+    <polygon points="400,20 430,12 420,40" fill="url(#shard_gold)"/>
+    <polygon points="530,60 560,52 550,80" fill="url(#shard_gold)"/>
+    <polygon points="650,22 680,15 670,42" fill="url(#shard_gold)"/>
+    <polygon points="780,58 810,50 800,78" fill="url(#shard_gold)"/>
+    <polygon points="910,18 940,10 930,38" fill="url(#shard_gold)"/>
+    <polygon points="1040,62 1070,54 1060,82" fill="url(#shard_gold)"/>
+    <polygon points="1160,25 1190,18 1180,45" fill="url(#shard_gold)"/>
+    <polygon points="1290,55 1320,48 1310,75" fill="url(#shard_gold)"/>
+
+    <!-- Rose Quartz Shards -->
+    <polygon points="80,60 115,50 102,80" fill="url(#shard_rose)"/>
+    <polygon points="205,20 240,12 228,45" fill="url(#shard_rose)"/>
+    <polygon points="340,62 375,52 362,85" fill="url(#shard_rose)"/>
+    <polygon points="465,22 500,15 488,48" fill="url(#shard_rose)"/>
+    <polygon points="590,65 625,55 612,88" fill="url(#shard_rose)"/>
+    <polygon points="715,18 750,10 738,42" fill="url(#shard_rose)"/>
+    <polygon points="840,60 875,50 862,82" fill="url(#shard_rose)"/>
+    <polygon points="975,25 1010,18 998,48" fill="url(#shard_rose)"/>
+    <polygon points="1100,68 1135,58 1122,88" fill="url(#shard_rose)"/>
+    <polygon points="1225,20 1260,12 1248,45" fill="url(#shard_rose)"/>
+    <polygon points="1350,62 1385,52 1372,82" fill="url(#shard_rose)"/>
+  </g>
+
+  <!-- Accent Bottom Border -->
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#c084fc" stroke-width="2"/>
+</svg>

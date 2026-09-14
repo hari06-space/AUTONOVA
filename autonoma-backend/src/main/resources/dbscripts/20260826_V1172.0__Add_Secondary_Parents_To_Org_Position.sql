@@ -1,0 +1,13 @@
+-- Migration: Add SECONDARY_PARENT_IDS to HR_ORG_POSITION for Matrix & Multiple Root Reporting
+USE [AT_NUTECH];
+GO
+
+IF NOT EXISTS (
+    SELECT 1 FROM sys.columns 
+    WHERE object_id = OBJECT_ID(N'[dbo].[HR_ORG_POSITION]') 
+    AND name = 'SECONDARY_PARENT_IDS'
+)
+BEGIN
+    ALTER TABLE [dbo].[HR_ORG_POSITION] ADD [SECONDARY_PARENT_IDS] NVARCHAR(500) NULL;
+END
+GO

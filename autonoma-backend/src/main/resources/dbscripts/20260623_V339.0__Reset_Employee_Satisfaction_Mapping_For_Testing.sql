@@ -1,0 +1,28 @@
+-- Reset Employee Satisfaction Mapping for Jane Trainer (ID 2) to Pending and extend the due date
+IF EXISTS (SELECT 1 FROM HR_EMPLOYEE_SATISFACTION_MAPPING WHERE ID = 1)
+BEGIN
+    UPDATE HR_EMPLOYEE_SATISFACTION_MAPPING
+    SET STATUS = 'Pending',
+        IS_CLOSED = 'N',
+        FEEDBACK_START_DATE = CAST(GETDATE() AS DATE),
+        FEEDBACK_END_DATE = CAST(DATEADD(day, 14, GETDATE()) AS DATE),
+        ELIGIBILITY_DATE = CAST(GETDATE() AS DATE),
+        SUBMITTED_DATE = NULL,
+        AVERAGE_SCORE = NULL,
+        TOTAL_SCORE = NULL
+    WHERE ID = 1;
+    PRINT 'Updated existing Employee Satisfaction Mapping ID 1 to Pending';
+END
+ELSE
+BEGIN
+    IF EXISTS (SELECT 1 FROM HR_EMPLOYEE WHERE ID = 2)
+    BEGIN
+        INSERT INTO HR_EMPLOYEE_SATISFACTION_MAPPING (
+            EMPLOYEE_ID, FEEDBACK_CYCLE, ELIGIBILITY_DATE, FEEDBACK_START_DATE, FEEDBACK_END_DATE, IS_CLOSED, STATUS, REMINDER_COUNT, CREATED_BY, CREATED_DATE
+        ) VALUES (
+            2, 'June 2026', CAST(GETDATE() AS DATE), CAST(GETDATE() AS DATE), CAST(DATEADD(day, 14, GETDATE()) AS DATE), 'N', 'Pending', '0', 'System', GETDATE()
+        );
+        PRINT 'Inserted new pending Employee Satisfaction Mapping for Jane Trainer';
+    END
+END
+GO

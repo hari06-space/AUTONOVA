@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Background Atmospheric Gradient (Warm Yellow to Pastel Pink to Azure Blue) -->
+    <linearGradient id="spectrum_bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff8db"/>
+      <stop offset="22%" stop-color="#fed7aa"/>
+      <stop offset="50%" stop-color="#fbcfe8"/>
+      <stop offset="78%" stop-color="#c7d2fe"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+
+    <!-- Orange / Amber Diagonal Slab Gradient -->
+    <linearGradient id="slab_orange" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+
+    <!-- Coral Pink Slab Gradient -->
+    <linearGradient id="slab_coral" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+
+    <!-- Orchid Purple Slab Gradient -->
+    <linearGradient id="slab_purple" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <!-- Royal Azure Blue Slab Gradient -->
+    <linearGradient id="slab_blue" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+
+    <!-- Soft Diffuse Shading Layer -->
+    <linearGradient id="soft_sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Background Atmosphere -->
+  <rect width="1440" height="90" fill="url(#spectrum_bg)"/>
+
+  <!-- 2. Translucent Ambient Shards & Background Angles (45 degree diagonals) -->
+  <g opacity="0.45">
+    <polygon points="320,90 520,-10 660,-10 460,90" fill="#fed7aa"/>
+    <polygon points="560,90 760,-10 900,-10 700,90" fill="#fbcfe8"/>
+    <polygon points="800,90 1000,-10 1140,-10 940,90" fill="#c7d2fe"/>
+    <polygon points="1040,90 1240,-10 1380,-10 1180,90" fill="#93c5fd"/>
+  </g>
+
+  <!-- 3. Foreground Crisp Geometric Angled Slabs (Matching Reference Image) -->
+  <!-- Orange / Gold Major Slab (Left) -->
+  <polygon points="360,90 480,-10 570,-10 450,90" fill="url(#slab_orange)" opacity="0.88"/>
+  <polygon points="480,90 580,-10 630,-10 530,90" fill="#f97316" opacity="0.4"/>
+
+  <!-- Coral Pink Slab (Center-Left) -->
+  <polygon points="620,90 730,-10 795,-10 685,90" fill="url(#slab_coral)" opacity="0.82"/>
+  <polygon points="710,90 800,-10 840,-10 750,90" fill="#f472b6" opacity="0.45"/>
+
+  <!-- Orchid Purple Slab (Center-Right) -->
+  <polygon points="840,90 950,-10 1025,-10 915,90" fill="url(#slab_purple)" opacity="0.85"/>
+  <polygon points="940,90 1030,-10 1070,-10 980,90" fill="#a855f7" opacity="0.4"/>
+
+  <!-- Azure Blue Accent Slab (Right) -->
+  <polygon points="1160,90 1260,-10 1330,-10 1230,90" fill="url(#slab_blue)" opacity="0.85"/>
+  <polygon points="1250,90 1340,-10 1390,-10 1300,90" fill="#38bdf8" opacity="0.5"/>
+
+  <!-- Small Precision Diamond Shard Accent on Far Right -->
+  <polygon points="1275,65 1315,25 1355,65 1315,105" fill="#3b82f6" opacity="0.75"/>
+
+  <!-- 4. Glossy Specular Top Sheen -->
+  <rect width="1440" height="90" fill="url(#soft_sheen)"/>
+
+  <!-- 5. Refined Bottom Edge Border Line -->
+  <line x1="0" y1="89" x2="1440" y2="89" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+  <line x1="0" y1="0.5" x2="1440" y2="0.5" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+</svg>

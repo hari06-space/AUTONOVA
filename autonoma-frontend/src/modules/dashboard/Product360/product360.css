@@ -1,0 +1,173 @@
+/* ==========================================================================
+   PRODUCT 360 & INVENTORY INTELLIGENCE DASHBOARD STYLES
+   ========================================================================== */
+
+.p360-container {
+  min-height: 100vh;
+  padding-bottom: 40px;
+  font-family: var(--p360-font-family, inherit) !important;
+}
+
+.p360-container,
+.p360-container * {
+  font-family: inherit !important;
+}
+
+.p360-container.p360-bold,
+.p360-container.p360-bold * {
+  font-weight: 700 !important;
+}
+
+.p360-container.p360-italic,
+.p360-container.p360-italic * {
+  font-style: italic !important;
+}
+
+/* Glassmorphism Card Style */
+.p360-card {
+  border-radius: var(--p360-border-radius, 8px) !important;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-mui-color-scheme='dark'] .p360-card,
+.dark .p360-card {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.p360-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* KPI Card Typography & Icons */
+.p360-kpi-card {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  min-height: 96px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--p360-border-radius, 10px) !important;
+}
+
+.p360-kpi-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255) 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.p360-kpi-value {
+  font-family: inherit !important;
+  font-weight: 800;
+  font-size: calc(1.15rem * var(--p360-font-scale, 1));
+  letter-spacing: -0.3px;
+  margin-top: 2px;
+}
+
+.p360-kpi-unit {
+  font-size: calc(0.68rem * var(--p360-font-scale, 1));
+  font-weight: 600;
+  opacity: 0.8;
+  margin-left: 3px;
+}
+
+.p360-kpi-label {
+  font-size: calc(0.68rem * var(--p360-font-scale, 1));
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status Badges */
+.p360-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: calc(var(--p360-border-radius, 10px) * 0.5);
+  font-size: calc(0.68rem * var(--p360-font-scale, 1));
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* Table Enhancements (Neutral, Clean, High Contrast) */
+.p360-table th,
+.p360-table .MuiTableCell-head {
+  font-size: calc(0.70rem * var(--p360-font-scale, 1)) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 6px 10px !important;
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  white-space: nowrap;
+}
+
+[data-mui-color-scheme='dark'] .p360-table th,
+[data-mui-color-scheme='dark'] .p360-table .MuiTableCell-head,
+.dark .p360-table th,
+.dark .p360-table .MuiTableCell-head {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #94a3b8 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.p360-table td,
+.p360-table .MuiTableCell-body {
+  font-size: calc(0.76rem * var(--p360-font-scale, 1)) !important;
+  padding: 6px 10px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-mui-color-scheme='dark'] .p360-table td,
+[data-mui-color-scheme='dark'] .p360-table .MuiTableCell-body,
+.dark .p360-table td,
+.dark .p360-table .MuiTableCell-body {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Custom Scrollbars for Compact Widgets */
+.p360-scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.p360-scroll::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 4px;
+}
+
+.p360-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+/* Action button micro-interactions */
+.p360-action-btn {
+  font-size: calc(0.72rem * var(--p360-font-scale, 1)) !important;
+  padding: 3px 8px !important;
+  border-radius: calc(var(--p360-border-radius, 10px) * 0.6) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+}
+  transition: all 0.15s ease-in-out !important;
+}
+
+.p360-action-btn:hover {
+  transform: translateY(-1px);
+}

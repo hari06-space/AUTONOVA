@@ -1,0 +1,10 @@
+-- Claimed V359.0: Add DOMAIN_NAME column to SLS_CUSTOMER table if missing
+IF OBJECT_ID('[dbo].[SLS_CUSTOMER]', 'U') IS NOT NULL
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('[dbo].[SLS_CUSTOMER]') AND name = 'DOMAIN_NAME')
+    BEGIN
+        ALTER TABLE [dbo].[SLS_CUSTOMER] ADD [DOMAIN_NAME] NVARCHAR(150);
+        PRINT 'Added column DOMAIN_NAME to SLS_CUSTOMER';
+    END
+END
+GO

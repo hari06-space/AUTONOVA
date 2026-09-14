@@ -1,0 +1,20 @@
+-- DB Migration: V1007__Populate_ATS_Interview_Level_Mappings.sql
+-- Populate the HR_INTERVIEW_LEVEL_MAPPING junction table from the comma-separated LEVEL_CODES in HR_INTERVIEW
+
+INSERT INTO [dbo].[HR_INTERVIEW_LEVEL_MAPPING] (INTERVIEW_ID, LEVEL_ID, CREATED_BY, CREATED_DATE, UPDATED_BY, UPDATED_DATE)
+SELECT 
+    i.ID, 
+    lvl.ROW_ID, 
+    'SYSTEM', 
+    GETDATE(), 
+    'SYSTEM', 
+    GETDATE()
+FROM [dbo].[HR_INTERVIEW] i
+CROSS APPLY STRING_SPLIT(i.LEVEL_CODES, ',') s
+INNER JOIN [dbo].[HR_DESIGNATION_LEVEL] lvl ON TRIM(s.value) = lvl.[LEVEL]
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM [dbo].[HR_INTERVIEW_LEVEL_MAPPING] m 
+    WHERE m.INTERVIEW_ID = i.ID AND m.LEVEL_ID = lvl.ROW_ID
+);
+GO

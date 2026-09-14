@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+  <defs>
+    <!-- Midnight Asphalt Gradient -->
+    <linearGradient id="tokyo_bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#08080f"/>
+      <stop offset="50%" stop-color="#0f0e1a"/>
+      <stop offset="100%" stop-color="#05050a"/>
+    </linearGradient>
+
+    <!-- Bokeh Soft Blur -->
+    <filter id="bokeh_blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+
+    <filter id="rain_blur" x="0%" y="0%" width="100%" height="100%">
+      <feGaussianBlur stdDeviation="0.8"/>
+    </filter>
+
+    <!-- Wet Street Reflection Gradient -->
+    <linearGradient id="wet_street" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.1"/>
+      <stop offset="25%" stop-color="#ec4899" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.15"/>
+      <stop offset="75%" stop-color="#06b6d4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Midnight Canvas -->
+  <rect width="1440" height="90" fill="url(#tokyo_bg)"/>
+
+  <!-- Glowing Cinematic Bokeh Orbs (Out-of-focus neon city lights) -->
+  <g filter="url(#bokeh_blur)">
+    <!-- Cyan Neon Orbs -->
+    <circle cx="120" cy="35" r="28" fill="#06b6d4" opacity="0.35"/>
+    <circle cx="580" cy="25" r="34" fill="#06b6d4" opacity="0.4"/>
+    <circle cx="1080" cy="40" r="30" fill="#38bdf8" opacity="0.35"/>
+
+    <!-- Magenta / Pink Neon Orbs -->
+    <circle cx="340" cy="42" r="32" fill="#ec4899" opacity="0.38"/>
+    <circle cx="780" cy="30" r="36" fill="#f43f5e" opacity="0.42"/>
+    <circle cx="1260" cy="36" r="32" fill="#e11d48" opacity="0.35"/>
+
+    <!-- Amber / Gold City Windows -->
+    <circle cx="220" cy="20" r="20" fill="#fbbf24" opacity="0.3"/>
+    <circle cx="920" cy="22" r="24" fill="#f59e0b" opacity="0.35"/>
+    <circle cx="1380" cy="25" r="22" fill="#fbbf24" opacity="0.28"/>
+
+    <!-- Violet / Purple Horizon Wash -->
+    <ellipse cx="460" cy="50" rx="90" ry="20" fill="#8b5cf6" opacity="0.25"/>
+    <ellipse cx="1020" cy="48" rx="100" ry="18" fill="#a855f7" opacity="0.25"/>
+  </g>
+
+  <!-- Slanted Rain Sheen Streaks (Angle: ~15 degrees) -->
+  <g stroke="#94a3b8" stroke-width="0.8" opacity="0.28" filter="url(#rain_blur)">
+    <line x1="60" y1="0" x2="45" y2="90"/>
+    <line x1="140" y1="0" x2="125" y2="90"/>
+    <line x1="230" y1="0" x2="215" y2="90"/>
+    <line x1="310" y1="0" x2="295" y2="90"/>
+    <line x1="420" y1="0" x2="405" y2="90"/>
+    <line x1="510" y1="0" x2="495" y2="90"/>
+    <line x1="630" y1="0" x2="615" y2="90"/>
+    <line x1="720" y1="0" x2="705" y2="90"/>
+    <line x1="840" y1="0" x2="825" y2="90"/>
+    <line x1="950" y1="0" x2="935" y2="90"/>
+    <line x1="1050" y1="0" x2="1035" y2="90"/>
+    <line x1="1160" y1="0" x2="1145" y2="90"/>
+    <line x1="1250" y1="0" x2="1235" y2="90"/>
+    <line x1="1350" y1="0" x2="1335" y2="90"/>
+  </g>
+
+  <!-- Fine Neon Light Leak Pencils -->
+  <g opacity="0.75">
+    <line x1="335" y1="10" x2="335" y2="75" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="8 6"/>
+    <line x1="585" y1="5" x2="585" y2="70" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="12 8"/>
+    <line x1="785" y1="8" x2="785" y2="72" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="10 5"/>
+    <line x1="1085" y1="12" x2="1085" y2="78" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="14 6"/>
+  </g>
+
+  <!-- Wet Street Gloss Reflection at Bottom Rim -->
+  <rect y="78" width="1440" height="12" fill="url(#wet_street)"/>
+  <line x1="0" y1="90" x2="1440" y2="90" stroke="#ec4899" stroke-width="1" opacity="0.5"/>
+</svg>

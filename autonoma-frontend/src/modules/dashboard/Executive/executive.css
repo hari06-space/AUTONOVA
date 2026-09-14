@@ -1,0 +1,224 @@
+/* Executive Dashboard Premium CSS */
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --color-healthy: #10b981;
+  --color-attention: #f59e0b;
+  --color-critical: #ef4444;
+  --color-info: #3b82f6;
+  --color-orange: #f97316;
+  --font-premium: 'Outfit', 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --card-glowing-green: rgba(16, 185, 129, 0.15);
+  --card-glowing-yellow: rgba(245, 158, 11, 0.15);
+  --card-glowing-red: rgba(239, 68, 68, 0.15);
+}
+
+.dark-mode-exec {
+  --glass-bg: rgba(17, 24, 39, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --card-glowing-green: rgba(16, 185, 129, 0.08);
+  --card-glowing-yellow: rgba(245, 158, 11, 0.08);
+  --card-glowing-red: rgba(239, 68, 68, 0.08);
+}
+
+.exec-container {
+  font-family: var(--font-premium);
+  color: var(--text-primary);
+  padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--glass-shadow), 0 0 1px 1px var(--glass-border);
+}
+
+/* Glowing States */
+.glass-card.healthy {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 32px var(--glass-shadow), 0 0 15px var(--card-glowing-green);
+}
+
+.glass-card.attention {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 8px 32px var(--glass-shadow), 0 0 15px var(--card-glowing-yellow);
+}
+
+.glass-card.critical {
+  border-color: rgba(239, 68, 68, 0.3);
+  box-shadow: 0 8px 32px var(--glass-shadow), 0 0 15px var(--card-glowing-red);
+}
+
+/* Live Operational Counters Indicator */
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-healthy);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-healthy);
+  border-radius: 50%;
+  animation: pulse-live 1.5s infinite;
+}
+
+@keyframes pulse-live {
+  0% {
+    transform: scale(0.85);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.85);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* AI Executive Briefing typewriter cursor effect */
+.ai-typewriter::after {
+  content: '|';
+  animation: blink-caret 0.75s step-end infinite;
+  color: var(--color-info);
+  margin-left: 2px;
+}
+
+@keyframes blink-caret {
+  from, to { color: transparent }
+  50% { color: var(--color-info) }
+}
+
+/* Department health badges */
+.dept-health-badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.dark-mode-exec .badge-green {
+  color: #34d399;
+}
+
+.badge-yellow {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.dark-mode-exec .badge-yellow {
+  color: #fbbf24;
+}
+
+.badge-red {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.dark-mode-exec .badge-red {
+  color: #f87171;
+}
+
+/* Timeline Custom styling */
+.timeline-item {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px dashed var(--glass-border);
+  padding-bottom: 20px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-info);
+  border: 2px solid var(--text-primary);
+}
+
+.timeline-item:last-child {
+  border-left: none;
+}
+
+.timeline-item.completed::before {
+  background: var(--color-healthy);
+}
+
+/* Custom Scrollbar for premium viewports */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Glow ring animation for high metrics */
+.glow-ring {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(59, 130, 246, 0) 70%);
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  pointer-events: none;
+}

@@ -1,0 +1,84 @@
+-- ============================================================
+-- Migration: Add Date & Time Settings to Company Credential
+-- Version:   V403.0
+-- Date:      2026-07-05
+-- Author:    TIS
+-- Purpose:   Adds TIME_FORMAT, DATE_FORMAT, WEEK_STARTS_ON,
+--            and APP_TIMEZONE columns to AD_COMPANY_CREDENTIAL
+--            to support the global Date & Time Settings panel.
+--
+-- Rules:
+--   - TIME_FORMAT: 'H24' (default) or 'H12' only
+--   - DATE_FORMAT: 'DD/MM/YYYY' (default), 'MM/DD/YYYY', or 'YYYY-MM-DD'
+--   - These values are display-only on the frontend.
+--   - Database always stores time in HH:mm / HH:mm:ss (24-hour).
+-- ============================================================
+
+-- TIME_FORMAT
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'AD_COMPANY_CREDENTIAL'
+      AND COLUMN_NAME = 'TIME_FORMAT'
+)
+BEGIN
+    ALTER TABLE AD_COMPANY_CREDENTIAL
+        ADD TIME_FORMAT NVARCHAR(10) NOT NULL
+            CONSTRAINT DF_AD_COMPANY_CREDENTIAL_TIME_FORMAT DEFAULT 'H24';
+    PRINT 'TIME_FORMAT column added to AD_COMPANY_CREDENTIAL (default: H24)';
+END
+ELSE
+BEGIN
+    PRINT 'TIME_FORMAT column already exists — skipping';
+END
+
+-- DATE_FORMAT
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'AD_COMPANY_CREDENTIAL'
+      AND COLUMN_NAME = 'DATE_FORMAT'
+)
+BEGIN
+    ALTER TABLE AD_COMPANY_CREDENTIAL
+        ADD DATE_FORMAT NVARCHAR(20) NOT NULL
+            CONSTRAINT DF_AD_COMPANY_CREDENTIAL_DATE_FORMAT DEFAULT 'DD/MM/YYYY';
+    PRINT 'DATE_FORMAT column added to AD_COMPANY_CREDENTIAL (default: DD/MM/YYYY)';
+END
+ELSE
+BEGIN
+    PRINT 'DATE_FORMAT column already exists — skipping';
+END
+
+-- WEEK_STARTS_ON
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'AD_COMPANY_CREDENTIAL'
+      AND COLUMN_NAME = 'WEEK_STARTS_ON'
+)
+BEGIN
+    ALTER TABLE AD_COMPANY_CREDENTIAL
+        ADD WEEK_STARTS_ON NVARCHAR(10) NOT NULL
+            CONSTRAINT DF_AD_COMPANY_CREDENTIAL_WEEK_STARTS_ON DEFAULT 'MONDAY';
+    PRINT 'WEEK_STARTS_ON column added to AD_COMPANY_CREDENTIAL (default: MONDAY)';
+END
+ELSE
+BEGIN
+    PRINT 'WEEK_STARTS_ON column already exists — skipping';
+END
+
+-- APP_TIMEZONE
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME = 'AD_COMPANY_CREDENTIAL'
+      AND COLUMN_NAME = 'APP_TIMEZONE'
+)
+BEGIN
+    ALTER TABLE AD_COMPANY_CREDENTIAL
+        ADD APP_TIMEZONE NVARCHAR(50) NOT NULL
+            CONSTRAINT DF_AD_COMPANY_CREDENTIAL_APP_TIMEZONE DEFAULT 'Asia/Kolkata';
+    PRINT 'APP_TIMEZONE column added to AD_COMPANY_CREDENTIAL (default: Asia/Kolkata)';
+END
+ELSE
+BEGIN
+    PRINT 'APP_TIMEZONE column already exists — skipping';
+END
+GO

@@ -1,0 +1,93 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: nutech-email-backend
+
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=${DB_NAME:AUTONOMA};trustServerCertificate=true;sendStringParametersAsUnicode=true;responseBuffering=adaptive;sendTimeAsDateTime=false
+    username: ${DB_USERNAME:nutech}
+    password: ${DB_PASSWORD:nutech@2026}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+# ── JWT Configuration ──
+jwt:
+  secret: ${JWT_SECRET:YourSuperSecretKeyThatIsAtLeast256BitsLongForHS256Algorithm2024}
+  expiration-ms: 86400000  # 24 hours
+
+# ── Microsoft Graph API ──
+msgraph:
+  tenant-id: dc9c3a4c-20c8-4af8-beeb-e0fbd4d8be82
+  client-id: 4b71dd8b-4df4-44b0-8a2c-5dafab094a0c
+  client-secret: ${MSGRAPH_CLIENT_SECRET:placeholder_client_secret}
+  shared-mailbox: ${SHARED_MAILBOX_EMAIL:darshan.k@technosprint.net}
+  processed-folder-name: Processed
+
+# ── OpenAI ──
+openai:
+  api-key: ${OPENAI_API_KEY:dummy-key}
+  model: gpt-4o-mini
+  base-url: https://api.openai.com/v1
+  max-tokens: 4096
+  temperature: 0.1
+
+# ── OCR ──
+ocr:
+  tessdata-path: ${TESSDATA_PATH:/usr/share/tesseract-ocr/5/tessdata}
+  language: eng
+  temp-dir: ${java.io.tmpdir}/nutech-ocr
+  reader-endpoint: ${OCR_READER_END_POINT:http://192.168.1.189:5000}
+
+# ── Async Thread Pool ──
+async:
+  core-pool-size: 4
+  max-pool-size: 8
+  queue-capacity: 100
+
+# ── Email Polling ──
+email:
+  poll:
+    enabled: true
+    interval-ms: 60000  # 1 minute
+    batch-size: 10
+
+# ── Document Storage ──
+document:
+  storage-path: ${DOCUMENT_STORAGE_PATH:./generated-documents}
+
+# ── AI Confidence Threshold ──
+ai:
+  confidence-threshold: 0.90
+
+# ── Logging ──
+logging:
+  level:
+    com.nutech.email: DEBUG
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+
+python:
+  email:
+    service:
+      enabled: true

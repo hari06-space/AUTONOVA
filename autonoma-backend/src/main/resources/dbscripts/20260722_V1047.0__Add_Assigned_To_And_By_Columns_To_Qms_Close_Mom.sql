@@ -1,0 +1,24 @@
+-- ===============================================================================
+-- 20260722_V1047.0__Add_Assigned_To_And_By_Columns_To_Qms_Close_Mom.sql
+-- Purpose: Add ASSIGNED_TO_ID and ASSIGNED_BY_ID columns to QMS_CLOSE_MOM_AND_VERIFY table
+-- ===============================================================================
+
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS 
+    WHERE TABLE_NAME = 'QMS_CLOSE_MOM_AND_VERIFY' AND COLUMN_NAME = 'ASSIGNED_TO_ID'
+)
+BEGIN
+    ALTER TABLE QMS_CLOSE_MOM_AND_VERIFY ADD ASSIGNED_TO_ID BIGINT NULL;
+    PRINT 'Added column ASSIGNED_TO_ID to QMS_CLOSE_MOM_AND_VERIFY';
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS 
+    WHERE TABLE_NAME = 'QMS_CLOSE_MOM_AND_VERIFY' AND COLUMN_NAME = 'ASSIGNED_BY_ID'
+)
+BEGIN
+    ALTER TABLE QMS_CLOSE_MOM_AND_VERIFY ADD ASSIGNED_BY_ID BIGINT NULL;
+    PRINT 'Added column ASSIGNED_BY_ID to QMS_CLOSE_MOM_AND_VERIFY';
+END;
+GO

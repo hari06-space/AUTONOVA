@@ -1,0 +1,152 @@
+# ==============================================================================
+# Autonoma ERP — Root .gitignore
+# Organization: Nutech
+# Owner: Aksar-S
+# Updated At: 2026-09-01
+# Description: Central Git exclusion rules for Java, React, Python, Flutter & Storage
+# ==============================================================================
+
+# ===== Java / Maven / Spring Boot =====
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+autonoma-backend/target/
+autonoma-backend/data/
+autonoma-backend/uploads/
+autonoma-backend/email-service/target/
+autonoma-backend/email-service/generated-documents/
+
+# ===== Node / React / Frontend =====
+node_modules/
+dist/
+build/
+.pnp
+.pnp.js
+coverage/
+.eslintcache
+.stylelintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+autonoma-frontend/node_modules/
+autonoma-frontend/dist/
+autonoma-frontend/build/
+autonoma-frontend/email-frontend/node_modules/
+autonoma-frontend/email-frontend/dist/
+
+# ===== Python & Virtual Environments =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+develop-eggs/
+eggs/
+.eggs/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+*.spec
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+venv/
+ENV/
+env/
+.venv/
+autonoma_scripts/.venv/
+autonoma_scripts/venv/
+.ipynb_checkpoints
+*.ipynb
+pip-log.txt
+pip-delete-this-directory.txt
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ===== Flutter & Mobile =====
+autonoma-mobile/
+autonoma_flutter/.dart_tool/
+autonoma_flutter/build/
+autonoma_flutter/android/.gradle/
+*.apk
+
+# ===== Local Database & Runtime Storage (Local only, Never commit) =====
+db/
+*.mv.db
+*.trace.db
+uploads/
+BOS_DOCUMENTS/
+generated-documents/
+db_export/
+
+# ===== Logs & Runtime Debug =====
+logs/
+*.log
+autonoma-backend/*.log
+autonoma-backend/email-service/*.log
+*_debug.txt
+migration_debug.txt
+db_debug.txt
+temp.txt
+buildPdfElement.txt
+*_dump.txt
+
+# ===== IDEs, OS & Editor Metadata =====
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+**/.project
+**/.classpath
+**/.settings/
+**/.factorypath
+
+# ===== Secrets & Credentials (NEVER commit) =====
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+.env
+.env.*
+!*.example
+**/application-local.properties
+
+# ===== Scratch & Miscellaneous Project Artifacts =====
+tools/
+nutech\ new/
+scratch/
+_archive/
+api-docs.json
+branch_health_report.md
+*.bak
+dummy.txt
+.refact/

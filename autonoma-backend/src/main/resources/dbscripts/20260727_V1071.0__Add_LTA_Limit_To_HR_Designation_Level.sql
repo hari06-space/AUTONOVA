@@ -1,0 +1,12 @@
+-- Description: Add LTA_LIMIT column to HR_DESIGNATION_LEVEL table
+IF NOT EXISTS (
+    SELECT 1 
+    FROM sys.columns 
+    WHERE object_id = OBJECT_ID('dbo.HR_DESIGNATION_LEVEL') 
+      AND name = 'LTA_LIMIT'
+)
+BEGIN
+    ALTER TABLE dbo.HR_DESIGNATION_LEVEL ADD LTA_LIMIT FLOAT NULL;
+    PRINT 'Added LTA_LIMIT column to HR_DESIGNATION_LEVEL';
+END
+GO

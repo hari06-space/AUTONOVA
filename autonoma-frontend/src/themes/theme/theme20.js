@@ -1,0 +1,82 @@
+// ==============================|| THEME 20 COLORS (Lavender & Peach) ||============================== //
+
+const theme20 = {
+  // paper & background
+  paper: '#ffffff',
+
+  // primary
+  primaryLight: '#f3e5f5',
+  primary200: '#ce93d8',
+  primaryMain: '#ba68c8',
+  primaryDark: '#9c27b0',
+  primary800: '#7b1fa2',
+
+  // secondary
+  secondaryLight: '#fff3e0',
+  secondary200: '#ffcc80',
+  secondaryMain: '#ffb74d',
+  secondaryDark: '#ff9800',
+  secondary800: '#f57c00',
+
+  // success
+  successLight: '#b9f6ca',
+  success200: '#69f0ae',
+  successMain: '#00e676',
+  successDark: '#00c853',
+
+  // error
+  errorLight: '#ef9a9a',
+  errorMain: '#f44336',
+  errorDark: '#c62828',
+
+  // orange
+  orangeLight: '#fbe9e7',
+  orangeMain: '#ffab91',
+  orangeDark: '#d84315',
+
+  // warning
+  warningLight: '#fff8e1',
+  warningMain: '#ffe57f',
+  warningDark: '#ffc107',
+
+  // grey
+  grey50: '#f8fafc',
+  grey100: '#eef2f6',
+  grey200: '#e3e8ef',
+  grey300: '#cdd5df',
+  grey500: '#697586',
+  grey600: '#4b5565',
+  grey700: '#364152',
+  grey900: '#121926',
+
+  // ==============================|| DARK THEME VARIANTS ||============================== //
+
+  // paper & background
+  darkPaper: '#111936',
+  darkBackground: '#1a223f',
+
+  // dark 800 & 900
+  darkLevel1: '#29314f',
+  darkLevel2: '#212946',
+
+  // text variants
+  darkTextTitle: '#d7dcec',
+  darkTextPrimary: '#bdc8f0',
+  darkTextSecondary: '#8492c4',
+
+  // primary dark
+  darkPrimaryLight: '#f3e5f5',
+  darkPrimaryMain: '#ce93d8',
+  darkPrimaryDark: '#ba68c8',
+  darkPrimary200: '#9c27b0',
+  darkPrimary800: '#7b1fa2',
+
+  // secondary dark
+  darkSecondaryLight: '#fff3e0',
+  darkSecondaryMain: '#ffcc80',
+  darkSecondaryDark: '#ffb74d',
+  darkSecondary200: '#ff9800',
+  darkSecondary800: '#f57c00'
+};
+
+export default theme20;
