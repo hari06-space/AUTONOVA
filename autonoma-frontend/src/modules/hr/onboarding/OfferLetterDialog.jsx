@@ -42,7 +42,7 @@ export default function OfferLetterDialog({ open, onClose, onSaveSuccess }) {
   // Letter Variables
   const [interviewDate, setInterviewDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [joiningDate, setJoiningDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [companyName, setCompanyName] = useState('AUTONOMA ENTERPRISE SYSTEMS');
+  const [companyName, setCompanyName] = useState('AUTONOVA ENTERPRISE SYSTEMS');
   const [headHrName, setHeadHrName] = useState('HR Manager');
 
   // Load departments and designations
@@ -76,7 +76,7 @@ export default function OfferLetterDialog({ open, onClose, onSaveSuccess }) {
     setSelectedDesg('');
     setInterviewDate(format(new Date(), 'yyyy-MM-dd'));
     setJoiningDate(format(new Date(), 'yyyy-MM-dd'));
-    setCompanyName('AUTONOMA ENTERPRISE SYSTEMS');
+    setCompanyName('AUTONOVA ENTERPRISE SYSTEMS');
     setHeadHrName('HR Manager');
   };
 

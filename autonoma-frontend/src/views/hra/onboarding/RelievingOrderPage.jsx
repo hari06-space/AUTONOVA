@@ -61,7 +61,7 @@ export default function RelievingOrderPage() {
   const isHorizontal = menuOrientation === MenuOrientation.HORIZONTAL;
   const stickyTop = isHorizontal ? (ribbonOpen ? 174 : 126) : 88;
 
-  const [companyName, setCompanyName] = useState('AUTONOMA ENTERPRISE SYSTEMS');
+  const [companyName, setCompanyName] = useState('AUTONOVA ENTERPRISE SYSTEMS');
   const [signingManager, setSigningManager] = useState('HR Manager');
 
   // Load all lookups on mount
@@ -117,7 +117,7 @@ export default function RelievingOrderPage() {
     setRelievingDate(format(new Date(), 'yyyy-MM-dd'));
     setSession('A.N.');
     setSubject('Relieving Order & Experience Certificate');
-    setCompanyName('AUTONOMA ENTERPRISE SYSTEMS');
+    setCompanyName('AUTONOVA ENTERPRISE SYSTEMS');
     setSigningManager('HR Manager');
   };
 

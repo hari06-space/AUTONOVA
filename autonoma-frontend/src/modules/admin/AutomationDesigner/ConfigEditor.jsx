@@ -594,7 +594,7 @@ export default function ConfigEditor({ config, onSave, onCancel }) {
                         label="TO Recipient Emails"
                         value={recipients.to}
                         onChange={e => setRecipients({ ...recipients, to: e.target.value })}
-                        placeholder="e.g. employee@autonoma.com, supervisor@autonoma.com"
+                        placeholder="e.g. employee@autonova.com, supervisor@autonova.com"
                         helperText="Comma separated values"
                         slotProps={{ input: { sx: { borderRadius: '10px' } } }}
                       />
@@ -603,7 +603,7 @@ export default function ConfigEditor({ config, onSave, onCancel }) {
                         label="CC Recipient Emails"
                         value={recipients.cc}
                         onChange={e => setRecipients({ ...recipients, cc: e.target.value })}
-                        placeholder="e.g. copy@autonoma.com"
+                        placeholder="e.g. copy@autonova.com"
                         slotProps={{ input: { sx: { borderRadius: '10px' } } }}
                       />
                     </Stack>

@@ -308,12 +308,12 @@ export default function AddAuditObservation() {
     profile
   }) => {
     const comp = profile || companyProfileData || companyProfile || {};
-    const compName = comp?.companyName || localStorage.getItem('companyName') || 'NUTECH WIND PARTS PVT LTD';
+    const compName = comp?.companyName || localStorage.getItem('companyName') || 'AUTONOVA';
     const compAddr = [comp?.address, comp?.city, comp?.state, comp?.pincode].filter(Boolean).join(', ') || '2/555 - A, BABU JEGA JEEVAN RAM STREET, GERUGAMBAKKAM, CHENNAI - 600128';
     const compPhone = comp?.mobileNo || comp?.phoneNo || comp?.supportPhone || '+91 98400 00000';
     const compGst = comp?.gstIn || comp?.gstin || comp?.gstNo || '';
-    const compEmail = comp?.companyEmail || comp?.emailId || comp?.supportEmail || 'info@nutechwindparts.com';
-    const compWebsite = comp?.website || 'WWW.NUTECHWINDPARTS.COM';
+    const compEmail = comp?.companyEmail || comp?.emailId || comp?.supportEmail || 'info@autonova.com';
+    const compWebsite = comp?.website || 'WWW.AUTONOVA.COM';
 
     const recipientName = extName || 'Auditor / Contact';
     const dateFormatted = auditDate ? String(auditDate).split('T')[0] : new Date().toISOString().split('T')[0];

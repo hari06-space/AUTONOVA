@@ -30,14 +30,7 @@ function Sidebar() {
     state: { menuOrientation, miniDrawer }
   } = useConfig();
 
-  const logo = useMemo(
-    () => (
-      <Box sx={{ display: 'flex', p: 2 }}>
-        <LogoSection />
-      </Box>
-    ),
-    []
-  );
+  const logo = null;
 
   const drawer = useMemo(() => {
     const isVerticalOpen = menuOrientation === MenuOrientation.VERTICAL && drawerOpen;

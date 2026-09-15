@@ -1,5 +1,5 @@
 /**
- * Organization: Nutech Wind Parts Pvt Ltd
+ * Organization: AUTONOVA
  * Owner: Yuvanesh M
  * Created At: 2026-09-01
  * Description: Reusable Candidate / Employee Autocomplete Dropdown with rich avatar, email, code badges, and polished popper styling.

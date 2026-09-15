@@ -228,7 +228,7 @@ const TaskToast = forwardRef(function TaskToast({ id, notif, onClose, onView }, 
               letterSpacing: '0.06em', textTransform: 'uppercase', lineHeight: 1,
               mb: 0.35, opacity: 0.9
             }}>
-              AUTONOMA BOS(S)
+              AUTONOVA BOS(S)
             </Typography>
             <Typography sx={{
               fontSize: '0.85rem', fontWeight: 800, 

@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Owner: Nutech
+// Organization: AUTONOVA
+// Owner: hari06-space
 // Created At: 2026-09-04
 // Description: Centralized Header / Top Bar Theme Registry & CSS Style Resolvers.
 //              Provides 20 distinctly unique executive presets across Solid/Gradients, Images, Shapes, and Textures/Abstract.

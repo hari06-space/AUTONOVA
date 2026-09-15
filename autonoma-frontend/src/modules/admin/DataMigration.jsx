@@ -62,7 +62,7 @@ const SCOPE_DATA = {
     subtitle: 'Target tables for legacy pending master checklist tasks',
     items: [
       { table: 'qms_checklist_assignment', tag: 'Target', desc: 'Migrates active, completed, or pending checklist tasks from legacy HRMS_CHECKLIST_PENDING_MASTER table.' },
-      { table: 'QMS_ATTACHMENT_PATH (QM1120)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=CLOSE CHECKLIST) using legacy ROW_ID. Copies physical files from D:\\ERPCommon-NuTech\\erpimage\\HRMS to Quality Management Systems/Checklist/Close Checklist - Renewal and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1120.' },
+      { table: 'QMS_ATTACHMENT_PATH (QM1120)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=CLOSE CHECKLIST) using legacy ROW_ID. Copies physical files from D:\\ERPCommon\\erpimage\\HRMS to Quality Management Systems/Checklist/Close Checklist - Renewal and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1120.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -79,7 +79,7 @@ const SCOPE_DATA = {
     subtitle: 'Target table for closed checklist history records',
     items: [
       { table: 'QMS_CHECKLIST_CLOSED', tag: 'Target', desc: 'Migrates 241,663 completed/pending/unresolved records from HRMS_CHECKLIST_PENDING_MASTER. Maps status strings to AD_STATUS_MASTER (auto-creates missing statuses). Normalizes FREQUENCY_LEVEL (BI-ANNUAL→HALF_YEARLY, ANNUAL→YEARLY, null→DAILY). Processed in batches of 1,000.' },
-      { table: 'QMS_ATTACHMENT_PATH (QM1120)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=CLOSE CHECKLIST) using legacy ROW_ID. Copies physical files from D:\\ERPCommon-NuTech\\erpimage\\HRMS to Quality Management Systems/Checklist/Close Checklist - Renewal and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1120.' },
+      { table: 'QMS_ATTACHMENT_PATH (QM1120)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=CLOSE CHECKLIST) using legacy ROW_ID. Copies physical files from D:\\ERPCommon\\erpimage\\HRMS to Quality Management Systems/Checklist/Close Checklist - Renewal and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1120.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -139,7 +139,7 @@ const SCOPE_DATA = {
       { table: 'HR_INTERVIEW', tag: 'Target', desc: 'Imports interview criteria details from legacy INTERVIEW_CRITERIA_MASTER.' },
       { table: 'HR_INTERVIEW_DEPARTMENT_MAPPING', tag: 'Mapping', desc: 'Maps structural target departments to their corresponding interview criteria.' },
       { table: 'HR_INTERVIEW_LEVEL_MAPPING', tag: 'Mapping', desc: 'Maps structural target grades/levels to their corresponding interview criteria.' },
-      { table: 'QMS_ATTACHMENT_PATH (M2110)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=INTERVIEW CRITERIA) using legacy ROW_ID. Copies physical files from D:\\ERPCommon-NuTech\\erpimage\\CRITERIA to ATS/Interview Criteria Master and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=M2110.' },
+      { table: 'QMS_ATTACHMENT_PATH (M2110)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=INTERVIEW CRITERIA) using legacy ROW_ID. Copies physical files from D:\\ERPCommon\\erpimage\\CRITERIA to ATS/Interview Criteria Master and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=M2110.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -150,7 +150,7 @@ const SCOPE_DATA = {
       { table: 'HR_INDUCTION', tag: 'Target', desc: 'Imports induction criteria details from legacy INDUCTION_CRITERIA_MASTER.' },
       { table: 'HR_INDUCTION_DEPARTMENT_MAPPING', tag: 'Mapping', desc: 'Maps structural target departments to their corresponding induction criteria.' },
       { table: 'HR_INDUCTION_LEVEL_MAPPING', tag: 'Mapping', desc: 'Maps structural target grades/levels to their corresponding induction criteria.' },
-      { table: 'QMS_ATTACHMENT_PATH (M2140)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=INDUCTION) using legacy ROW_ID. Copies physical files from D:\\ERPCommon-NuTech\\erpimage\\INDUCTION to ATS/Induction Criteria and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=M2140.' },
+      { table: 'QMS_ATTACHMENT_PATH (M2140)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=INDUCTION) using legacy ROW_ID. Copies physical files from D:\\ERPCommon\\erpimage\\INDUCTION to ATS/Induction Criteria and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=M2140.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -229,7 +229,7 @@ const SCOPE_DATA = {
       { table: 'QMS_MEETING_SCHEDULE', tag: 'Target', desc: 'Imports meeting schedules from legacy MEETING_SCHEDULE_MASTER. De-duplicates by schedule number.' },
       { table: 'QMS_MEETING_DEPARTMENT_MAPPING', tag: 'Mapping', desc: 'Maps and stores associated department details for each schedule.' },
       { table: 'QMS_MEETING_PARTICIPANT_MAPPING', tag: 'Mapping', desc: 'Maps and stores participant employee associations for each schedule.' },
-      { table: 'QMS_ATTACHMENT_PATH (QM1310)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=MEETING SCHEDULE) using legacy ROW_ID. Copies physical files from D:\\ERPCommon-NuTech\\erpimage\\HRMS → BOS_DOCUMENTS/QUALITY MANAGEMENT SYSTEMS/Meeting/Meeting Schedule and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1310.' },
+      { table: 'QMS_ATTACHMENT_PATH (QM1310)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=MEETING SCHEDULE) using legacy ROW_ID. Copies physical files from D:\\ERPCommon\\erpimage\\HRMS → BOS_DOCUMENTS/QUALITY MANAGEMENT SYSTEMS/Meeting/Meeting Schedule and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1310.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -247,7 +247,7 @@ const SCOPE_DATA = {
     items: [
       { table: 'QMS_MOM_MASTER', tag: 'Target', desc: 'Imports MOM master templates from legacy MEETING_MINUTES_MASTER.' },
       { table: 'QMS_MOM_DETAILS', tag: 'Target', desc: 'Imports MOM details and action/info items from legacy MEETING_MINUTE_TRANS.' },
-      { table: 'QMS_ATTACHMENT_PATH (QM1320)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=MEETING MINUTES) using legacy REF_ROW_ID, copies physical files from D:\\ERPCommon-NuTech\\erpimage\\HRMS → Minutes of Meeting folder, and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1320.' },
+      { table: 'QMS_ATTACHMENT_PATH (QM1320)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=MEETING MINUTES) using legacy REF_ROW_ID, copies physical files from D:\\ERPCommon\\erpimage\\HRMS → Minutes of Meeting folder, and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1320.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -256,7 +256,7 @@ const SCOPE_DATA = {
     subtitle: 'Target tables for Close MOM records and attachments',
     items: [
       { table: 'QMS_CLOSE_MOM_AND_VERIFY', tag: 'Target', desc: 'Imports Close MOM records from legacy QMS_ACTION_ITEM_AUDIT table, preserving primary key IDs.' },
-      { table: 'QMS_ATTACHMENT_PATH (QM1340)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=CORRECTIVE_ACTION) using legacy REF_ROW_ID, copies physical files from D:\\ERPCommon-NuTech\\erpimage\\HRMS → QUALITY MANAGEMENT SYSTEMS/Meeting/Close MOM, and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1340.' },
+      { table: 'QMS_ATTACHMENT_PATH (QM1340)', tag: 'Attachment', desc: 'Reads FILE_UPLOAD_TRANS (FROM_WHERE=CORRECTIVE_ACTION) using legacy REF_ROW_ID, copies physical files from D:\\ERPCommon\\erpimage\\HRMS → QUALITY MANAGEMENT SYSTEMS/Meeting/Close MOM, and saves each record in QMS_ATTACHMENT_PATH with PAGE_CODE=QM1340.' },
       { table: 'ad_migration_audit_log', tag: 'Audit', desc: 'Logs execution timestamp, user identity, record count, and status for this migration step.' }
     ]
   },
@@ -1726,7 +1726,7 @@ export default function DataMigration() {
   return (
     <MainCard
       title="Data Migration Hub"
-      subtitle="Transfer data to the Autonoma-Bos(s) architecture safely"
+      subtitle="Transfer data to the Autonova-Bos(s) architecture safely"
       icon={IconDatabaseExport}
       secondary={
         activeTab === 0 && (

@@ -61,7 +61,7 @@ export default function AppointmentOrderDialog({ open, onClose, onSaveSuccess })
 
   // Letter Variables
   const [joiningDate, setJoiningDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [companyName, setCompanyName] = useState('AUTONOMA ENTERPRISE SYSTEMS');
+  const [companyName, setCompanyName] = useState('AUTONOVA ENTERPRISE SYSTEMS');
   const [signingManager, setSigningManager] = useState('HR Manager');
 
   // Clauses list
@@ -102,7 +102,7 @@ export default function AppointmentOrderDialog({ open, onClose, onSaveSuccess })
     setSelectedDept('');
     setSelectedDesg('');
     setJoiningDate(format(new Date(), 'yyyy-MM-dd'));
-    setCompanyName('AUTONOMA ENTERPRISE SYSTEMS');
+    setCompanyName('AUTONOVA ENTERPRISE SYSTEMS');
     setSigningManager('HR Manager');
     setClauses([...defaultClauses]);
   };

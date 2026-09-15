@@ -30,7 +30,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BookIcon from '@mui/icons-material/Book';
 
-import logo from 'assets/images/logo1.jpeg';
+import logo from 'assets/images/autonova-logo.png';
 import logoDark from 'assets/images/logo-dark.svg';
 import companyLightLogo from 'assets/images/maintenance/img-ct-light-logo.png';
 import companyDarkLogo from 'assets/images/maintenance/img-ct-dark-logo.png';
@@ -181,16 +181,7 @@ export default function ComingSoon1() {
             title="Slider5 image"
             sx={{ position: 'absolute', bottom: -40, left: 50, width: 400, transform: 'rotate(145deg)' }}
           />
-          <CardMedia
-            component="img"
-            src={colorScheme === ThemeMode.DARK ? logoDark : logo}
-            alt="Berry"
-            sx={{
-              position: themeDirection === ThemeDirection.RTL ? 'relative' : 'initial',
-              top: themeDirection === ThemeDirection.RTL ? 30 : 'initial',
-              width: 'auto'
-            }}
-          />
+
         </CardContent>
         <Grid container spacing={gridSpacing}>
           <Grid size={12}>

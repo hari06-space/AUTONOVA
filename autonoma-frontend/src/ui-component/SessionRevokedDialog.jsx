@@ -1,6 +1,6 @@
 /**
- * Organization: Nutech
- * Owner: Nutech
+ * Organization: AUTONOVA
+ * Owner: hari06-space
  * Created At: 2026-09-03
  * Description: Ultra-animated, high-energy session revocation dialog with security lock graphics, credential details, network IP, MAC ID, animated 5-second countdown progress bar, and automatic logout when account is logged in from another system.
  */

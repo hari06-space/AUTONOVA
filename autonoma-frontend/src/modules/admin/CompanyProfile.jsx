@@ -541,7 +541,7 @@ const CompanyProfile = () => {
             pincode: rec.pincode || '',
             gstIn: rec.gstIn || '',
             clientCode: rec.clientCode || '',
-            dbSourceName: rec.dbSourceName || 'AUTONOMA',
+            dbSourceName: rec.dbSourceName || 'AUTONOVA',
             licRenewalDate: rec.licRenewalDate ? rec.licRenewalDate.slice(0, 10) : '',
             licExpiryDate: rec.licExpiryDate ? rec.licExpiryDate.slice(0, 10) : '',
             logoFileName: rec.logoFileName || '',

@@ -1,5 +1,5 @@
 /*
-Organization: Autonoma ERP
+Organization: Autonova ERP
 Owner: Developer
 Created At: 2026-09-05
 Description: List view for Production Plans with filters, metrics & actions

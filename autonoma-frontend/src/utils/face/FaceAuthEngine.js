@@ -1,9 +1,9 @@
 /**
  * FaceAuthEngine.js
  *
- * Organization: Nutech
- * Owner: Nutech
- * Updated By: Nutech
+ * Organization: AUTONOVA
+ * Owner: hari06-space
+ * Updated By: hari06-space
  * Updated At: 2026-08-29
  * Description: Banking-grade enterprise face authentication pipeline.
  *

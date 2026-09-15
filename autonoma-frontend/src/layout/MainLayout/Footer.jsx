@@ -368,7 +368,7 @@ export default function Footer() {
             color: theme.palette.primary.main,
             fontWeight: 900, letterSpacing: '0.5px', textTransform: 'uppercase'
           }}>
-            Autonoma System Pvt Ltd
+            Autonova System Pvt Ltd
           </span>
         </Typography>
 
@@ -443,7 +443,7 @@ export default function Footer() {
 
         {/* Social links */}
         <Stack direction="row" spacing={0.5}>
-          <IconButton size="small" component="a" href="https://autonomasys.com" target="_blank"
+          <IconButton size="small" component="a" href="https://autonovasys.com" target="_blank"
             sx={{ color: '#00C6FF', p: 0.5, transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)', '&:hover': { transform: 'scale(1.2) translateY(-2px)', background: 'rgba(0, 198, 255, 0.15)', boxShadow: '0 4px 12px rgba(0,198,255,0.2)' } }}>
             <LanguageIcon sx={{ fontSize: '1rem' }} />
           </IconButton>

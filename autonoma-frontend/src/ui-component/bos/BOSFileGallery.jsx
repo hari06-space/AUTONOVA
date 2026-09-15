@@ -23,7 +23,7 @@ import { getFileViewUrl } from 'utils/upload-helper';
 import BOSFilePreview from './BOSFilePreview';
 
 /**
- * BOSFileGallery - Standardized Attachment Gallery & Dialog Modal for Autonoma ERP
+ * BOSFileGallery - Standardized Attachment Gallery & Dialog Modal for Autonova ERP
  */
 export const BOSFileGallery = ({
   open,

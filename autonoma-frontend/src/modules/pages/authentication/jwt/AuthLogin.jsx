@@ -1120,7 +1120,7 @@ export default function JWTLogin({ onFaceModeChange, ...others }) {
                         }
                       }}
                     >
-                      {isLoggingIn ? 'Launching Autonoma…' : 'Sign In'}
+                      {isLoggingIn ? 'Launching Autonova…' : 'Sign In'}
                     </Button>
                   </AnimateButton>
                 </form>

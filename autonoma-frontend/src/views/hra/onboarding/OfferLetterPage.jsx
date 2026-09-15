@@ -1,5 +1,5 @@
 /**
- * Organization: Nutech Wind Parts Pvt Ltd
+ * Organization: AUTONOVA
  * Owner: Yuvanesh M
  * Created At: 2026-08-30
  * Updated By: Yuvanesh M
@@ -191,7 +191,7 @@ export default function OfferLetterPage() {
       return explicitSections;
     }
     try {
-      const cached = localStorage.getItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE');
+      const cached = localStorage.getItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE');
       if (cached) {
         const p = JSON.parse(cached);
         if (p.sections && Array.isArray(p.sections) && p.sections.length > 0) {

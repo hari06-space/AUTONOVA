@@ -146,7 +146,7 @@ const DEFAULT_DESIGNATIONS = ['Junior Executive', 'Executive', 'Senior Executive
 
 const EMPLOYMENT_TYPES = ['Permanent', 'Probation', 'Contract', 'Intern', 'Apprentice', 'Consultant'];
 const SHIFTS = ['General', 'Morning', 'Evening', 'Night'];
-const LOCATIONS = ['NUTECH WIND - Corporate Office', 'NUTECH WIND - Production Plant', 'NUTECH WIND - Unit 1', 'NUTECH WIND - Unit 2', 'NUTECH WIND - Warehouse'];
+const LOCATIONS = ['Corporate Office', 'Production Plant', 'Unit 1', 'Unit 2', 'Warehouse'];
 const GRADES = ['G1', 'G2', 'G3', 'E1', 'E2', 'M1', 'M2'];
 
 const APPOINTMENT_STATUSES = ['Draft', 'Pending Approval', 'Approved', 'Email Sent', 'Candidate Accepted', 'Candidate Rejected', 'Joined', 'Cancelled', 'Expired'];
@@ -195,7 +195,7 @@ const APPOINTMENT_ORDER_TEMPLATES = [
     subject: 'Appointment Order - {{CandidateName}} ({{Designation}})',
     body: `Dear {{CandidateName}},
 
-We are pleased to formally issue your Appointment Order for the position of {{Designation}} in the {{Department}} department at NUTECH WIND PARTS PVT LTD.
+We are pleased to formally issue your Appointment Order for the position of {{Designation}} in the {{Department}} department at AUTONOVA.
 
 Key Terms of Appointment:
 • Date of Joining: {{JoiningDate}}
@@ -209,7 +209,7 @@ Please find your detailed Appointment Order and Employment Terms attached. Kindl
 Warm Regards,
 {{ManagerName}}
 HR Department
-NUTECH WIND PARTS PVT LTD`
+AUTONOVA`
   },
   {
     id: 'TPL_EXEC_AO',
@@ -217,7 +217,7 @@ NUTECH WIND PARTS PVT LTD`
     subject: 'Executive Appointment Order - {{CandidateName}}',
     body: `Dear {{CandidateName}},
 
-On behalf of NUTECH WIND PARTS PVT LTD, we take great pleasure in appointing you as {{Designation}} within our {{Department}} division effective from {{JoiningDate}}.
+On behalf of AUTONOVA, we take great pleasure in appointing you as {{Designation}} within our {{Department}} division effective from {{JoiningDate}}.
 
 Your Annual Compensation Package (CTC) is set at INR {{CTC}}, reporting directly to {{ManagerName}} at our {{Location}} facility.
 
@@ -257,7 +257,7 @@ const FALLBACK_APPOINTMENT_LIST = [
     department: 'Production',
     designation: 'Production Engineer',
     employmentType: 'Permanent',
-    workLocation: 'NUTECH WIND - Production Plant',
+    workLocation: 'Production Plant',
     orderDate: '2026-08-01',
     joiningDate: '2026-08-15',
     totalCTC: 540000,
@@ -293,7 +293,7 @@ const FALLBACK_APPOINTMENT_LIST = [
     department: 'Quality',
     designation: 'Quality Control Lead',
     employmentType: 'Probation',
-    workLocation: 'NUTECH WIND - Unit 1',
+    workLocation: 'Unit 1',
     orderDate: '2026-08-02',
     joiningDate: '2026-08-20',
     totalCTC: 696000,
@@ -329,7 +329,7 @@ const FALLBACK_APPOINTMENT_LIST = [
     department: 'Accounts',
     designation: 'Finance Manager',
     employmentType: 'Permanent',
-    workLocation: 'NUTECH WIND - Corporate Office',
+    workLocation: 'Corporate Office',
     orderDate: '2026-08-03',
     joiningDate: '2026-09-01',
     totalCTC: 1281600,
@@ -365,7 +365,7 @@ const FALLBACK_APPOINTMENT_LIST = [
     department: 'Maintenance',
     designation: 'Electrical Engineer',
     employmentType: 'Contract',
-    workLocation: 'NUTECH WIND - Production Plant',
+    workLocation: 'Production Plant',
     orderDate: '2026-07-25',
     joiningDate: '2026-08-10',
     totalCTC: 480000,
@@ -474,7 +474,7 @@ export default function AppointmentOrderPage() {
   const [reportingManager, setReportingManager] = useState('');
   const [employmentType, setEmploymentType] = useState('Permanent');
   const [shift, setShift] = useState('General');
-  const [workLocation, setWorkLocation] = useState('NUTECH WIND - Corporate Office');
+  const [workLocation, setWorkLocation] = useState('Corporate Office');
   const [grade, setGrade] = useState('E1');
   const [joiningDate, setJoiningDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [orderExpiryDate, setOrderExpiryDate] = useState(format(new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'));
@@ -634,7 +634,7 @@ export default function AppointmentOrderPage() {
               department: item.department || parsedForm.department || 'Production',
               designation: item.designation || parsedForm.designation || 'Engineer',
               employmentType: parsedForm.employmentType || 'Permanent',
-              workLocation: parsedForm.workLocation || 'NUTECH WIND - Corporate Office',
+              workLocation: parsedForm.workLocation || 'Corporate Office',
               orderDate: item.letterDate ? format(new Date(item.letterDate), 'yyyy-MM-dd') : format(new Date(), 'yyyy-MM-dd'),
               joiningDate: parsedForm.joiningDate || format(new Date(), 'yyyy-MM-dd'),
               totalCTC: parsedForm.compensation?.totalCTC || 540000,
@@ -706,7 +706,7 @@ export default function AppointmentOrderPage() {
       reportingManager: 'Senthil Kumar (General Manager)',
       refNo: 'AO-20260803-4821',
       appointmentOrderNo: 'AO/2627/4821',
-      workLocation: 'NUTECH WIND - Production Plant',
+      workLocation: 'Production Plant',
       employmentType: 'Permanent',
       shift: 'General',
       salaryStructureId: 'SAL_PROD_ENG',
@@ -728,7 +728,7 @@ export default function AppointmentOrderPage() {
       reportingManager: 'Rajesh Sharma (Plant Head)',
       refNo: 'AO-20260803-5190',
       appointmentOrderNo: 'AO/2627/5190',
-      workLocation: 'NUTECH WIND - Unit 1',
+      workLocation: 'Unit 1',
       employmentType: 'Probation',
       shift: 'Morning',
       salaryStructureId: 'SAL_EXEC',
@@ -750,7 +750,7 @@ export default function AppointmentOrderPage() {
       reportingManager: 'Head HR',
       refNo: 'AO-20260803-6234',
       appointmentOrderNo: 'AO/2627/6234',
-      workLocation: 'NUTECH WIND - Corporate Office',
+      workLocation: 'Corporate Office',
       employmentType: 'Permanent',
       shift: 'General',
       salaryStructureId: 'SAL_MGR',
@@ -794,7 +794,7 @@ export default function AppointmentOrderPage() {
     setReportingManager('');
     setEmploymentType('Permanent');
     setShift('General');
-    setWorkLocation('NUTECH WIND - Corporate Office');
+    setWorkLocation('Corporate Office');
     setSelectedSalTemplate('');
     setBasicPay(30000);
     setHraPay(12000);
@@ -890,7 +890,7 @@ export default function AppointmentOrderPage() {
                .replaceAll('{{ProbationPeriod}}', probationPeriod)
                .replaceAll('{{CTC}}', formattedCTC)
                .replaceAll('{{ManagerName}}', mgrName)
-               .replaceAll('{{CompanyName}}', 'NUTECH WIND PARTS PVT LTD');
+               .replaceAll('{{CompanyName}}', 'AUTONOVA');
 
     return body;
   }, [candidateName, fatherName, selectedCandidate, department, designation, reportingManager, signingAuthority, workLocation, totalCTC, joiningDate, selectedAppointmentTemplate, shift, probationPeriod]);
@@ -918,7 +918,7 @@ export default function AppointmentOrderPage() {
     setReportingManager(record.reportingManager || 'Head HR');
     setEmploymentType(record.employmentType || 'Permanent');
     setShift(record.shift || 'General');
-    setWorkLocation(record.workLocation || 'NUTECH WIND - Corporate Office');
+    setWorkLocation(record.workLocation || 'Corporate Office');
     setOrderDate(record.orderDate || format(new Date(), 'yyyy-MM-dd'));
     setJoiningDate(record.joiningDate || format(new Date(), 'yyyy-MM-dd'));
     setBasicPay(record.basicPay || 30000);
@@ -974,7 +974,7 @@ export default function AppointmentOrderPage() {
     setReportingManager('');
     setEmploymentType('Permanent');
     setShift('General');
-    setWorkLocation('NUTECH WIND - Corporate Office');
+    setWorkLocation('Corporate Office');
     setSelectedSalTemplate('');
     setBasicPay(30000);
     setHraPay(12000);
@@ -2080,7 +2080,7 @@ export default function AppointmentOrderPage() {
               <Grid container spacing={2} alignItems="center" sx={{ borderBottom: '2px solid #1976d2', pb: 2, mb: 2 }}>
                 <Grid item xs={8}>
                   <Typography variant="h3" sx={{ fontWeight: 800, color: '#1976d2', textTransform: 'uppercase', letterSpacing: 1 }}>
-                    NUTECH WIND PARTS PVT LTD
+                    AUTONOVA
                   </Typography>
                   <Typography variant="body2" sx={{ fontSize: '0.85rem', color: '#555' }}>
                     Plot No. 42 & 43, Phase II, Industrial Estate, Guindy, Chennai - 600032
@@ -2089,7 +2089,7 @@ export default function AppointmentOrderPage() {
                     GSTIN: 33AAAAA0000A1Z5
                   </Typography>
                   <Typography variant="body2" sx={{ fontSize: '0.8rem', color: '#666' }}>
-                    Mob: +91 98765 43210 | Email: hr@nutechwindparts.com | Web: www.nutechwindparts.com
+                    Mob: +91 98765 43210 | Email: hr@autonova.com | Web: www.autonova.com
                   </Typography>
                 </Grid>
                 <Grid item xs={4} textAlign="right">

@@ -174,7 +174,7 @@ export default function ReleaseNotesPopup({ open, onClose, isHistoryMode = false
       >
         <Box>
           <Typography variant="h3" sx={{ fontWeight: 800, color: 'text.primary', mb: 0.5, display: 'flex', alignItems: 'center', gap: 1.5 }}>
-            {isHistoryMode ? "Release History" : "What's New in Autonoma"}
+            {isHistoryMode ? "Release History" : "What's New in Autonova"}
             {isCritical && (
               <Chip
                 label="Critical Update"

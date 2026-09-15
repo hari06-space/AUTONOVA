@@ -1,5 +1,5 @@
 /*
-Organization: Autonoma ERP
+Organization: Autonova ERP
 Owner: Developer
 Created At: 2026-09-05
 Description: Form for Creating Production Plan with live BOM explosion preview, planning tree, and requirement tabs

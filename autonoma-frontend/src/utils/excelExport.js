@@ -195,7 +195,7 @@ export const exportToExcel = (data, fileName, headerInfo = {}) => {
   // 9. Dynamic System Metadata & Print Header/Footer configuration (visible ONLY when printed)
   let finalBuffer = excelBuffer;
   try {
-    const companyName = headerInfo.companyName || sessionStorage.getItem('companyName') || 'AUTONOMA';
+    const companyName = headerInfo.companyName || sessionStorage.getItem('companyName') || 'AUTONOVA';
     const shortName = headerInfo.shortName || sessionStorage.getItem('divisionName') || 'Business Operating System';
     const userName = headerInfo.userName || sessionStorage.getItem('userName') || 'SYSTEM';
 

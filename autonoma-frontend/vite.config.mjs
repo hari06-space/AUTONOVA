@@ -15,7 +15,8 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3001,
       strictPort: true,
-      host: true,
+      host: '0.0.0.0',
+      allowedHosts: true,
       clearScreen: false,
       watch: {
         usePolling: true,
@@ -108,8 +109,29 @@ export default defineConfig(({ mode }) => {
     preview: {
       port: 3001,
       strictPort: true,
-      open: true,
-      host: true
+      open: false,
+      host: '0.0.0.0',
+      allowedHosts: true,
+      proxy: {
+        '/api': {
+          target: BACKEND_URL,
+          changeOrigin: true,
+          secure: false,
+          configure: (proxy) => {
+            proxy.on('error', (err) => {
+              if (err.code !== 'ECONNRESET' && err.code !== 'ECONNABORTED') {
+                console.warn('[Vite Preview Proxy API]', err.message);
+              }
+            });
+          }
+        },
+        '/ws': {
+          target: BACKEND_URL,
+          ws: true,
+          changeOrigin: true,
+          secure: false
+        }
+      }
     },
     define: {
       global: 'window',

@@ -41,7 +41,7 @@ export default function RelievingOrderDialog({ open, onClose, onSaveSuccess }) {
   const [relievingDate, setRelievingDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [session, setSession] = useState('A.N.'); // A.N. or F.N.
   const [subject, setSubject] = useState('Relieving Order & Experience Certificate');
-  const [companyName, setCompanyName] = useState('AUTONOMA ENTERPRISE SYSTEMS');
+  const [companyName, setCompanyName] = useState('AUTONOVA ENTERPRISE SYSTEMS');
   const [signingManager, setSigningManager] = useState('HR Manager');
 
   // Load all lookups
@@ -99,7 +99,7 @@ export default function RelievingOrderDialog({ open, onClose, onSaveSuccess }) {
     setRelievingDate(format(new Date(), 'yyyy-MM-dd'));
     setSession('A.N.');
     setSubject('Relieving Order & Experience Certificate');
-    setCompanyName('AUTONOMA ENTERPRISE SYSTEMS');
+    setCompanyName('AUTONOVA ENTERPRISE SYSTEMS');
     setSigningManager('HR Manager');
   };
 

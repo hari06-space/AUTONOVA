@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# start.sh - Autonoma ERP Startup Script for macOS
+# start.sh - Autonova ERP Startup Script for macOS
 
 # Auto-configure JAVA_HOME to JDK 21 on macOS if present
 if [ -d "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home" ]; then
@@ -9,7 +9,7 @@ if [ -d "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home" ]; then
 fi
 
 echo "=========================================================="
-echo "🚀 Starting Autonoma ERP Application Suite (macOS)..."
+echo "🚀 Starting Autonova ERP Application Suite (macOS)..."
 echo "=========================================================="
 
 # 1. Start Docker Container if not running
@@ -64,7 +64,7 @@ cd ../..
 # 6. Start the Backend (Port 8081)
 echo "Starting Spring Boot Backend (Port 8081)..."
 cd autonoma-backend
-nohup java -Dbypass.license=true -DDB_NAME=AT_NUTECH -Dspring.datasource.databasename=AT_NUTECH -jar target/Autonoma.jar > ../logs/backend_nohup.log 2>&1 &
+nohup java -Dbypass.license=true -DDB_NAME=AT_NUTECH -Dspring.datasource.databasename=AT_NUTECH -jar target/Autonova.jar > ../logs/backend_nohup.log 2>&1 &
 cd ..
 
 # 7. Start the Frontend (Port 3001)
@@ -104,7 +104,7 @@ echo "Checking active ports:"
 lsof -i :8081 -i :3001 -i :8000 -i :9090
 
 echo "=========================================================="
-echo "🎉 Autonoma ERP is running!"
+echo "🎉 Autonova ERP is running!"
 echo "   - Python Service: http://localhost:8000"
 echo "   - OCR Service:    http://localhost:9090"
 echo "   - Frontend:       http://localhost:3001"

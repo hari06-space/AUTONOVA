@@ -1,5 +1,5 @@
 /**
- * Organization: Nutech Wind Parts Pvt Ltd
+ * Organization: AUTONOVA
  * Owner: Yuvanesh M
  * Created At: 2026-09-03
  * Updated By: Yuvanesh M
@@ -715,7 +715,7 @@ export const buildOfferLetterDocumentModel = (record = {}, options = {}) => {
 
   const companyData = {
     companyName:
-      baseComp.companyName || optComp.companyName || parsedData.companyName || record.companyName || 'Autonoma ERP',
+      baseComp.companyName || optComp.companyName || parsedData.companyName || record.companyName || 'Autonova ERP',
     companyAddress:
       baseComp.companyAddress ||
       optComp.companyAddress ||
@@ -844,7 +844,7 @@ export const buildOfferLetterDocumentModel = (record = {}, options = {}) => {
   if (!resolvedSections) {
     try {
       const cached =
-        typeof window !== 'undefined' ? localStorage.getItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE') : null;
+        typeof window !== 'undefined' ? localStorage.getItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE') : null;
       if (cached) {
         const p = JSON.parse(cached);
         if (p.sections && Array.isArray(p.sections) && p.sections.length > 0) {
@@ -1363,5 +1363,5 @@ export const buildCleanOfferLetterHtml = (
 </div>`;
   });
 
-  return `<div class="autonoma-offer-letter-clean-doc" style="background:#ffffff;width:794px;max-width:794px;margin:0 auto;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-family:'Inter',Arial,Helvetica,sans-serif;"><style>.autonoma-offer-letter-clean-doc, .autonoma-offer-letter-clean-doc * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; } .autonoma-offer-letter-clean-doc .offer-rich-text p { margin: 0 0 6px 0; line-height: 1.55; } .autonoma-offer-letter-clean-doc .offer-rich-text p:last-child { margin-bottom: 0; } .autonoma-offer-letter-clean-doc .offer-rich-text ul { list-style-type: disc !important; padding-left: 22px; margin: 4px 0 6px 0; } .autonoma-offer-letter-clean-doc .offer-rich-text ol { list-style-type: decimal !important; padding-left: 22px; margin: 4px 0 6px 0; } .autonoma-offer-letter-clean-doc .offer-rich-text li { margin-bottom: 4px; line-height: 1.5; } .autonoma-offer-letter-clean-doc .offer-rich-text li[data-list="bullet"], .autonoma-offer-letter-clean-doc .offer-rich-text ul li { list-style-type: disc !important; } .autonoma-offer-letter-clean-doc .offer-rich-text li[data-list="ordered"], .autonoma-offer-letter-clean-doc .offer-rich-text ol li { list-style-type: decimal !important; }</style>${pageHtmls.join('\n')}</div>`;
+  return `<div class="autonova-offer-letter-clean-doc" style="background:#ffffff;width:794px;max-width:794px;margin:0 auto;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-family:'Inter',Arial,Helvetica,sans-serif;"><style>.autonova-offer-letter-clean-doc, .autonova-offer-letter-clean-doc * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; } .autonova-offer-letter-clean-doc .offer-rich-text p { margin: 0 0 6px 0; line-height: 1.55; } .autonova-offer-letter-clean-doc .offer-rich-text p:last-child { margin-bottom: 0; } .autonova-offer-letter-clean-doc .offer-rich-text ul { list-style-type: disc !important; padding-left: 22px; margin: 4px 0 6px 0; } .autonova-offer-letter-clean-doc .offer-rich-text ol { list-style-type: decimal !important; padding-left: 22px; margin: 4px 0 6px 0; } .autonova-offer-letter-clean-doc .offer-rich-text li { margin-bottom: 4px; line-height: 1.5; } .autonova-offer-letter-clean-doc .offer-rich-text li[data-list="bullet"], .autonova-offer-letter-clean-doc .offer-rich-text ul li { list-style-type: disc !important; } .autonova-offer-letter-clean-doc .offer-rich-text li[data-list="ordered"], .autonova-offer-letter-clean-doc .offer-rich-text ol li { list-style-type: decimal !important; }</style>${pageHtmls.join('\n')}</div>`;
 };

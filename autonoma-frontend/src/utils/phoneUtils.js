@@ -8,12 +8,16 @@ let globalCountries = [
 
 // Asynchronously fetch and cache countries list from master database
 const loadCountries = () => {
+  const token = typeof window !== 'undefined' && (sessionStorage.getItem('serviceToken') || localStorage.getItem('serviceToken'));
   const isCandidatePage = typeof window !== 'undefined' && (
     window.location.pathname.toLowerCase().includes('candidate') ||
     window.location.pathname.toLowerCase().includes('assessment') ||
     window.location.pathname.toLowerCase().includes('onboarding') ||
     window.location.pathname.toLowerCase().includes('portal')
   );
+  if (!token && !isCandidatePage) {
+    return;
+  }
   const primaryEndpoint = isCandidatePage ? '/api/hra/applicants/portal/countries' : '/api/admin/countries';
   const fallbackEndpoint = isCandidatePage ? '/api/admin/countries' : '/api/hra/applicants/portal/countries';
 

@@ -52,7 +52,7 @@ const TEMPLATES = {
   <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;" />
   <p>Date: <strong>{{joiningDate}}</strong></p>
   <p>Dear <strong>{{employeeName}}</strong>,</p>
-  <p>We are pleased to offer you the position of <strong>{{designationName}}</strong> at NUTECH WIND PARTS PVT LTD.</p>
+  <p>We are pleased to offer you the position of <strong>{{designationName}}</strong> at AUTONOVA.</p>
   <p>Your annual salary package will be <strong>{{salaryPackage}}</strong> CTC. Your planned joining date is <strong>{{joiningDate}}</strong>.</p>
   <p>Please review and sign this offer letter as acceptance of the terms.</p>
   <br /><br />
@@ -178,7 +178,7 @@ export default function EmployeeOnboarding() {
   const [templateData, setTemplateData] = useState({
     subject: 'CALL LETTER - {{employeeName}}',
     body: '',
-    footer: 'NUTECH WIND PARTS PVT LTD'
+    footer: 'AUTONOVA'
   });
   const [activeField, setActiveField] = useState(null); // 'subject' | 'body' | 'footer'
   const [cursorPos, setCursorPos] = useState(0);
@@ -483,7 +483,7 @@ export default function EmployeeOnboarding() {
         ...td,
         subject: `CALL LETTER - {{employeeName}}`,
         body: rawTemplate,
-        footer: 'NUTECH WIND PARTS PVT LTD'
+        footer: 'AUTONOVA'
       }));
 
       return updated;
@@ -552,7 +552,7 @@ export default function EmployeeOnboarding() {
     setTemplateData({
       subject: `CALL LETTER - {{employeeName}}`,
       body: TEMPLATES[getTemplateType(activeDocType)],
-      footer: 'NUTECH WIND PARTS PVT LTD'
+      footer: 'AUTONOVA'
     });
     setColumnMapping([
       { name: 'id', customRename: 'id', enabled: true },
@@ -623,7 +623,7 @@ export default function EmployeeOnboarding() {
 
     let extractedSubject = `CALL LETTER - ${row.employee ? row.employee.employeeName : ''}`;
     let extractedBody = row.documentContent || '';
-    let extractedFooter = 'NUTECH WIND PARTS PVT LTD';
+    let extractedFooter = 'AUTONOVA';
 
     if (row.documentContent && row.documentContent.includes('Subject:')) {
       try {

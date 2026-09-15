@@ -1,10 +1,10 @@
 /**
- * Organization: Nutech
+ * Organization: AUTONOVA
  * Owner: Aksar-S
  * Created At: 2026-08-31
  * Updated By: Yuvanesh M
  * Updated At: 2026-09-03
- * Description: Universal Digital PDF Exporter for Autonoma ERP.
+ * Description: Universal Digital PDF Exporter for Autonova ERP.
  * Generates true vector digital PDFs with selectable, searchable text matching the Export Designer preview.
  * Encapsulates reliable browser download via file-saver, matching exportToExcel architecture.
  */
@@ -188,7 +188,7 @@ export const buildDigitalPdfDocument = async ({
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(15);
     doc.setTextColor(primaryColor);
-    doc.text(String(companyProfile?.companyName || 'Autonoma ERP'), textStartX, startHeaderY + 4.5);
+    doc.text(String(companyProfile?.companyName || 'Autonova ERP'), textStartX, startHeaderY + 4.5);
 
     // Short Name
     let leftMetaY = startHeaderY + 8.5;
@@ -581,7 +581,7 @@ export const buildDigitalPdfDocument = async ({
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(6.8);
     doc.setTextColor(textDisabledColor);
-    const footerText = `Confidential Report | © ${new Date().getFullYear()} ${companyProfile?.companyName || 'Autonoma ERP'}`;
+    const footerText = `Confidential Report | © ${new Date().getFullYear()} ${companyProfile?.companyName || 'Autonova ERP'}`;
     doc.text(footerText, margin, footerY);
 
     // Right: Page X of Y
@@ -1163,7 +1163,7 @@ export const buildDigitalOfferLetterPdf = async (config = {}) => {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(6.8);
     doc.setTextColor('#94a3b8');
-    const compName = company.companyName || 'Autonoma ERP';
+    const compName = company.companyName || 'Autonova ERP';
     doc.text(`This is a system-generated offer letter. | ${compName}`, marginX, footerY + 1.5);
 
     doc.setFont('helvetica', 'bold');

@@ -357,7 +357,7 @@ export const triggerVisitorGatePassEmail = async (row, company, options = {}) =>
     return null;
   }
 
-  const compName = company?.companyName || 'Autonoma ERP';
+  const compName = company?.companyName || 'Autonova ERP';
   const passNo = row?.gatePassNo || 'Doc';
   const emailSubject = options.subject || `Visitor Gate Pass - ${passNo} - ${compName}`;
   const htmlBody = options.htmlBody || buildVisitorGatePassEmailHtml(row, company);

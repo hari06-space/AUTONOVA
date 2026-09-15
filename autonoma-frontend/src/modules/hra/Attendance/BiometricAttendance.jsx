@@ -270,7 +270,7 @@ export default function BiometricAttendance() {
 
       let htmlString = `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
-          <h2 style="text-align: center; margin-bottom: 5px;">Autonoma ERP - Attendance Report</h2>
+          <h2 style="text-align: center; margin-bottom: 5px;">Autonova ERP - Attendance Report</h2>
           <h4 style="text-align: center; color: #666; margin-top: 0; margin-bottom: 25px;">
             ${activeTab === 0 ? 'Daily Logs' : 'Monthly Summary'} - ${processMonth} ${processYear}
           </h4>

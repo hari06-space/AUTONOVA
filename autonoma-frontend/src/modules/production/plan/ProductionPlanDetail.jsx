@@ -1,5 +1,5 @@
 /*
-Organization: Autonoma ERP
+Organization: Autonova ERP
 Owner: Developer
 Created At: 2026-09-05
 Description: Detail view for Production Plan with multi-tab planning tree, requirements, and execution actions

@@ -1,6 +1,6 @@
 /**
- * Organization: Nutech
- * Owner: Nutech
+ * Organization: AUTONOVA
+ * Owner: hari06-space
  * Created At: 2026-09-02
  * Description: Intelligent Document Content Search Page with exact location indicators and secure viewer.
  */

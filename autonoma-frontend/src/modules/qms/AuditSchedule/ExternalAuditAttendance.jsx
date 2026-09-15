@@ -37,7 +37,7 @@ import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
 import CorporateFareRoundedIcon from '@mui/icons-material/CorporateFareRounded';
 import ScheduleRoundedIcon from '@mui/icons-material/ScheduleRounded';
 import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
-import nutechLogo from 'assets/images/nutech-logo.jpeg';
+import defaultLogo from 'assets/images/autonova-logo.png';
 import { getCompanyImageUrl, getFileViewUrl } from 'utils/upload-helper';
 
 const ExternalAuditAttendance = () => {
@@ -152,11 +152,11 @@ const ExternalAuditAttendance = () => {
   };
 
   // Resolve Company details from DB
-  const compName = companyProfile?.companyName || 'NUTECH WIND PARTS PVT LTD';
+  const compName = companyProfile?.companyName || 'AUTONOVA';
 
-  // Resolve Company Logo from DB with nutechLogo fallback
+  // Resolve Company Logo from DB with defaultLogo fallback
   const rawLogo = companyProfile?.logoFileName || companyProfile?.logo || companyProfile?.logoUrl;
-  let compLogo = nutechLogo;
+  let compLogo = defaultLogo;
   if (rawLogo && typeof rawLogo === 'string') {
     if (rawLogo.startsWith('http') || rawLogo.startsWith('blob:') || rawLogo.startsWith('data:')) {
       compLogo = rawLogo;
@@ -324,37 +324,6 @@ const ExternalAuditAttendance = () => {
               gap: { xs: 2, sm: 3 }
             }}
           >
-            {/* Logo Frame */}
-            <Box
-              sx={{
-                width: { xs: 76, sm: 88 },
-                height: { xs: 76, sm: 88 },
-                bgcolor: '#ffffff',
-                p: 1,
-                borderRadius: 3.5,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '2px solid rgba(56, 189, 248, 0.4)',
-                boxShadow: '0 10px 28px rgba(0,0,0,0.4)',
-                flexShrink: 0,
-                overflow: 'hidden'
-              }}
-            >
-              <img
-                src={compLogo}
-                alt={compName}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain'
-                }}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = nutechLogo;
-                }}
-              />
-            </Box>
 
             {/* Company Info */}
             <Box sx={{ flexGrow: 1, textAlign: { xs: 'center', sm: 'left' } }}>
@@ -817,7 +786,7 @@ const ExternalAuditAttendance = () => {
                   <Stack direction="row" spacing={1} alignItems="center">
                     <VerifiedUserRoundedIcon sx={{ color: '#38bdf8', fontSize: 20 }} />
                     <Typography variant="caption" sx={{ color: '#94a3b8', fontWeight: 500 }}>
-                      Cryptographically Authenticated &bull; Autonoma BOS(S)
+                      Cryptographically Authenticated &bull; Autonova BOS(S)
                     </Typography>
                   </Stack>
 

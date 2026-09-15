@@ -159,7 +159,7 @@ const DEFAULT_CITIES = ['City 1', 'City 2', 'City 3', 'City 4'];
 const emptyForm = {
   companyName: '', shortName: '', address: '',
   city: '', state: '', stateCode: '', country: 'India', pincode: '',
-  gstIn: '', clientCode: '', dbSourceName: 'AUTONOMA', licRenewalDate: '', licExpiryDate: '',
+  gstIn: '', clientCode: '', dbSourceName: 'AUTONOVA', licRenewalDate: '', licExpiryDate: '',
   logoFileName: '', logInBgFileName: '', directoryPath: 'BOS_DOCUMENTS',
   licExpRemainderDays: 0,
   restoreEnableDays: 7,
@@ -519,7 +519,7 @@ const ClientMaster = () => {
       const payload = {
         ...form,
         ...updatedForm,
-        dbSourceName: updatedForm.dbName || form.dbName || form.dbSourceName || 'AUTONOMA',
+        dbSourceName: updatedForm.dbName || form.dbName || form.dbSourceName || 'AUTONOVA',
         stateCode: form.stateCode ? parseInt(form.stateCode) : null,
         licExpRemainderDays: form.licExpRemainderDays ? parseInt(form.licExpRemainderDays) : 0,
         restoreEnableDays: form.restoreEnableDays ? parseInt(form.restoreEnableDays) : 0,
@@ -750,7 +750,7 @@ const ClientMaster = () => {
       pincode: rec.pincode || '',
       gstIn: rec.gstIn || '',
       clientCode: rec.clientCode || '',
-      dbSourceName: rec.dbSourceName || 'AUTONOMA',
+      dbSourceName: rec.dbSourceName || 'AUTONOVA',
       licRenewalDate: rec.licRenewalDate ? rec.licRenewalDate.slice(0, 10) : '',
       licExpiryDate: rec.licExpiryDate ? rec.licExpiryDate.slice(0, 10) : '',
       logoFileName: rec.logoFileName || '',
@@ -1368,7 +1368,7 @@ const ClientMaster = () => {
       const token = sessionStorage.getItem('serviceToken') || '';
       const payload = {
         ...form,
-        dbSourceName: form.dbName || form.dbSourceName || 'AUTONOMA',
+        dbSourceName: form.dbName || form.dbSourceName || 'AUTONOVA',
         isActive: form.isActive !== false,
         stateCode: form.stateCode ? parseInt(form.stateCode) : null,
         licExpRemainderDays: form.licExpRemainderDays ? parseInt(form.licExpRemainderDays) : 0,
@@ -2148,7 +2148,7 @@ const ClientMaster = () => {
                             fullWidth
                             size="small"
                             label="Enterprise License Key / Security Token"
-                            value={form.licenseKey || (recordId ? 'AUTONOMA-LIC-' + String(form.clientCode || 'DEV').toUpperCase() + '-' + String(recordId).padStart(4, '0') : 'AUTO-GENERATED ON SAVE')}
+                            value={form.licenseKey || (recordId ? 'AUTONOVA-LIC-' + String(form.clientCode || 'DEV').toUpperCase() + '-' + String(recordId).padStart(4, '0') : 'AUTO-GENERATED ON SAVE')}
                             InputProps={{
                               readOnly: true,
                               startAdornment: (
@@ -2162,7 +2162,7 @@ const ClientMaster = () => {
                                     <IconButton
                                       size="small"
                                       onClick={() => {
-                                        const keyToCopy = form.licenseKey || ('AUTONOMA-LIC-' + String(form.clientCode || 'DEV').toUpperCase() + '-' + String(recordId || '0001').padStart(4, '0'));
+                                        const keyToCopy = form.licenseKey || ('AUTONOVA-LIC-' + String(form.clientCode || 'DEV').toUpperCase() + '-' + String(recordId || '0001').padStart(4, '0'));
                                         navigator.clipboard.writeText(keyToCopy);
                                         showSnack('License Key copied to clipboard!', 'success');
                                       }}
@@ -2319,7 +2319,7 @@ const ClientMaster = () => {
                         <Grid item xs={12} sm={6} md={3}>
                           <TextField
                             {...fieldProps('dbHost', 'Server / Host *')}
-                            placeholder="e.g. boss.autonomasys.com"
+                            placeholder="e.g. boss.autonovasys.com"
                             onChange={(e) => {
                               handleChange(e);
                               setTestDbConnectionSuccessful(false);

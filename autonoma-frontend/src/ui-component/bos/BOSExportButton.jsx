@@ -153,7 +153,7 @@ const BOSExportButton = React.forwardRef(({
   const [sidebarWidth, setSidebarWidth] = useState(280);
   const [isResizing, setIsResizing] = useState(false);
   const [showPdfHeader, setShowPdfHeader] = useState(true);
-  const [companyProfile, setCompanyProfile] = useState({ companyName: 'AUTONOMA', shortName: 'Business Operating System' });
+  const [companyProfile, setCompanyProfile] = useState({ companyName: 'AUTONOVA', shortName: 'Business Operating System' });
 
   useEffect(() => {
     if (open !== undefined) {
@@ -163,14 +163,14 @@ const BOSExportButton = React.forwardRef(({
 
   // Fetch company profile only when preview is opened to save bandwidth on mount
   useEffect(() => {
-    if (previewOpen && companyProfile.companyName === 'AUTONOMA') {
+    if (previewOpen && companyProfile.companyName === 'AUTONOVA') {
       axios.get('/api/company-profile/all')
         .then(res => {
           const list = Array.isArray(res.data) ? res.data : [];
           if (list.length > 0) {
             const rec = list[0];
             setCompanyProfile({
-              companyName: rec.companyName || 'AUTONOMA',
+              companyName: rec.companyName || 'AUTONOVA',
               shortName: rec.shortName || rec.dbSourceName || 'Business Operating System',
               address: rec.address || '',
               city: rec.city || '',
@@ -622,7 +622,7 @@ const BOSExportButton = React.forwardRef(({
       await uploadAndLogExport('Excel');
       await exportToExcel(prepareData(excelColumns), getFormattedFilename(), {
         userName: user?.id || user?.username || user?.email || 'SYSTEM',
-        companyName: companyProfile.companyName || 'AUTONOMA',
+        companyName: companyProfile.companyName || 'AUTONOVA',
         shortName: companyProfile.shortName || 'Business Operating System',
         reportTitle: reportTitle
       });
@@ -1349,7 +1349,7 @@ const BOSExportButton = React.forwardRef(({
                         }
                         label={
                           <Typography variant="body2" sx={{ fontSize: '13px', color: 'text.primary' }}>
-                            Show AUTONOMA header
+                            Show AUTONOVA header
                           </Typography>
                         }
                         sx={{ ml: -0.5 }}

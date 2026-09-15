@@ -4,8 +4,8 @@ import useAuth from 'hooks/useAuth';
 import useRealtimeRefresh from 'hooks/useRealtimeRefresh';
 import meetingAlarmAudio from 'utils/meetingAlarmSound';
 
-const STORAGE_PREFIX = 'autonoma_meeting_alarm_dismissed_';
-const BC_NAME = 'autonoma_meeting_alarm_channel';
+const STORAGE_PREFIX = 'autonova_meeting_alarm_dismissed_';
+const BC_NAME = 'autonova_meeting_alarm_channel';
 const AUTO_DISMISS_SECONDS = 30;
 
 // Helper: parse HH:mm or HH:mm:ss string to total seconds from midnight

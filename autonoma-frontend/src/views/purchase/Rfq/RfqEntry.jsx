@@ -15,7 +15,7 @@ import useAuth from 'hooks/useAuth';
 import axios from 'utils/axios';
 import rfqService from '../../../api/rfqService';
 import purchaseRequestService from '../../../api/purchaseRequestService';
-import autonomaLogo from 'assets/images/autonoma-logo.png';
+import autonovaLogo from 'assets/images/autonova-logo.png';
 import { getFileViewUrl, getCompanyImageUrl } from 'utils/upload-helper';
 import SendRfqDialog from './SendRfqDialog';
 import RfqEmailHistoryDialog from './RfqEmailHistoryDialog';
@@ -266,7 +266,7 @@ const RfqEntry = () => {
     const productColumns = useMemo(() => [
         {
             id: 'productImage', label: 'Image', minWidth: 60, align: 'center', renderCell: (val) => (
-                <Avatar variant="rounded" src={val ? getCompanyImageUrl(val) : autonomaLogo} sx={{ width: 40, height: 40, bgcolor: 'transparent', objectFit: 'contain' }} />
+                <Avatar variant="rounded" src={val ? getCompanyImageUrl(val) : autonovaLogo} sx={{ width: 40, height: 40, bgcolor: 'transparent', objectFit: 'contain' }} />
             )
         },
         { id: 'itemCode', label: 'Item Code', minWidth: 120 },

@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Updated By: Nutech
+// Organization: AUTONOVA
+// Updated By: hari06-space
 // Updated At: 2026-09-04
 // Description: Font Family selector — 100% offline via @fontsource local packages.
 //              No Google Fonts CDN dependency. All fonts are bundled with the app.

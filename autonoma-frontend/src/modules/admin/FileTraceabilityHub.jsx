@@ -244,7 +244,7 @@ const FileTraceabilityHub = () => {
             <table class="header-table">
               <tr>
                 <td style="vertical-align: top;">
-                  <h1 style="margin: 0; color: #673ab7; font-size: 28px; font-weight: 900; letter-spacing: -1px;">AUTONOMA</h1>
+                  <h1 style="margin: 0; color: #673ab7; font-size: 28px; font-weight: 900; letter-spacing: -1px;">AUTONOVA</h1>
                   <span style="font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 1px;">Business Operating System</span>
                 </td>
                 <td style="text-align: right; vertical-align: top;">
@@ -259,7 +259,7 @@ const FileTraceabilityHub = () => {
 
             <div class="summary-box">
               <h4 style="margin: 0 0 5px 0; font-size: 14px; color: #333;">Report Summary</h4>
-              <span style="font-size: 11px; color: #666;">This document contains ${previewData.data.length} verified records from the Autonoma ERP database.</span>
+              <span style="font-size: 11px; color: #666;">This document contains ${previewData.data.length} verified records from the Autonova ERP database.</span>
             </div>
 
             <table class="data-table">
@@ -272,7 +272,7 @@ const FileTraceabilityHub = () => {
             </table>
 
             <div class="footer">
-              Confidential Report | © ${new Date().getFullYear()} Autonoma ERP
+              Confidential Report | © ${new Date().getFullYear()} Autonova ERP
             </div>
           </body>
         </html>
@@ -626,7 +626,7 @@ const FileTraceabilityHub = () => {
                   <Stack direction="row" justifyContent="space-between" sx={{ mb: 4, borderBottom: '3px solid', borderColor: 'primary.main', pb: 2 }}>
                     <Box>
                       <Typography variant="h2" sx={{ color: 'primary.main', fontWeight: 900, fontSize: '2rem', letterSpacing: -1 }}>
-                        AUTONOMA
+                        AUTONOVA
                       </Typography>
                       <span style={{ fontSize: '10px', fontWeight: 700, color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>
                         Business Operating System
@@ -647,7 +647,7 @@ const FileTraceabilityHub = () => {
                       Report Summary
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
-                      This document contains {previewData.data?.length || 0} verified records from the Autonoma ERP database.
+                      This document contains {previewData.data?.length || 0} verified records from the Autonova ERP database.
                     </Typography>
                   </Box>
 
@@ -684,7 +684,7 @@ const FileTraceabilityHub = () => {
 
                   <Box sx={{ mt: 'auto', pt: 2, borderTop: '1px solid #eee', textAlign: 'center' }}>
                     <Typography variant="caption" sx={{ color: 'text.disabled', display: 'block' }}>
-                      Confidential Report | © {new Date().getFullYear()} Autonoma ERP
+                      Confidential Report | © {new Date().getFullYear()} Autonova ERP
                     </Typography>
                   </Box>
                 </Paper>

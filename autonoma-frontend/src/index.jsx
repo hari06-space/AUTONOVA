@@ -21,12 +21,7 @@ import * as serviceWorker from 'serviceWorker';
 import reportWebVitals from 'reportWebVitals';
 import { ConfigProvider } from 'contexts/ConfigContext';
 import { showAppAlert } from 'utils/alert';
-import { FaceDetectionService } from 'utils/face';
 
-// Eagerly preload neural network models in WebGL background at application startup
-setTimeout(() => {
-  FaceDetectionService.initialize().catch(() => {});
-}, 100);
 
 // style + assets
 import 'assets/scss/style.scss';

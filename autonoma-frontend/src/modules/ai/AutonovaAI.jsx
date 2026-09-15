@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Card, CardContent, Typography, Box, CircularProgress, Chip } from '@mui/material';
 import { IconTrendingUp, IconTrendingDown, IconAlertTriangle } from '@tabler/icons-react';
-import { sendMessage } from 'api/autonomaAiApi';
+import { sendMessage } from 'api/autonovaAiApi';
 
 const ExecutiveCard = ({ title, value, trend, color, loading }) => (
   <Card sx={{ height: '100%', background: 'linear-gradient(135deg, rgba(13,27,62,0.8) 0%, rgba(26,58,110,0.8) 100%)', color: '#fff', border: `1px solid ${color}40`, boxShadow: `0 4px 20px ${color}20` }}>
@@ -20,7 +20,7 @@ const ExecutiveCard = ({ title, value, trend, color, loading }) => (
   </Card>
 );
 
-const AutonomaAI = () => {
+const AutonovaAI = () => {
   const [data, setData] = useState({
     revenue: null, profitability: null, pendingApprovals: null, criticalInventory: null, businessHealth: null
   });
@@ -87,4 +87,4 @@ const AutonomaAI = () => {
   );
 };
 
-export default AutonomaAI;
+export default AutonovaAI;

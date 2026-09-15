@@ -301,7 +301,7 @@ const STATUS = {
 };
 const getSS = (s) => STATUS[s] || STATUS.default;
 
-// Updated By: Nutech
+// Updated By: hari06-space
 // Updated At: 2026-09-04
 // Optimized: two-tier capture — small cards at scale=0.75 + imageTimeout=0 for max speed;
 // large "Copy All" container at scale=1 with full DOM freeze.
@@ -784,7 +784,7 @@ export default function UserTaskQueue() {
   const [copiedId, setCopiedId] = useState(null);
 
   // ─── Clipboard Copy (Visual Screenshot) ──────────────────────────────────────
-  // Updated By: Nutech
+  // Updated By: hari06-space
   // Updated At: 2026-09-04
   // Individual cards → scale=0.75 + imageTimeout=0 + PNG-only clipboard (fastest).
   // Copy All → scale=1 (large container, full quality).

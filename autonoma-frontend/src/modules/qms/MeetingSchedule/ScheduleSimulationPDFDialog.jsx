@@ -125,7 +125,7 @@ export default function ScheduleSimulationPDFDialog({
   const totalScheduled = simulationResult?.totalScheduled ?? rows.filter((r) => r.finalScheduledDate).length;
   const totalSkipped = totalCandidates - totalScheduled;
 
-  const companyName = company?.companyName || company?.name || company?.profileName || 'NUTECH WIND PARTS PVT LTD';
+  const companyName = company?.companyName || company?.name || company?.profileName || 'AUTONOVA';
   const companyAddress = [
     company?.address1,
     company?.address2,
@@ -405,7 +405,7 @@ export default function ScheduleSimulationPDFDialog({
             {/* Footer Sign-off Block */}
             <Box sx={{ pt: 2, borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography variant="caption" sx={{ color: '#94a3b8', fontSize: '0.7rem' }}>
-                Autonoma BOS(S) • Automated Meeting Rule Engine
+                Autonova BOS(S) • Automated Meeting Rule Engine
               </Typography>
               <Typography variant="caption" sx={{ color: '#94a3b8', fontSize: '0.7rem' }}>
                 Page 1 of 1

@@ -3,12 +3,12 @@ import { useState } from 'react';
 import MainCard from 'ui-component/cards/MainCard';
 import useQuotationStore from 'store/useQuotationStore';
 import { IconTrendingDown, IconTrendingUp, IconTrash, IconCalendarEvent } from '@tabler/icons-react';
-import autonomaLogo from 'assets/images/autonoma-logo.png';
+import autonovaLogo from 'assets/images/autonova-logo.png';
 import { API_BASE } from 'utils/api-constants';
 
-const getDisplayImage = (url, autonomaLogo) => {
+const getDisplayImage = (url, autonovaLogo) => {
     if (url) return url.startsWith('http') ? url : `${API_BASE}/files${url}`;
-    return autonomaLogo;
+    return autonovaLogo;
 };
 
 const QuotationItemGrid = ({ isReadOnly, errors = {}, setErrors }) => {
@@ -128,11 +128,11 @@ const QuotationItemGrid = ({ isReadOnly, errors = {}, setErrors }) => {
                                     <TableCell sx={{ p: 1 }}>
                                         <Box display="flex" alignItems="center" gap={1.5}>
                                             <Tooltip
-                                                title={<img src={getDisplayImage(row.imageUrl, autonomaLogo)} alt="Preview" style={{ maxWidth: 200, maxHeight: 200, objectFit: 'contain' }} />}
+                                                title={<img src={getDisplayImage(row.imageUrl, autonovaLogo)} alt="Preview" style={{ maxWidth: 200, maxHeight: 200, objectFit: 'contain' }} />}
                                                 placement="right"
                                                 componentsProps={{ tooltip: { sx: { bgcolor: 'background.paper', boxShadow: theme.shadows[5], p: 1, border: '1px solid', borderColor: 'divider' } } }}
                                             >
-                                                <Avatar variant="rounded" src={getDisplayImage(row.imageUrl, autonomaLogo)} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' }, cursor: 'pointer' }} />
+                                                <Avatar variant="rounded" src={getDisplayImage(row.imageUrl, autonovaLogo)} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' }, cursor: 'pointer' }} />
                                             </Tooltip>
                                             <Box flex={1}>
                                                 <Box display="flex" alignItems="center" gap={0.5}>

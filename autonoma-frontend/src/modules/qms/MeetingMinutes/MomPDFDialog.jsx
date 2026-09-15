@@ -342,7 +342,7 @@ export default function MomPDFDialog({ open, onClose, momId, row }) {
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', pb: 2, mb: 2, borderBottom: '2px solid #0f172a' }}>
                 <Box sx={{ maxWidth: '65%' }}>
                   <Typography variant="h5" sx={{ fontWeight: 800, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.5px', mb: 0.5, fontSize: '15px' }}>
-                    {company?.companyName || company?.name || 'NUTECH WIND PARTS PRIVATE LIMITED'}
+                    {company?.companyName || company?.name || 'AUTONOVA'}
                   </Typography>
                   <Typography sx={{ fontSize: '10px', color: '#475569', lineHeight: 1.4 }}>
                     {company?.addressLine1 || company?.address || ''} {company?.addressLine2 || ''}
@@ -351,7 +351,7 @@ export default function MomPDFDialog({ open, onClose, momId, row }) {
                     {company?.city ? `${company.city}, ` : ''}{company?.state ? `${company.state} ` : ''}{company?.pincode ? `- ${company.pincode}` : ''}
                   </Typography>
                   <Typography sx={{ fontSize: '10px', color: '#475569', mt: 0.3 }}>
-                    Email: {company?.email || 'quality@nutechwind.com'} | Phone: {company?.phone || '-'}
+                    Email: {company?.email || 'quality@autonova.com'} | Phone: {company?.phone || '-'}
                   </Typography>
                 </Box>
 

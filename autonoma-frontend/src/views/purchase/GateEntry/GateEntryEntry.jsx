@@ -23,7 +23,7 @@ import {
 import { CheckCircle, RadioButtonUnchecked, ExpandMore, LocalShipping } from "@mui/icons-material";
 import { bos, bosConfirm } from "ui-component/bos/BOSConfirmDialog";
 import axios from "utils/axios";
-import autonomaLogo from 'assets/images/autonoma-logo.png';
+import autonovaLogo from 'assets/images/autonova-logo.png';
 
 
 
@@ -157,7 +157,7 @@ function ItemsGrid({ transactions, selectedSourceKey, onQtyChange, onRemoveItem,
                                 <TableCell sx={{ color: "text.secondary", fontSize: "0.75rem" }}>{idx + 1}</TableCell>
                                 <TableCell sx={{ p: 1 }}>
                                     <Box display="flex" alignItems="center" gap={1.5}>
-                                        <Avatar variant="rounded" src={item.imageUrl || autonomaLogo} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' } }} />
+                                        <Avatar variant="rounded" src={item.imageUrl || autonovaLogo} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' } }} />
                                         <Box flex={1}>
                                             <Typography variant="body2" fontWeight={700} color="text.primary" sx={{ mb: 0.5 }}>
                                                 {item.itemName || item.itemDescription || item.itemCode}

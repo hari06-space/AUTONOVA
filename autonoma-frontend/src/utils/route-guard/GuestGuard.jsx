@@ -24,10 +24,8 @@ export default function GuestGuard({ children }) {
 
       if (redirectUrl) {
         navigate(redirectUrl, { replace: true });
-      } else if (user?.userLevel === 0 || user?.userLevel === 1 || user?.userLevel >= 5) {
-        navigate(DASHBOARD_PATH, { replace: true });
       } else {
-        navigate('/access-denied', { replace: true });
+        navigate(DASHBOARD_PATH, { replace: true });
       }
     }
   }, [isLoggedIn, navigate, user]);

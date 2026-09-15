@@ -8,7 +8,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { IconDeviceFloppy, IconCheck, IconTrash, IconPrinter, IconArrowLeft, IconPaperclip } from '@tabler/icons-react';
 import { Receipt, ExpandMore } from '@mui/icons-material';
 import { bos, bosConfirm } from 'ui-component/bos/BOSConfirmDialog';
-import autonomaLogo from 'assets/images/autonoma-logo.png';
+import autonovaLogo from 'assets/images/autonova-logo.png';
 import Swal from 'sweetalert2';
 
 // Project imports
@@ -246,7 +246,7 @@ const GoodsReceiptEntry = () => {
             render: (row) => {
                 return (
                     <Box display="flex" alignItems="center" gap={1.5}>
-                        <Avatar variant="rounded" src={autonomaLogo} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' } }} />
+                        <Avatar variant="rounded" src={autonovaLogo} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' } }} />
                         <Box flex={1}>
                             <Typography variant="body2" fontWeight={700} color="text.primary">
                                 {row.itemName || row.itemCode || 'Unknown Item'}

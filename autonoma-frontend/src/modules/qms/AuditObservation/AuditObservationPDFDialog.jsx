@@ -251,7 +251,7 @@ export default function AuditObservationPDFDialog({ open, onClose, row, company:
   };
 
   // Dynamic Company Details
-  const companyName = company?.companyName || company?.name || company?.profileName || 'NUTECH WIND PARTS PVT. LTD';
+  const companyName = company?.companyName || company?.name || company?.profileName || 'AUTONOVA';
   const address1 = company?.address || company?.address1 || '2/555A, Babu Jagajeevanram Street';
   const address2 = company?.address2 || '';
   const city = company?.city || 'Gerugambakkam, Chennai';
@@ -261,7 +261,7 @@ export default function AuditObservationPDFDialog({ open, onClose, row, company:
   const phone = company?.phone || company?.mobileNo || company?.phoneNo || company?.contactNo || '91-9840168832, 91-9600949305';
   const gstin = company?.gstin || company?.gstNo || company?.gstNumber || '33AABCN4970C1ZS';
   const email = company?.email || company?.emailId || 'sukierp@sukisoft.com';
-  const website = company?.website || company?.webSite || 'https://www.nutechwindparts.com/';
+  const website = company?.website || company?.webSite || 'https://www.autonova.com/';
 
   let logoSrc = null;
   if (company?.logoUrl) {
@@ -917,7 +917,7 @@ export default function AuditObservationPDFDialog({ open, onClose, row, company:
                 borderTop: '1px solid #e2e8f0'
               }}
             >
-              <span>Autonoma BOS(S) - Quality Management System (QMS Audit Observation)</span>
+              <span>Autonova BOS(S) - Quality Management System (QMS Audit Observation)</span>
               <span>Confidential - For Internal QMS Audit Reference Only</span>
               <span>Doc: {activeData?.observationNo || 'QMS-OBR'}</span>
             </Box>

@@ -6,13 +6,13 @@ import { IconX, IconCalendarEvent } from '@tabler/icons-react';
 import { BOSDataTable, BOSTextField, BOSAutocomplete, errorStyle } from 'ui-component/bos';
 import { useMasterDataStore } from 'store/useMasterDataStore';
 import { API_BASE } from 'utils/api-constants';
-import autonomaLogo from 'assets/images/autonoma-logo.png';
+import autonovaLogo from 'assets/images/autonova-logo.png';
 import { getCompanyImageUrl } from 'utils/upload-helper';
 
-const getDisplayImage = (url, companyLogo, autonomaLogo) => {
+const getDisplayImage = (url, companyLogo, autonovaLogo) => {
     if (url) return url.startsWith('http') ? url : `${API_BASE}/files${url}`;
     if (companyLogo) return companyLogo;
-    return autonomaLogo;
+    return autonovaLogo;
 };
 
 export default function POItemGrid({ formData, setFormData, isReadOnly, errors }) {
@@ -187,7 +187,7 @@ export default function POItemGrid({ formData, setFormData, isReadOnly, errors }
             minWidth: 80,
             align: 'center',
             render: (row) => {
-                let imgSrc = autonomaLogo;
+                let imgSrc = autonovaLogo;
                 if (row.productImage) {
                     imgSrc = row.productImage.startsWith('http') ? row.productImage : `${API_BASE}/files${row.productImage}`;
                 } else if (companyLogo) {
@@ -437,11 +437,11 @@ export default function POItemGrid({ formData, setFormData, isReadOnly, errors }
                                     <TableCell sx={{ p: 1 }}>
                                         <Box display="flex" alignItems="center" gap={1.5}>
                                             <Tooltip
-                                                title={<img src={getDisplayImage(item.imageUrl, companyLogo, autonomaLogo)} alt="Preview" style={{ maxWidth: 200, maxHeight: 200, objectFit: 'contain' }} />}
+                                                title={<img src={getDisplayImage(item.imageUrl, companyLogo, autonovaLogo)} alt="Preview" style={{ maxWidth: 200, maxHeight: 200, objectFit: 'contain' }} />}
                                                 placement="right"
                                                 componentsProps={{ tooltip: { sx: { bgcolor: 'background.paper', boxShadow: theme.shadows[5], p: 1, border: '1px solid', borderColor: 'divider' } } }}
                                             >
-                                                <Avatar variant="rounded" src={getDisplayImage(item.imageUrl, companyLogo, autonomaLogo)} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' }, cursor: 'pointer' }} />
+                                                <Avatar variant="rounded" src={getDisplayImage(item.imageUrl, companyLogo, autonovaLogo)} sx={{ width: 48, height: 48, boxShadow: theme.shadows[1], bgcolor: '#fff', '& img': { objectFit: 'contain' }, cursor: 'pointer' }} />
                                             </Tooltip>
                                             <Box flex={1}>
                                                 {isReadOnly || item.sourceDocumentNo ? (

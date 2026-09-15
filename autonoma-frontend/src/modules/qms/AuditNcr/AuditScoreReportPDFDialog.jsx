@@ -115,7 +115,7 @@ export default function AuditScoreReportPDFDialog({
   if (!open) return null;
 
   // Dynamic Company Details
-  const companyName = company?.companyName || company?.name || company?.profileName || 'NUTECH WIND PARTS PVT. LTD';
+  const companyName = company?.companyName || company?.name || company?.profileName || 'AUTONOVA';
   const address1 = company?.address || company?.address1 || '2/555A, Babu Jagajeevanram Street';
   const address2 = company?.address2 || '';
   const city = company?.city || 'Gerugambakkam, Chennai';
@@ -124,8 +124,8 @@ export default function AuditScoreReportPDFDialog({
   const country = company?.country || 'INDIA';
   const phone = company?.phone || company?.mobileNo || company?.phoneNo || '91-9840168832';
   const gstin = company?.gstin || company?.gstNo || company?.gstNumber || '33AABCN4970C1ZS';
-  const email = company?.email || company?.emailId || 'info@nutechwindparts.com';
-  const website = company?.website || company?.webSite || 'www.nutechwindparts.com';
+  const email = company?.email || company?.emailId || 'info@autonova.com';
+  const website = company?.website || company?.webSite || 'www.autonova.com';
 
   let logoSrc = null;
   if (company?.logoUrl) {

@@ -1200,7 +1200,7 @@ export default function EnquiryForm() {
   const handleOpenEmailDialog = () => {
     setEmailFormData({
       to: formData.email || '',
-      cc: 'sales@nutechwindparts.com',
+      cc: '',
       subject: `RFQ Enquiry Notification: ${formData.enquiryNo || 'Draft'}`,
       body: `Dear Customer,\n\nWe have received your enquiry regarding: ${formData.subject}.\n\nThanks & Regards,\nSales Team`
     });

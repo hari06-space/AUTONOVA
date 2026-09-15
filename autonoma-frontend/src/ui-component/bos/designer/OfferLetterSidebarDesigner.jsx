@@ -1,6 +1,6 @@
 /**
- * Organization: Nutech
- * Owner: Logaraj S
+ * Organization: AUTONOVA
+ * Owner: hari06-space
  * Created At: 2026-08-30
  * Updated By: Logaraj S
  * Updated At: 2026-09-01
@@ -249,7 +249,7 @@ export default function OfferLetterSidebarDesigner({
     const designation = getDisplayString(formData.designation) || 'Production Engineer';
     const department = getDisplayString(formData.department) || 'Production';
     const reportingManager = getDisplayString(formData.reportingManager) || 'Rajesh Kumar (Plant Head)';
-    const location = getDisplayString(formData.workLocation) || 'NUTECH WIND - Unit 1';
+    const location = getDisplayString(formData.workLocation) || 'Unit 1';
     const employmentType = getDisplayString(formData.employmentType) || 'Permanent';
     const grade = getDisplayString(formData.grade) || 'E1';
 
@@ -299,12 +299,12 @@ export default function OfferLetterSidebarDesigner({
       'salary.grossSalary': `₹${grossSalary.toLocaleString('en-IN')}`,
       'salary.deductions': `₹${deductions.toLocaleString('en-IN')}`,
 
-      'company.name': compInfo.companyName || 'NUTECH WIND PARTS PRIVATE LIMITED',
+      'company.name': compInfo.companyName || 'AUTONOVA',
       'company.address': compInfo.companyAddress || 'Hosur, Tamil Nadu',
       'company.gstin': compInfo.companyGstin || '33AABCN1234F1Z5',
       'company.phone': compInfo.companyPhone || '+91 4344 278900',
-      'company.email': compInfo.companyEmail || 'hr@nutechwind.com',
-      'company.logo': compInfo.companyLogo || '/logo1.jpeg',
+      'company.email': compInfo.companyEmail || 'hr@autonova.com',
+      'company.logo': compInfo.companyLogo || '/logo.png',
       'company.hrName': compInfo.hrName || 'Hari Chakkaravarthy',
       'company.hrDesignation': compInfo.hrDesignation || 'Head - HR'
     };

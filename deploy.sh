@@ -55,7 +55,7 @@ cd ..
 
 # Compress backend JAR to speed up transfer
 echo "📦 Compressing backend JAR to .tar.gz format..."
-tar -czf autonoma-backend/target/erp-backend.tar.gz -C autonoma-backend/target Autonoma.jar
+tar -czf autonoma-backend/target/erp-backend.tar.gz -C autonoma-backend/target Autonova.jar
 
 # 4. Upload backend package
 echo "📤 Uploading compressed backend package to EC2..."
@@ -113,7 +113,7 @@ ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=15 -o ServerAliveCountMax
     
     echo "⚙️ Extracting new backend JAR version..."
     tar -xzf /home/ubuntu/autonoma-backend-new.tar.gz -C /home/ubuntu/
-    mv /home/ubuntu/Autonoma.jar /home/ubuntu/autonoma-backend.jar
+    mv /home/ubuntu/Autonova.jar /home/ubuntu/autonoma-backend.jar
     rm -f /home/ubuntu/autonoma-backend-new.tar.gz
     
     echo "Starting new backend instance with RDS datasource overrides..."

@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Updated By: Nutech
+// Organization: AUTONOVA
+// Updated By: hari06-space
 // Updated At: 2026-09-04
 // Description: Ultra-premium Audio Studio with quick sound presets, grouped categories, and interactive tone preview.
 

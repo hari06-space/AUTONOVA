@@ -12,15 +12,15 @@ set "FRONTEND_DIST=%FRONTEND_DIR%\dist"
 set "BACKEND_TARGET=%BACKEND_DIR%\target"
 
 echo ========================================================
-echo   Autonoma Build System - Frontend + Backend Build
+echo   Autonova Build System - Frontend + Backend Build
 echo ========================================================
 echo.
 
-REM Command argument check (e.g., Autonoma Build)
+REM Command argument check (e.g., Autonova Build)
 if not "%~1"=="" (
     if /i not "%~1"=="build" (
         echo [ERROR] Unknown command argument: %~1
-        echo Usage: Autonoma Build
+        echo Usage: Autonova Build
         exit /b 1
     )
 )
@@ -123,7 +123,7 @@ if %ERRORLEVEL% neq 0 (
 
 echo.
 echo ========================================================
-echo [SUCCESS] Autonoma Complete Build Successful!
-echo Final JAR output: %BACKEND_DIR%\target\Autonoma.jar
+echo [SUCCESS] Autonova Complete Build Successful!
+echo Final JAR output: %BACKEND_DIR%\target\Autonova.jar
 echo ========================================================
 exit /b 0

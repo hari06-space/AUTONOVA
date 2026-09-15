@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Updated By: Nutech
+// Organization: AUTONOVA
+// Updated By: hari06-space
 // Updated At: 2026-09-04
 // Description: Premium redesign — Font size slider with live text size preview.
 

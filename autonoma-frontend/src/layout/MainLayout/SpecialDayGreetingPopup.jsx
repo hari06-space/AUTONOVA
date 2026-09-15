@@ -386,7 +386,7 @@ export default function SpecialDayGreetingPopup() {
 
   const isAnniversary = popupType === 'ANNIVERSARY';
   const isWorkAnniversary = popupType === 'WORK_ANNIVERSARY';
-  const currentCompany = user?.companyName || sessionStorage.getItem('companyName') || 'Autonoma';
+  const currentCompany = user?.companyName || sessionStorage.getItem('companyName') || 'Autonova';
 
   // Theme Config
   let dialogBorderColor = '';

@@ -172,7 +172,7 @@ export default function AuditVsActualPDFDialog({
 
   if (!open) return null;
 
-  const companyName = company?.companyName || company?.name || 'NUTECH WIND PARTS PVT. LTD';
+  const companyName = company?.companyName || company?.name || 'AUTONOVA';
   const address1    = company?.address || company?.address1 || '2/555A, Babu Jagajeevanram Street';
   const city        = company?.city || 'Gerugambakkam, Chennai';
   const pincode     = company?.pincode || '600122';

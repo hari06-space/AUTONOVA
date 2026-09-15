@@ -287,13 +287,13 @@ const SendRfqDialog = ({
                             const comp = data[0];
                             const mail = comp.smtpUsername || comp.emailId || '';
                             if (mail) setFromEmail(mail);
-                            else setFromEmail('noreply@autonoma.com');
+                            else setFromEmail('noreply@autonova.com');
                         } else {
-                            setFromEmail('noreply@autonoma.com');
+                            setFromEmail('noreply@autonova.com');
                         }
                     })
                     .catch(() => {
-                        setFromEmail('noreply@autonoma.com');
+                        setFromEmail('noreply@autonova.com');
                     });
             }
             setSubject(initialSubject || `RFQ Request - ${rfqNo || ''}`);

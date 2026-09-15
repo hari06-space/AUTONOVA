@@ -419,7 +419,7 @@ const OmVisitorGateEntry = Loadable(lazy(() => import('modules/order/VisitorGate
 // epm routing
 const EpmDashboard = Loadable(lazy(() => import('modules/epm/dashboard')));
 
-// ── Autonoma AI ──────────────────────────────────────────────────
+// ── Autonova AI ──────────────────────────────────────────────────
 
 // ==============================|| MAIN ROUTING ||============================== //
 

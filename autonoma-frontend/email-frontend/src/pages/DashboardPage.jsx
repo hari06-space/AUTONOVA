@@ -75,7 +75,7 @@ export default function DashboardPage() {
       <Box sx={{ flexShrink: 0, mb: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <Box>
           <Typography variant="h4" sx={{ fontWeight: 800, color: '#fff', mb: 0.5 }}>Process Progress Visuals</Typography>
-          <Typography variant="body2" color="text.secondary">Real-time analytics and performance surveys of Nutech Email processing</Typography>
+          <Typography variant="body2" color="text.secondary">Real-time analytics and performance surveys of AUTONOVA Email processing</Typography>
         </Box>
         <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
           <Button 

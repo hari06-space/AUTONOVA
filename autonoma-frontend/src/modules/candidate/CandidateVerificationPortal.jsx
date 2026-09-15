@@ -89,14 +89,14 @@ const CandidateVerificationPortal = () => {
       const cached = localStorage.getItem('candidate_company_branding');
       if (cached) return JSON.parse(cached);
     } catch (e) {}
-    return { logoUrl: null, companyName: 'Autonoma ERP' };
+    return { logoUrl: null, companyName: 'Autonova ERP' };
   });
 
   useEffect(() => {
     axios.get('/api/hra/applicants/portal/branding')
       .then(res => {
         if (res.data) {
-          const cName = res.data.companyName || 'Autonoma ERP';
+          const cName = res.data.companyName || 'Autonova ERP';
           const logoFileName = res.data.logoFileName;
           const lUrl = logoFileName ? getCompanyImageUrl(logoFileName) : null;
           const brandingData = { companyName: cName, logoUrl: lUrl };
@@ -427,7 +427,7 @@ const CandidateVerificationPortal = () => {
                   {error}
                 </Alert>
                 <Typography variant="body2" sx={{ color: textMutedColor }}>
-                  Please contact the Autonoma HR team to request a new verification link.
+                  Please contact the Autonova HR team to request a new verification link.
                 </Typography>
               </CardContent>
             </Card>

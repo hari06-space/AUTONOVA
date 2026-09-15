@@ -576,7 +576,7 @@ export default function SupplierQualityCostSection({ data = {}, productId, divis
             <Grid item xs={12} md={6}>
               <Alert severity="info" sx={{ mb: 2, borderRadius: '8px' }}>
                 <AlertTitle sx={{ fontWeight: 800 }}>Active In-Transit Shipments</AlertTitle>
-                600 NOS dispatched from Nutech Aura Polymers. Expected delivery within 48 hours.
+                600 NOS dispatched from Aura Polymers. Expected delivery within 48 hours.
               </Alert>
             </Grid>
           </Grid>
@@ -613,7 +613,7 @@ export default function SupplierQualityCostSection({ data = {}, productId, divis
                 </TableHead>
                 <TableBody>
                   {(supplierIntelligence.suppliers || [
-                    { supplierName: 'INAPL | NUTECH AURA POLYMERS', lastPrice: 1210, leadTimeDays: 15, qualityScore: 99.2 },
+                    { supplierName: 'INAPL | AURA POLYMERS', lastPrice: 1210, leadTimeDays: 15, qualityScore: 99.2 },
                     { supplierName: 'Shiva Precision Pvt Ltd', lastPrice: 1245, leadTimeDays: 18, qualityScore: 98.5 }
                   ]).map((s, idx) => (
                     <TableRow key={idx}>

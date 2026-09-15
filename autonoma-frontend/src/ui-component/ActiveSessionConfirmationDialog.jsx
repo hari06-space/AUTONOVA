@@ -36,8 +36,8 @@ import {
 } from '@tabler/icons-react';
 
 /**
- * Organization: Nutech
- * Owner: Nutech
+ * Organization: AUTONOVA
+ * Owner: hari06-space
  * Created At: 2026-09-03
  * Description: High-energy, colorful, animated confirmation dialog for Single Active Session takeover displaying full network IP, MAC ID, and account credentials.
  */

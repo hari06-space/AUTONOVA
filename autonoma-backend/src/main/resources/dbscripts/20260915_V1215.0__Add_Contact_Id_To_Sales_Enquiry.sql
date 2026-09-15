@@ -1,0 +1,12 @@
+-- Organization: Autonova
+-- Owner: hari06-space
+-- Created At: 2026-09-15
+-- Description: Add CONTACT_ID column to SALES_ENQUIRY_HEADER to align with SmEnquiry entity
+
+IF NOT EXISTS (
+    SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS 
+    WHERE TABLE_NAME = 'SALES_ENQUIRY_HEADER' AND COLUMN_NAME = 'CONTACT_ID'
+)
+BEGIN
+    ALTER TABLE SALES_ENQUIRY_HEADER ADD CONTACT_ID BIGINT;
+END;

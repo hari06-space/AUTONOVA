@@ -632,16 +632,16 @@ public class UserSessionService {
             String insertSql = "INSERT INTO AD_USER_SESSION_AUDIT (USER_ID, SESSION_ID, DEVICE_ID, DEVICE_NAME, IP_ADDRESS, USER_AGENT, LOGIN_TIME, LAST_ACTIVITY, SESSION_STATUS, CREATED_BY, CREATED_DATE) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement ps = conn.prepareStatement(insertSql)) {
-                ps.setString(1, userId);
-                ps.setString(2, sessionId);
-                ps.setString(3, deviceId);
-                ps.setString(4, deviceName);
-                ps.setString(5, ipAddress);
-                ps.setString(6, userAgent != null && userAgent.length() > 500 ? userAgent.substring(0, 500) : userAgent);
+                ps.setString(1, userId != null && userId.length() > 50 ? userId.substring(0, 50) : userId);
+                ps.setString(2, sessionId != null && sessionId.length() > 100 ? sessionId.substring(0, 100) : sessionId);
+                ps.setString(3, deviceId != null && deviceId.length() > 100 ? deviceId.substring(0, 100) : deviceId);
+                ps.setString(4, deviceName != null && deviceName.length() > 500 ? deviceName.substring(0, 500) : deviceName);
+                ps.setString(5, ipAddress != null && ipAddress.length() > 500 ? ipAddress.substring(0, 500) : ipAddress);
+                ps.setString(6, userAgent != null && userAgent.length() > 1000 ? userAgent.substring(0, 1000) : userAgent);
                 ps.setTimestamp(7, new java.sql.Timestamp(loginTime.getTime()));
                 ps.setTimestamp(8, new java.sql.Timestamp(lastActivity.getTime()));
                 ps.setString(9, status);
-                ps.setString(10, userId);
+                ps.setString(10, userId != null && userId.length() > 50 ? userId.substring(0, 50) : userId);
                 ps.setTimestamp(11, new java.sql.Timestamp(loginTime.getTime()));
                 ps.executeUpdate();
             }

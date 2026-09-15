@@ -11,13 +11,13 @@ $FrontendDistDir = Join-Path $FrontendDir "dist"
 $BackendTargetDir = Join-Path $BackendDir "target"
 
 Write-Host "========================================================" -ForegroundColor Cyan
-Write-Host "  Autonoma Build System - Frontend + Backend Build" -ForegroundColor Cyan
+Write-Host "  Autonova Build System - Frontend + Backend Build" -ForegroundColor Cyan
 Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host ""
 
 if ($Command -and $Command -ine "build") {
     Write-Host "[ERROR] Unknown command argument: $Command" -ForegroundColor Red
-    Write-Host "Usage: Autonoma Build" -ForegroundColor Yellow
+    Write-Host "Usage: Autonova Build" -ForegroundColor Yellow
     exit 1
 }
 
@@ -78,7 +78,7 @@ Set-Location $BackendDir
 # Safely stop any running Java processes holding locks on target directory / error.log
 try {
     Get-Process -Name "javaw", "java" -ErrorAction SilentlyContinue | Where-Object {
-        $_.Path -like "*jdk*" -or $_.CommandLine -like "*autonoma*" -or $_.CommandLine -like "*Autonoma.jar*"
+        $_.Path -like "*jdk*" -or $_.CommandLine -like "*autonoma*" -or $_.CommandLine -like "*Autonova.jar*"
     } | Stop-Process -Force -ErrorAction SilentlyContinue
     Start-Sleep -Milliseconds 500
 } catch {}
@@ -109,8 +109,8 @@ try {
 
 Write-Host ""
 Write-Host "========================================================" -ForegroundColor Green
-Write-Host "[SUCCESS] Autonoma Complete Build Successful!" -ForegroundColor Green
-Write-Host "Final JAR output: $BackendDir\target\Autonoma.jar" -ForegroundColor Green
+Write-Host "[SUCCESS] Autonova Complete Build Successful!" -ForegroundColor Green
+Write-Host "Final JAR output: $BackendDir\target\Autonova.jar" -ForegroundColor Green
 Write-Host "========================================================" -ForegroundColor Green
 Set-Location $RootDir
 exit 0

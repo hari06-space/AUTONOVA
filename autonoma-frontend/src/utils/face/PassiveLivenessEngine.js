@@ -1,9 +1,9 @@
 /**
  * PassiveLivenessEngine.js
  *
- * Organization: Nutech
- * Owner: Nutech
- * Updated By: Nutech
+ * Organization: AUTONOVA
+ * Owner: hari06-space
+ * Updated By: hari06-space
  * Updated At: 2026-08-29
  * Description: Passive liveness detection for enterprise face authentication.
  *

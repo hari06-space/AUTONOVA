@@ -8,8 +8,8 @@ import Stack from '@mui/material/Stack';
 export default function AuthFooter() {
   return (
     <Stack direction="row" sx={{ justifyContent: 'center' }}>
-      <Typography variant="subtitle2" component={Link} href="https://autonomasys.com" target="_blank" underline="hover">
-        autonomasys.com © 2026
+      <Typography variant="subtitle2" component={Link} href="https://autonovasys.com" target="_blank" underline="hover">
+        autonovasys.com © 2026
       </Typography>
     </Stack>
   );

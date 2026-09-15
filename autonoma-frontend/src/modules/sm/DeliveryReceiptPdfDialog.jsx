@@ -117,7 +117,7 @@ export default function DeliveryReceiptPdfDialog({ open, onClose, receipt }) {
               <tr>
                 <td style={{ width: '60%', verticalAlign: 'top' }}>
                   <Typography variant="h3" sx={{ fontWeight: 800, color: '#0f172a' }}>
-                    NUTECH WIND PARTS PVT LTD
+                    AUTONOVA
                   </Typography>
                   <Typography variant="caption" sx={{ color: '#475569', display: 'block', mt: 0.5 }}>
                     Plot No. 12, Industrial Estate, Guindy, Chennai - 600032, Tamil Nadu, India
@@ -279,7 +279,7 @@ export default function DeliveryReceiptPdfDialog({ open, onClose, receipt }) {
               <Typography variant="caption" sx={{ fontWeight: 700, color: '#334155' }}>Receiver&apos;s Signature & Seal</Typography>
             </Box>
             <Box sx={{ textAlign: 'center', width: 220, borderTop: '1px dashed #94a3b8', pt: 1 }}>
-              <Typography variant="caption" sx={{ fontWeight: 700, color: '#334155' }}>For NUTECH WIND PARTS PVT LTD</Typography>
+              <Typography variant="caption" sx={{ fontWeight: 700, color: '#334155' }}>For AUTONOVA</Typography>
               <Typography variant="caption" sx={{ display: 'block', color: '#64748b', fontSize: '10px' }}>Authorized Signatory</Typography>
             </Box>
           </Box>

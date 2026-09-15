@@ -27,8 +27,7 @@ export default function MainLayout() {
     <div className="app-layout">
       <aside className="sidebar">
         <div className="sidebar__logo">
-          <div className="sidebar__logo-icon">N</div>
-          <span className="sidebar__logo-text">Nutech Mail</span>
+          <span className="sidebar__logo-text">AUTONOVA Mail</span>
         </div>
 
         <nav className="sidebar__nav">

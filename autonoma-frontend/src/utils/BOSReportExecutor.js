@@ -1,5 +1,5 @@
 /**
- * Organization: Nutech
+ * Organization: AUTONOVA
  * Owner: Aksar-S
  * Description: Universal Runtime Report Executor & Dynamic Data Interpolator.
  * Renders designed templates with live ERP page data into high-fidelity PDF documents.
@@ -13,7 +13,7 @@ const saveAs = typeof fileSaverPkg === 'function' ? fileSaverPkg : (fileSaverPkg
 
 /**
  * Safely resolves a nested dot-notation property path from a data object
- * Example: resolvePath({ company: { name: 'Nutech' } }, 'company.name') => 'Nutech'
+ * Example: resolvePath({ company: { name: 'AUTONOVA' } }, 'company.name') => 'AUTONOVA'
  */
 export const resolvePath = (obj, path, fallback = '') => {
   if (!obj || !path) return fallback;
@@ -73,7 +73,7 @@ export const interpolatePlaceholders = (text, dataContext = {}) => {
  */
 const generateQrDataUrl = async (text) => {
   try {
-    const encoded = encodeURIComponent(text || 'https://autonoma.erp');
+    const encoded = encodeURIComponent(text || 'https://autonova.erp');
     return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encoded}`;
   } catch (err) {
     console.warn('[BOSReportExecutor] QR code generation failed:', err);
@@ -154,7 +154,7 @@ export const renderReportToPdfBlob = async (template, dataContext = {}, options 
       pdf.setLineWidth(0.3);
       pdf.roundedRect(x, y, width, height, 2, 2, 'FD');
     } else if (el.type === 'qrcode') {
-      const qrVal = interpolatePlaceholders(el.content || 'https://autonoma.erp', dataContext);
+      const qrVal = interpolatePlaceholders(el.content || 'https://autonova.erp', dataContext);
       const qrDataUrl = await generateQrDataUrl(qrVal);
       if (qrDataUrl) {
         const qrSize = Math.min(width, height, 35);

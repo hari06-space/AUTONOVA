@@ -738,7 +738,7 @@ export default function ChatMainPage() {
               </Avatar>
 
               <Typography variant="h2" sx={{ fontWeight: 700, color: theme.palette.text.primary, mb: 1 }}>
-                Autonoma Connect
+                Autonova Connect
               </Typography>
 
               <Typography variant="body1" sx={{ color: theme.palette.text.secondary, maxWidth: 460, lineHeight: 1.6 }}>

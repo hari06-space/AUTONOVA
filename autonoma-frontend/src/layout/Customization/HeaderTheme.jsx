@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Owner: Nutech
+// Organization: AUTONOVA
+// Owner: hari06-space
 // Created At: 2026-09-04
 // Description: Ultra-luxury Header / Top Bar Theme selector with realistic miniature topbar previews,
 //              interactive category filter chips, and instant live theme switching.

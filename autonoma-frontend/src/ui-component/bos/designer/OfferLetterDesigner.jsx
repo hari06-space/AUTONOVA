@@ -296,7 +296,7 @@ export default function OfferLetterDesigner({
       return initialSections;
     }
     try {
-      const cached = localStorage.getItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE');
+      const cached = localStorage.getItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE');
       if (cached) {
         const parsed = JSON.parse(cached);
         if (parsed.sections && Array.isArray(parsed.sections) && parsed.sections.length > 0) {
@@ -1069,7 +1069,7 @@ export default function OfferLetterDesigner({
                 if (parsed.templateName) setTemplateName(parsed.templateName);
                 if (parsed.templateCode) setTemplateCode(parsed.templateCode);
                 try {
-                  localStorage.setItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE', JSON.stringify({
+                  localStorage.setItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE', JSON.stringify({
                     templateName: parsed.templateName || 'Standard Executive Offer Letter',
                     templateCode: parsed.templateCode || 'DEFAULT_OFFER_TEMPLATE',
                     sections: finalSections,
@@ -1086,7 +1086,7 @@ export default function OfferLetterDesigner({
       }
       // Check local cache if server returned no records
       try {
-        const cached = localStorage.getItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE');
+        const cached = localStorage.getItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE');
         if (cached) {
           const parsed = JSON.parse(cached);
           if (parsed.sections && Array.isArray(parsed.sections) && parsed.sections.length > 0) {
@@ -1103,7 +1103,7 @@ export default function OfferLetterDesigner({
     } catch (err) {
       console.warn('No custom template loaded from server; using local/default template.', err);
       try {
-        const cached = localStorage.getItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE');
+        const cached = localStorage.getItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE');
         if (cached) {
           const parsed = JSON.parse(cached);
           if (parsed.sections && Array.isArray(parsed.sections) && parsed.sections.length > 0) {
@@ -1408,7 +1408,7 @@ export default function OfferLetterDesigner({
     setZoomLevel(100);
     setConfirmResetOpen(false);
     try {
-      localStorage.removeItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE');
+      localStorage.removeItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE');
     } catch (e) {}
     // Re-fetch default salutation from ATS if possible
     fetchAtsOfferContent();
@@ -1631,7 +1631,7 @@ export default function OfferLetterDesigner({
         setTemplateRecordId(res.data.id);
       }
       try {
-        localStorage.setItem('AUTONOMA_OFFER_LETTER_TEMPLATE_CACHE', JSON.stringify({
+        localStorage.setItem('AUTONOVA_OFFER_LETTER_TEMPLATE_CACHE', JSON.stringify({
           templateName,
           templateCode,
           sections,
@@ -3607,7 +3607,7 @@ export default function OfferLetterDesigner({
                                     </Box>
                                     <Box sx={{ display: 'flex', fontSize: '0.75rem' }}>
                                       <Typography variant="caption" sx={{ width: '85px', fontWeight: 600, color: 'text.secondary' }}>Company</Typography>
-                                      <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 600 }}>: {liveDataMap['{{companyName}}'] || 'AUTONOMA'}</Typography>
+                                      <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 600 }}>: {liveDataMap['{{companyName}}'] || 'AUTONOVA'}</Typography>
                                     </Box>
                                   </Stack>
                                 </Paper>

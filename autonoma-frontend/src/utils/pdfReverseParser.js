@@ -1,5 +1,5 @@
 /**
- * Organization: Nutech
+ * Organization: AUTONOVA
  * Owner: Aksar-S
  * Description: Smart PDF Reverse Parser & Geometry Extractor.
  * Parses uploaded PDF documents in the browser, extracts text items, coordinates, font metrics,

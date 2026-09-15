@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Updated By: Nutech
+// Organization: AUTONOVA
+// Updated By: hari06-space
 // Updated At: 2026-09-04
 // Description: Ultra-premium Menu Card Style selector with sleek visual icon cards.
 

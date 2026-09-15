@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { FILTER_TYPES, COMMON_FILTER_IDS } from 'utils/constants';
 
 /**
- * Organization: Nutech
+ * Organization: AUTONOVA
  * Owner: Logaraj S
  * Updated By: Logaraj S
  * Updated At: 2026-09-01
@@ -683,7 +683,7 @@ export const filterRows = (rows, searchQuery, globalFilters, columns, resolveNes
 };
 
 /**
- * Universal export value resolver for Autonoma ERP.
+ * Universal export value resolver for Autonova ERP.
  * Converts primitives, Dates, React elements, arrays, and standard domain objects
  * into human-readable export strings.
  *

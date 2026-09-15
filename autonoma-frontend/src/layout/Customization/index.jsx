@@ -1,5 +1,5 @@
-// Organization: Nutech
-// Updated By: Nutech
+// Organization: AUTONOVA
+// Updated By: hari06-space
 // Updated At: 2026-09-04
 // Description: Executive Theme Studio Drawer — clean minimalist header, iOS-style segmented pill tabs, and cohesive aesthetic.
 

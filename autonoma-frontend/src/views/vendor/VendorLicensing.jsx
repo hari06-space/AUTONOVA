@@ -299,7 +299,7 @@ export default function VendorLicensing() {
     <Box sx={{ p: 0, display: 'flex', flexDirection: 'column', height: 'calc(100vh - 145px)' }}>
       <BOSPageHeader
         title="Offline License Management"
-        subtitle="Issue, cryptographically sign, and encrypt license packages for active Autonoma ERP clients."
+        subtitle="Issue, cryptographically sign, and encrypt license packages for active Autonova ERP clients."
         actions={
           <Button
             variant="outlined"

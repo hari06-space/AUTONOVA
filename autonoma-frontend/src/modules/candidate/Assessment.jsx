@@ -389,7 +389,7 @@ export default function CandidateAssessment() {
     axios.get('/api/hra/applicants/portal/branding')
       .then(res => {
         if (res.data) {
-          const cName = res.data.companyName || 'Autonoma ERP Corp';
+          const cName = res.data.companyName || 'Autonova ERP Corp';
           const logoFileName = res.data.logoFileName;
           const lUrl = logoFileName ? getCompanyImageUrl(logoFileName) : null;
           const brandingData = { companyName: cName, logoUrl: lUrl };
@@ -458,7 +458,7 @@ export default function CandidateAssessment() {
           localStorage.setItem(`candidate_details_${stableToken}`, JSON.stringify(response.data.applicant));
           setRejectedDocuments(response.data.rejectedDocuments || []);
           
-          const cName = response.data.companyName || 'Autonoma ERP Corp';
+          const cName = response.data.companyName || 'Autonova ERP Corp';
           const logoFileName = response.data.logoFileName;
           const lUrl = logoFileName ? getCompanyImageUrl(logoFileName) : null;
           const brandingData = { companyName: cName, logoUrl: lUrl };

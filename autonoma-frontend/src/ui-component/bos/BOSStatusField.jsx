@@ -5,7 +5,7 @@ import BOSToggleSwitch from './BOSToggleSwitch';
 
 /**
  * BOSStatusField Component
- * Enforces standardized status behavior across all Autonoma ERP modules:
+ * Enforces standardized status behavior across all Autonova ERP modules:
  * - Falls back to a dropdown select if custom children are provided.
  * - Otherwise, replaces the dropdown with a standardized toggle button (switch control),
  *   consistent with the EB_SLAB page.

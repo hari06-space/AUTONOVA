@@ -8,7 +8,7 @@ import { BOSDataTable, BOSTableToolbar } from 'ui-component/bos';
 import usePagePermissions, { PAGE_CODES } from 'hooks/usePagePermissions';
 import { setFilterConfig } from 'store/slices/search';
 import { API_BASE } from 'utils/api-constants';
-import autonomaLogo from 'assets/images/autonoma-logo.png';
+import autonovaLogo from 'assets/images/autonova-logo.png';
 
 export default function CurrentStockReport() {
   const theme = useTheme();
@@ -108,7 +108,7 @@ export default function CurrentStockReport() {
         bold: true,
         frozen: true,
         render: (row) => {
-          let imgSrc = autonomaLogo;
+          let imgSrc = autonovaLogo;
           if (row.productImage) {
             imgSrc = row.productImage.startsWith('http') ? row.productImage : `${API_BASE}/files${row.productImage}`;
           }

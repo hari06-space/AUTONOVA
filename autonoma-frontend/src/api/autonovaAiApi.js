@@ -9,7 +9,7 @@ const api = axiosServices;
 // ─────────────────────────────────────────────────────────────────
 
 /**
- * Send a message to Autonoma AI.
+ * Send a message to Autonova AI.
  * @param {string} question
  * @param {string|null} sessionId
  */

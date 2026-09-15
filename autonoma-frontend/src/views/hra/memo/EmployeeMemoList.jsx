@@ -114,12 +114,12 @@ const PdfMemoTemplate = ({ memo, companyProfile, companyLogoUrl, companyLocation
   const locationStr = companyLocation || memo.location || memo.employee?.workLocation || memo.employee?.location || '-';
 
   // Company Profile Details (Rule #33)
-  const compName = companyProfile?.companyName || localStorage.getItem('companyName') || 'NUTECH AUTONOMA';
+  const compName = companyProfile?.companyName || localStorage.getItem('companyName') || 'AUTONOVA';
   const compAddress = [companyProfile?.address, companyProfile?.city, companyProfile?.state, companyProfile?.pincode].filter(Boolean).join(', ') || locationStr || 'Chennai, Tamil Nadu';
   const compGstin = companyProfile?.gstIn || companyProfile?.gstin || '-';
   const compMob = companyProfile?.mobileNo || companyProfile?.phoneNo || companyProfile?.supportPhone || '-';
   const compEmail = companyProfile?.emailId || companyProfile?.supportEmail || '-';
-  const compWeb = companyProfile?.website || 'www.nutechautonoma.com';
+  const compWeb = companyProfile?.website || 'www.autonova.com';
 
   return (
     <Box
@@ -371,7 +371,7 @@ const PdfMemoTemplate = ({ memo, companyProfile, companyLogoUrl, companyLocation
 
       {/* Bottom Bar */}
       <Typography variant="caption" sx={{ textAlign: 'center', borderTop: '2px solid #0f172a', pt: 0.8, fontSize: '0.65rem', fontWeight: 800, color: '#0f172a', display: 'block', letterSpacing: 0.5, position: 'relative', zIndex: 2 }}>
-        Nutech Autonoma &nbsp;|&nbsp; www.nutechautonoma.com
+        Autonova &nbsp;|&nbsp; www.autonova.com
       </Typography>
     </Box>
   );
@@ -804,12 +804,12 @@ const EmployeeMemoList = () => {
     const locationStr = companyLocation || memo.location || memo.employee?.workLocation || '-';
 
     // Company Profile Details (Rule #33)
-    const compName = companyProfile?.companyName || localStorage.getItem('companyName') || 'NUTECH AUTONOMA';
+    const compName = companyProfile?.companyName || localStorage.getItem('companyName') || 'AUTONOVA';
     const compAddress = [companyProfile?.address, companyProfile?.city, companyProfile?.state, companyProfile?.pincode].filter(Boolean).join(', ') || locationStr || 'Chennai, Tamil Nadu';
     const compGstin = companyProfile?.gstIn || companyProfile?.gstin || '-';
     const compMob = companyProfile?.mobileNo || companyProfile?.phoneNo || companyProfile?.supportPhone || '-';
     const compEmail = companyProfile?.emailId || companyProfile?.supportEmail || '-';
-    const compWeb = companyProfile?.website || 'www.nutechautonoma.com';
+    const compWeb = companyProfile?.website || 'www.autonova.com';
 
     let elementToRender = document.getElementById('printable-memo-pdf-document');
     let containerCreated = false;
@@ -989,7 +989,7 @@ const EmployeeMemoList = () => {
 
           <!-- Bottom bar -->
           <div style="text-align: center; border-top: 2px solid #0f172a; padding-top: 6px; font-size: 10px; font-weight: 800; color: #0f172a;">
-            Nutech Autonoma &nbsp;|&nbsp; www.nutechautonoma.com
+            Autonova &nbsp;|&nbsp; www.autonova.com
           </div>
         </div>
       `;
@@ -1589,7 +1589,7 @@ const EmployeeMemoList = () => {
                     From Email
                   </Typography>
                   <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                    {previewMemo.fromEmail || 'hr@nutechwindparts.com'}
+                    {previewMemo.fromEmail || 'hr@autonova.com'}
                   </Typography>
                 </Box>
                 <Box>

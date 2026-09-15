@@ -17,7 +17,6 @@ import useAuth from 'hooks/useAuth';
 
 // assets
 import bgImage from 'assets/images/boss_login_bg.png';
-import companyLogo from 'assets/images/nutech-logo.jpeg';
 
 // tabler icons
 import {
@@ -148,18 +147,7 @@ export default function Login() {
                 <Box sx={{ p: { md: 3, lg: 4 }, position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%' }}>
 
                   {/* Header */}
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    <Box sx={{
-                      bgcolor: 'background.paper',
-                      p: 0.5,
-                      borderRadius: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
-                    }}>
-                      <img src={companyLogo} alt="Company Logo" style={{ height: '40px', width: 'auto', borderRadius: '8px' }} />
-                    </Box>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box>
                       <Typography variant="h1" sx={{ fontSize: { md: '2rem', lg: '2.5rem' }, fontWeight: 900, letterSpacing: '-0.02em', background: 'linear-gradient(90deg, #D4AF37 0%, #FFDF73 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
                         BOS(S)
@@ -222,7 +210,7 @@ export default function Login() {
                     </Box>
 
                     <Typography sx={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.6rem' }}>
-                      © 2026 Autonoma Solutions Pvt. Ltd. All rights reserved.
+                      © 2026 Autonova Solutions Pvt. Ltd. All rights reserved.
                     </Typography>
                   </Box>
                 </Box>
@@ -241,13 +229,7 @@ export default function Login() {
               zIndex: 1,
               justifyContent: 'center'
             }}>
-              {downMD && (
-                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-                  <Box sx={{ bgcolor: 'background.paper', p: 0.5, borderRadius: '8px' }}>
-                    <img src={companyLogo} alt="Company Logo" style={{ height: '36px', width: 'auto', borderRadius: '6px' }} />
-                  </Box>
-                </Box>
-              )}
+
 
               <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: 420 }, mx: 'auto' }}>
                 {!isLoggedIn && <ViewOnlyAlert />}

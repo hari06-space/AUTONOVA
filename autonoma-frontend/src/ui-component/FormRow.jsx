@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Box, Typography } from '@mui/material';
 
 /**
- * Standardized Form Row for Autonoma ERP
+ * Standardized Form Row for Autonova ERP
  * Ensures perfect vertical alignment of input fields across all masters.
  *
  * @param {string} label - The label text

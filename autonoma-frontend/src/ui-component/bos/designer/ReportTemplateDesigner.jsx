@@ -212,7 +212,7 @@ const TOOLBOX_ITEMS = [
   { type: 'dynamic', label: 'Dynamic Field', icon: IconBinary, defaultContent: '{{doc.number}}' },
   { type: 'image', label: 'Image', icon: IconPhoto, defaultContent: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200' },
   { type: 'table', label: 'Data Table', icon: IconTable },
-  { type: 'qrcode', label: 'QR Code', icon: IconQrcode, defaultContent: 'https://autonoma.erp' },
+  { type: 'qrcode', label: 'QR Code', icon: IconQrcode, defaultContent: 'https://autonova.erp' },
   { type: 'barcode', label: 'Barcode', icon: IconBarcode, defaultContent: '1234567890' },
   { type: 'line', label: 'Horizontal Line', icon: IconLine },
   { type: 'rectangle', label: 'Rectangle Shape', icon: IconSquare },
@@ -232,10 +232,10 @@ export default function ReportTemplateDesigner() {
   const [simulateLive, setSimulateLive] = useState(false);
   const mockSimulationContext = {
     company: {
-      companyName: 'NUTECH WIND PARTS PVT LTD',
+      companyName: 'AUTONOVA',
       address: 'Chennai, Tamil Nadu, 600122',
       gstin: '33AABCN1234F1Z5',
-      email: 'info@nutech.in',
+      email: 'info@autonova.com',
       phone: '+91 9876543210'
     },
     schedule: {

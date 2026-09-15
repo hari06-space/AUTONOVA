@@ -42,7 +42,7 @@ export default function VisitorGatePassEmailDialog({ open, onClose, row, company
   useEffect(() => {
     if (row && open) {
       setToEmail(row.emailId || '');
-      const compName = company?.companyName || 'Autonoma ERP';
+      const compName = company?.companyName || 'Autonova ERP';
       const passNo = row.gatePassNo || 'Gate Pass';
       setSubject(`Visitor Gate Pass - ${passNo} - ${compName}`);
     }
